@@ -71,11 +71,11 @@ Friend recommended me to do it, and it is fun to mess up with files.
 
 Lmao, sure. This is why it is open-source. Do not hesitate, make it better :).
 
-3. **Does this Notepad works on Linux?**
+3. **Does this Notepad runs on Linux?**
 
 Yes, it does. Just make sure you download the '.AppImage' file and allow it to execute.
 
-4. **Does this Notepad works on Windows?**
+4. **Does this Notepad runs on Windows?**
 
 Yes, it does. Just make sure you download the '.exe' file and setup the application.
 

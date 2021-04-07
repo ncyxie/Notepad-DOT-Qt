@@ -17,6 +17,8 @@ As it is open source, you can modify it and even make it better.
 
 [Download Notepad DOT Qt](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)
 
+**If you are Windows user, select '.exe' file. If you are Linux user, select '.AppImage' file.**
+
 ## Screenshots
 
 *N/A*
@@ -39,7 +41,11 @@ Lmao, sure. This is why it is open-source. Do not hesitate, make it better :).
 
 Yes, it does. Just make sure you download the '.AppImage' file and allow it to execute.
 
-4. **What are this Notepad system requirements?**
+4. **Does this Notepad works on Windows?**
+
+Yes, it does. Just make sure you download the '.exe' file and setup the application.
+
+5. **What are this Notepad system requirements?**
 
 No special requirements are needed, even very low-end PC can run this application.
 

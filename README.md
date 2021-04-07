@@ -24,20 +24,30 @@ As it is open source, you can modify it and even make it better.
 ## Linux ([Source](https://docs.appimage.org/introduction/quickstart.html))
 
 **Using the GUI**
-    **1.** [Download latest Notepad DOT Qt version '.AppImage' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases)
-    **2.** Open your file manager and browse to the location of the Notepad DOT AppImage;
-    **3.** Right-click on the Notepad DOT AppImage and click the ‘Properties’ entry;
-    **4.** Switch to the Permissions tab;
-    **5.** Click the ‘Allow executing file as program’ checkbox if you are using a Nautilus-based file manager (Files, Nemo, Caja), or click the ‘Is executable’ checkbox if you                    are using Dolphin, or change the ‘Execute’ drop down list to ‘Anyone’ if you are using PCManFM;
-    **6.** Close the dialog;
-    **7.** Double-click on the Notepad DOT AppImage file to run.
+1. [Download latest Notepad DOT Qt version '.AppImage' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases);
+
+2. Open your file manager and browse to the location of the Notepad DOT AppImage;
+
+3. Right-click on the Notepad DOT AppImage and click the ‘Properties’ entry;
+
+4. Switch to the Permissions tab;
+
+5. Click the ‘Allow executing file as program’ checkbox if you are using a Nautilus-based file manager (Files, Nemo, Caja), or click the ‘Is executable’ checkbox if you                    are using Dolphin, or change the ‘Execute’ drop down list to ‘Anyone’ if you are using PCManFM;
+
+6. Close the dialog;
+
+7. Double-click on the Notepad DOT AppImage file to run.
 
 **Using the Terminal**
-    1. [Download latest Notepad DOT Qt version '.AppImage' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases)
-    2. Open a terminal;
-    3. Change to the directory containing the AppImage, e.g., using cd <my directory>;
-    4. Make the AppImage executable: chmod +x Notepad_DOT_v1.0.0-b1.AppImage;
-    5. Run the AppImage: ./Notepad_DOT_v1.0.0-b1.AppImage.
+1. [Download latest Notepad DOT Qt version '.AppImage' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases);
+
+2. Open a terminal;
+
+3. Change to the directory containing the AppImage, e.g., using cd <my directory>;
+
+4. Make the AppImage executable: chmod +x Notepad_DOT_v1.0.0-b1.AppImage;
+
+5. Run the AppImage: ./Notepad_DOT_v1.0.0-b1.AppImage.
 
 ## Windows
 

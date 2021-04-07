@@ -25,10 +25,6 @@ As it is open source, you can modify it and even make it better.
 
 Since you are here, you just need to enter [Issues](https://github.com/ncyxie/Notepad-Dot/issues/) page in GitHub, or contact with me using Discord or Telegram.
 
-## Updates
-
-You can expect me to publish application updates at Friday, Saturday or Sunday. Normally, other days I am not publishing application updates.
-
 ## FAQ
 
 1. **Why did you decided to make a notepad?**

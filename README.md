@@ -43,11 +43,11 @@ As it is open source, you can modify it and even make it better.
 
 2. Open a terminal;
 
-3. Change to the directory containing the AppImage, e.g., using cd <my directory>;
+3. Change to the directory containing the AppImage, e.g., using ``cd <my directory>``;
 
-4. Make the AppImage executable: chmod +x Notepad_DOT_v1.0.0-b1.AppImage;
+4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-b1.AppImage``;
 
-5. Run the AppImage: ./Notepad_DOT_v1.0.0-b1.AppImage.
+5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b1.AppImage``.
 
 ## Windows
 

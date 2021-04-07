@@ -1,6 +1,6 @@
 *Last updated: 07/04/2021*
 
-# Notepad-DOT-Qt
+# Notepad DOT Qt
 
 ## Latest Information
 

@@ -77,6 +77,11 @@
     <property name="title">
      <string>&amp;Help</string>
     </property>
+    <addaction name="action_GitHub_repository"/>
+    <addaction name="action_GitHub_releases"/>
+    <addaction name="separator"/>
+    <addaction name="action_Telegram_support"/>
+    <addaction name="separator"/>
     <addaction name="action_About"/>
    </widget>
    <addaction name="menuFile"/>
@@ -199,6 +204,21 @@
   <action name="actionPrint">
    <property name="text">
     <string>Print</string>
+   </property>
+  </action>
+  <action name="action_GitHub_repository">
+   <property name="text">
+    <string>&amp;GitHub repository</string>
+   </property>
+  </action>
+  <action name="action_GitHub_releases">
+   <property name="text">
+    <string>&amp;GitHub releases</string>
+   </property>
+  </action>
+  <action name="action_Telegram_support">
+   <property name="text">
+    <string>&amp;Telegram support</string>
    </property>
   </action>
  </widget>

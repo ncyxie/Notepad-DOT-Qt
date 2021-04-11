@@ -11,6 +11,7 @@
 #include <QTextEdit>
 #include <QPrinter>
 #include <QPrintDialog>
+#include <QDesktopServices>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -181,4 +182,22 @@ void MainWindow::on_actionPrint_triggered()
         return;
     }
     ui->textEdit->print(&printer);
+}
+
+void MainWindow::on_action_GitHub_repository_triggered()
+{
+    QString link = "https://github.com/ncyxie/Notepad-DOT-Qt";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
+void MainWindow::on_action_GitHub_releases_triggered()
+{
+    QString link = "https://github.com/ncyxie/Notepad-DOT-Qt/releases";
+    QDesktopServices::openUrl(QUrl(link));
+}
+
+void MainWindow::on_action_Telegram_support_triggered()
+{
+    QString link = "https://t.me/ncyxie";
+    QDesktopServices::openUrl(QUrl(link));
 }

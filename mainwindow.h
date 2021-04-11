@@ -52,6 +52,12 @@ private slots:
 
     void on_actionPrint_triggered();
 
+    void on_action_GitHub_repository_triggered();
+
+    void on_action_GitHub_releases_triggered();
+
+    void on_action_Telegram_support_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

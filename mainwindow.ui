@@ -49,6 +49,8 @@
     <addaction name="action_Save"/>
     <addaction name="action_Save_As"/>
     <addaction name="separator"/>
+    <addaction name="actionPrint"/>
+    <addaction name="separator"/>
     <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
@@ -192,6 +194,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionPrint">
+   <property name="text">
+    <string>Print</string>
    </property>
   </action>
  </widget>

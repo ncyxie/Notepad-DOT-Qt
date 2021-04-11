@@ -9,6 +9,8 @@
 #include <QFontDialog>
 #include <QColorDialog>
 #include <QTextEdit>
+#include <QPrinter>
+#include <QPrintDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -63,7 +65,7 @@ void MainWindow::on_action_Open_triggered()
 void MainWindow::on_action_Save_triggered()
 {
     QString fileName;
-        // If we don't have a filename from before, get one.
+
         if (currentFile.isEmpty()) {
             fileName = QFileDialog::getSaveFileName(this, "Save");
             currentFile = fileName;
@@ -168,4 +170,15 @@ void MainWindow::on_action_Delete_triggered()
 void MainWindow::on_action_Select_All_triggered()
 {
     ui->textEdit->selectAll();
+}
+
+void MainWindow::on_actionPrint_triggered()
+{
+    QPrinter printer;
+    printer.setPrinterName("Printer Name");
+    QPrintDialog pDialog(&printer, this);
+    if(pDialog.exec() == QDialog::Rejected){
+        return;
+    }
+    ui->textEdit->print(&printer);
 }

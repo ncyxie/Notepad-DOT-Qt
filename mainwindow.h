@@ -50,6 +50,8 @@ private slots:
 
     void on_action_Select_All_triggered();
 
+    void on_actionPrint_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

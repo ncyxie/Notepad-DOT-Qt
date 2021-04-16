@@ -65,6 +65,11 @@
     <addaction name="action_Paste"/>
     <addaction name="action_Delete"/>
     <addaction name="action_Select_All"/>
+    <addaction name="separator"/>
+    <addaction name="action_Search_with_Google"/>
+    <addaction name="action_Search_with_Bing"/>
+    <addaction name="action_Search_with_DuckDuckGo"/>
+    <addaction name="action_Search_with_Yahoo"/>
    </widget>
    <widget class="QMenu" name="menuFormat">
     <property name="title">
@@ -219,6 +224,26 @@
   <action name="action_Telegram_support">
    <property name="text">
     <string>&amp;Telegram support</string>
+   </property>
+  </action>
+  <action name="action_Search_with_Google">
+   <property name="text">
+    <string>&amp;Search with Google</string>
+   </property>
+  </action>
+  <action name="action_Search_with_Bing">
+   <property name="text">
+    <string>&amp;Search with Bing</string>
+   </property>
+  </action>
+  <action name="action_Search_with_DuckDuckGo">
+   <property name="text">
+    <string>&amp;Search with DuckDuckGo</string>
+   </property>
+  </action>
+  <action name="action_Search_with_Yahoo">
+   <property name="text">
+    <string>&amp;Search with Yahoo!</string>
    </property>
   </action>
  </widget>

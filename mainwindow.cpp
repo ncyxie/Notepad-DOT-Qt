@@ -201,3 +201,39 @@ void MainWindow::on_action_Telegram_support_triggered()
     QString link = "https://t.me/ncyxie";
     QDesktopServices::openUrl(QUrl(link));
 }
+
+void MainWindow::on_action_Search_with_Google_triggered()
+{
+    QTextCursor cursor= ui->textEdit->textCursor();
+        if(cursor.hasSelection()) {
+            QString link = "https://www.google.com/search?q=" + cursor.selectedText();
+            QDesktopServices::openUrl(QUrl(link));
+        }
+}
+
+void MainWindow::on_action_Search_with_Bing_triggered()
+{
+    QTextCursor cursor= ui->textEdit->textCursor();
+        if(cursor.hasSelection()) {
+            QString link = "https://www.bing.com/search?q=" + cursor.selectedText();
+            QDesktopServices::openUrl(QUrl(link));
+        }
+}
+
+void MainWindow::on_action_Search_with_DuckDuckGo_triggered()
+{
+    QTextCursor cursor= ui->textEdit->textCursor();
+        if(cursor.hasSelection()) {
+            QString link = "https://duckduckgo.com/?q=" + cursor.selectedText();
+            QDesktopServices::openUrl(QUrl(link));
+        }
+}
+
+void MainWindow::on_action_Search_with_Yahoo_triggered()
+{
+    QTextCursor cursor= ui->textEdit->textCursor();
+        if(cursor.hasSelection()) {
+            QString link = "https://search.yahoo.com/search?p=" + cursor.selectedText();
+            QDesktopServices::openUrl(QUrl(link));
+        }
+}

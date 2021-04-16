@@ -58,6 +58,14 @@ private slots:
 
     void on_action_Telegram_support_triggered();
 
+    void on_action_Search_with_Google_triggered();
+
+    void on_action_Search_with_Bing_triggered();
+
+    void on_action_Search_with_DuckDuckGo_triggered();
+
+    void on_action_Search_with_Yahoo_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

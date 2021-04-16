@@ -44,6 +44,7 @@
      <string>&amp;File</string>
     </property>
     <addaction name="action_New"/>
+    <addaction name="action_New_Window"/>
     <addaction name="separator"/>
     <addaction name="action_Open"/>
     <addaction name="action_Save"/>
@@ -64,6 +65,7 @@
     <addaction name="action_Copy"/>
     <addaction name="action_Paste"/>
     <addaction name="action_Delete"/>
+    <addaction name="separator"/>
     <addaction name="action_Select_All"/>
     <addaction name="separator"/>
     <addaction name="action_Search_with_Google"/>
@@ -210,6 +212,9 @@
    <property name="text">
     <string>Print</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
   </action>
   <action name="action_GitHub_repository">
    <property name="text">
@@ -230,20 +235,40 @@
    <property name="text">
     <string>&amp;Search with Google</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+X</string>
+   </property>
   </action>
   <action name="action_Search_with_Bing">
    <property name="text">
     <string>&amp;Search with Bing</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+B</string>
    </property>
   </action>
   <action name="action_Search_with_DuckDuckGo">
    <property name="text">
     <string>&amp;Search with DuckDuckGo</string>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+D</string>
+   </property>
   </action>
   <action name="action_Search_with_Yahoo">
    <property name="text">
     <string>&amp;Search with Yahoo!</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+Y</string>
+   </property>
+  </action>
+  <action name="action_New_Window">
+   <property name="text">
+    <string>&amp;New Window</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+N</string>
    </property>
   </action>
  </widget>

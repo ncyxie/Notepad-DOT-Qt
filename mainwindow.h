@@ -66,6 +66,8 @@ private slots:
 
     void on_action_Search_with_Yahoo_triggered();
 
+    void on_action_New_Window_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

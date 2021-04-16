@@ -237,3 +237,8 @@ void MainWindow::on_action_Search_with_Yahoo_triggered()
             QDesktopServices::openUrl(QUrl(link));
         }
 }
+
+void MainWindow::on_action_New_Window_triggered()
+{
+
+}

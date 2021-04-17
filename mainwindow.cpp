@@ -132,9 +132,9 @@ void MainWindow::on_action_About_triggered()
     about_text = "NOTEPAD DOT\n";
     about_text += "A open source, lightweight and \ncustomizable text editor.\n";
     about_text += "Works on Windows and Linux\noperating systems.\n\n";
-    about_text += "Version: 1.0.0-b1\n";
-    about_text += "Build date: 07/04/2021\n";
-    about_text += "Built by using Qt Creator\n";
+    about_text += "Version: 1.0.0-b2\n";
+    about_text += "Build date: 17/04/2021\n";
+    about_text += "Based on Qt and C++\n";
     about_text += "Made by ncyxie\n";
     about_text += "Thanks to zero9178\n";
     about_text += "Thanks to XeZrunner\n";

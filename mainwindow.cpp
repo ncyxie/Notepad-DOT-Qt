@@ -240,5 +240,13 @@ void MainWindow::on_action_Search_with_Yahoo_triggered()
 
 void MainWindow::on_action_New_Window_triggered()
 {
+    MainWindow *newWindow = new MainWindow();
+    newWindow->show();
+}
 
+void MainWindow::on_action_Date_Time_triggered()
+{
+    dateTime = QDateTime::currentDateTime();
+    QString str = dateTime.toString();
+    ui->textEdit->insertPlainText(str);
 }

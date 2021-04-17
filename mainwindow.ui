@@ -67,6 +67,7 @@
     <addaction name="action_Delete"/>
     <addaction name="separator"/>
     <addaction name="action_Select_All"/>
+    <addaction name="action_Date_Time"/>
     <addaction name="separator"/>
     <addaction name="action_Search_with_Google"/>
     <addaction name="action_Search_with_Bing"/>
@@ -269,6 +270,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+N</string>
+   </property>
+  </action>
+  <action name="action_Date_Time">
+   <property name="text">
+    <string>&amp;Date/Time</string>
+   </property>
+   <property name="shortcut">
+    <string>F5</string>
    </property>
   </action>
  </widget>

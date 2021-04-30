@@ -1,4 +1,4 @@
-*Last time information was updated: 29/04/2021*
+*Last time information was updated: 30/04/2021*
 
 # Notepad DOT Qt
 

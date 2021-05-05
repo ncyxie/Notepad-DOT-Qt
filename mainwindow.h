@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QDateTime>
+#include "aboutdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -75,6 +76,8 @@ private:
     Ui::MainWindow *ui;
     QString currentFile;
     QDateTime dateTime;
+
+    AboutDialog *aboutdialog;
 };
 
 

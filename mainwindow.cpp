@@ -20,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle("Untitled - Notepad DOT");
 }
-
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -128,18 +127,8 @@ void MainWindow::on_action_Redo_triggered()
 
 void MainWindow::on_action_About_triggered()
 {
-    QString about_text;
-    about_text = "NOTEPAD DOT\n";
-    about_text += "A open source, lightweight and \ncustomizable text editor.\n";
-    about_text += "Works on Windows and Linux\noperating systems.\n\n";
-    about_text += "Version: 1.0.0-b2\n";
-    about_text += "Build date: 17/04/2021\n";
-    about_text += "Based on Qt and C++\n";
-    about_text += "Made by ncyxie\n";
-    about_text += "Thanks to zero9178\n";
-    about_text += "Thanks to XeZrunner\n";
-
-    QMessageBox::about(this, "About", about_text);
+    aboutdialog = new AboutDialog(this);
+    aboutdialog->show();
 }
 
 void MainWindow::on_action_Exit_triggered()

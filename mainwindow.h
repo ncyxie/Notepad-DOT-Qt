@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QDateTime>
 #include "aboutdialog.h"
+#include "discorddialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -72,12 +73,15 @@ private slots:
 
     void on_action_Date_Time_triggered();
 
+    void on_action_Discord_support_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;
     QDateTime dateTime;
 
     AboutDialog *aboutdialog;
+    discorddialog *ddialog;
 };
 
 

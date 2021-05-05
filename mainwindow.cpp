@@ -239,3 +239,9 @@ void MainWindow::on_action_Date_Time_triggered()
     QString str = dateTime.toString();
     ui->textEdit->insertPlainText(str);
 }
+
+void MainWindow::on_action_Discord_support_triggered()
+{
+    ddialog = new discorddialog(this);
+    ddialog->show();
+}

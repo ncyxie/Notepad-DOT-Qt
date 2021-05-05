@@ -11,15 +11,18 @@ CONFIG += c++11
 
 SOURCES += \
     aboutdialog.cpp \
+    discorddialog.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
     aboutdialog.h \
+    discorddialog.h \
     mainwindow.h
 
 FORMS += \
     aboutdialog.ui \
+    discorddialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.

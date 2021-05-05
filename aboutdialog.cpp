@@ -8,6 +8,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
 {
     ui->setupUi(this);
     setFixedSize(width(), height());
+    this->setWindowTitle("About");
     QPixmap pix(":/img/Notepad-DOT-icon.ico");
     ui->icon_pic->setPixmap(pix.scaled(190, 196, Qt::KeepAspectRatio));
 }

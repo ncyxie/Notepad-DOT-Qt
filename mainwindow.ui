@@ -89,6 +89,7 @@
     <addaction name="action_GitHub_releases"/>
     <addaction name="separator"/>
     <addaction name="action_Telegram_support"/>
+    <addaction name="action_Discord_support"/>
     <addaction name="separator"/>
     <addaction name="action_About"/>
    </widget>
@@ -293,6 +294,11 @@
   <action name="action_Replace">
    <property name="text">
     <string>&amp;Replace</string>
+   </property>
+  </action>
+  <action name="action_Discord_support">
+   <property name="text">
+    <string>&amp;Discord support</string>
    </property>
   </action>
  </widget>

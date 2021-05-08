@@ -1,4 +1,4 @@
-*Last time information was updated: 08/05/2021*
+*Last time information was updated: 09/05/2021*
 
 # Notepad DOT Qt
 
@@ -83,7 +83,7 @@ Yes, it does. Just make sure you download the '.exe' file and setup the applicat
 
 No special requirements are needed, even very low-end PC can run this application.
 
-6. **Why Notepad DOT Qt doesn't officialy support macOS?**
+6. **Why Notepad DOT Qt doesn't officially support macOS?**
 
 I don't have macOS computer, so I cannot test for bugs, how it works and etc. 
 Actually, Notepad DOT Qt *might* work on macOS, but you will have to compile and test application

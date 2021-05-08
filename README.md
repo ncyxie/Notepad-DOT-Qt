@@ -15,7 +15,7 @@ As it is open source, you can modify it and even make it better.
 
 ## Download
 
-**[Download Notepad DOT Qt]**(https://github.com/ncyxie/Notepad-DOT-Qt/releases/)
+**[Download Notepad DOT Qt](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
 
 **If you are Windows user, select '.exe' file. If you are Linux user, select '.AppImage' file.**
 

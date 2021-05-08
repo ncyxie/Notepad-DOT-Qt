@@ -69,7 +69,7 @@ Friend recommended me to do it, and it is fun to mess up with files.
 
 2. **Can I "kang" a little of this Notepad code?**
 
-Lmao, sure. This is why it is open-source. Do not hesitate, make it better :).
+For sure. This is why it is open-source. Do not hesitate, make it better :).
 
 3. **Does this Notepad runs on Linux?**
 
@@ -82,6 +82,12 @@ Yes, it does. Just make sure you download the '.exe' file and setup the applicat
 5. **What are this Notepad system requirements?**
 
 No special requirements are needed, even very low-end PC can run this application.
+
+6. **Why Notepad DOT Qt doesn't officialy support macOS?**
+
+I don't have macOS computer, so I cannot test for bugs, how it works and etc. 
+Actually, Notepad DOT Qt *might* work on macOS, but you will have to compile and test application
+yourself.
 
 ## Thanks to
 

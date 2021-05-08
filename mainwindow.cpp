@@ -144,14 +144,24 @@ void MainWindow::on_action_Font_triggered()
 void MainWindow::on_action_Color_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
-    ui->textEdit->selectAll();
-    ui->textEdit->setTextColor(QColorDialog::getColor(ui->textEdit->textColor(),this));
-    ui->textEdit->setTextCursor( cursor );
+    QString text = ui->textEdit->toPlainText();
+
+    if (text != "")
+    {
+        ui->textEdit->selectAll();
+        ui->textEdit->setTextColor(QColorDialog::getColor(ui->textEdit->textColor(),this));
+        ui->textEdit->setTextCursor( cursor );
+    }
+    else
+    {
+        ui->textEdit->setTextColor(QColorDialog::getColor(ui->textEdit->textColor(),this));
+    }
+
 }
 
 void MainWindow::on_action_Delete_triggered()
 {
-    QTextCursor cursor= ui->textEdit->textCursor();
+    QTextCursor cursor = ui->textEdit->textCursor();
         if(cursor.hasSelection()) {
             cursor.deleteChar();
         }
@@ -256,7 +266,6 @@ void MainWindow::on_action_Appearance_triggered()
         p.setColor(QPalette::Base, color);
         ui->textEdit->setPalette(p);
     }
-
     else
     {
         return;

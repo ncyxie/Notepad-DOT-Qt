@@ -245,3 +245,20 @@ void MainWindow::on_action_Discord_support_triggered()
     ddialog = new discorddialog(this);
     ddialog->show();
 }
+
+void MainWindow::on_action_Appearance_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::white, this);
+
+    if (color.isValid())
+    {
+        QPalette p = ui->textEdit->palette();
+        p.setColor(QPalette::Base, color);
+        ui->textEdit->setPalette(p);
+    }
+
+    else
+    {
+        return;
+    }
+}

@@ -75,6 +75,8 @@ private slots:
 
     void on_action_Discord_support_triggered();
 
+    void on_action_Appearance_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

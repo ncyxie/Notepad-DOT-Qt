@@ -77,6 +77,10 @@ private slots:
 
     void on_action_Appearance_triggered();
 
+    void on_action_Uppercase_triggered();
+
+    void on_action_Lowercase_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

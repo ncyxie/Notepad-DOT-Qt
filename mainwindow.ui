@@ -80,6 +80,9 @@
     </property>
     <addaction name="action_Font"/>
     <addaction name="action_Color"/>
+    <addaction name="separator"/>
+    <addaction name="action_Uppercase"/>
+    <addaction name="action_Lowercase"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -311,6 +314,22 @@
   <action name="action_Appearance">
    <property name="text">
     <string>&amp;Appearance</string>
+   </property>
+  </action>
+  <action name="action_Uppercase">
+   <property name="text">
+    <string>&amp;Uppercase</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+U</string>
+   </property>
+  </action>
+  <action name="action_Lowercase">
+   <property name="text">
+    <string>&amp;Lowercase</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+U</string>
    </property>
   </action>
  </widget>

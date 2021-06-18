@@ -9,5 +9,6 @@ int main(int argc, char *argv[])
     a.setWindowIcon(QIcon(":/img/Notepad-DOT-icon.ico"));
     MainWindow w;
     w.show();
+
     return a.exec();
 }

@@ -271,3 +271,17 @@ void MainWindow::on_action_Appearance_triggered()
         return;
     }
 }
+
+void MainWindow::on_action_Uppercase_triggered()
+{
+    QString text = ui->textEdit->toPlainText();
+    ui->textEdit->setText(text.toUpper());
+}
+
+
+void MainWindow::on_action_Lowercase_triggered()
+{
+    QString text = ui->textEdit->toPlainText();
+    ui->textEdit->setText(text.toLower());
+}
+

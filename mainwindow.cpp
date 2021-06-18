@@ -275,21 +275,19 @@ void MainWindow::on_action_Appearance_triggered()
 void MainWindow::on_action_Uppercase_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
-        if(cursor.hasSelection()) {
-    QString text = ui->textEdit->toPlainText();
-    ui->textEdit->setText(text.toUpper());
-    ui->textEdit->setTextCursor( cursor );
-        }
+    if (cursor.hasSelection()) {
+        QString newText = cursor.selectedText().toUpper();
+        cursor.insertText(newText);
+    }
 }
 
 
 void MainWindow::on_action_Lowercase_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
-        if(cursor.hasSelection()) {
-    QString text = ui->textEdit->toPlainText();
-    ui->textEdit->setText(text.toLower());
-    ui->textEdit->setTextCursor( cursor );
-        }
+    if (cursor.hasSelection()) {
+        QString newText = cursor.selectedText().toLower();
+        cursor.insertText(newText);
+    }
 }
 

@@ -1,10 +1,10 @@
-*Last time information was updated: 08/05/2021*
+*Last time information was updated: 17/06/2021*
 
 # Notepad DOT Qt
 
 ## Latest Information
 
-**Second beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
+**Third beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
 
 ## Introduction
 
@@ -15,7 +15,7 @@ As it is open source, you can modify it and even make it better.
 
 ## Download
 
-[Download Notepad DOT Qt](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)
+**[Download Notepad DOT Qt](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
 
 **If you are Windows user, select '.exe' file. If you are Linux user, select '.AppImage' file.**
 
@@ -45,9 +45,9 @@ As it is open source, you can modify it and even make it better.
 
 3. Change to the directory containing the AppImage, e.g., using ``cd <my directory>``;
 
-4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-b2.AppImage``;
+4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-b3.AppImage``;
 
-5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b2.AppImage``.
+5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b3.AppImage``.
 
 ## Windows
 
@@ -69,7 +69,7 @@ Friend recommended me to do it, and it is fun to mess up with files.
 
 2. **Can I "kang" a little of this Notepad code?**
 
-Lmao, sure. This is why it is open-source. Do not hesitate, make it better :).
+For sure. This is why it is open-source. Do not hesitate, make it better :).
 
 3. **Does this Notepad runs on Linux?**
 
@@ -82,6 +82,12 @@ Yes, it does. Just make sure you download the '.exe' file and setup the applicat
 5. **What are this Notepad system requirements?**
 
 No special requirements are needed, even very low-end PC can run this application.
+
+6. **Why Notepad DOT Qt doesn't officially support macOS?**
+
+I don't have macOS computer, so I cannot test for bugs, how it works and etc. 
+Actually, Notepad DOT Qt *might* work on macOS, but you will have to compile and test application
+yourself.
 
 ## Thanks to
 

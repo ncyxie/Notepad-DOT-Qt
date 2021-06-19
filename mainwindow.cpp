@@ -148,13 +148,29 @@ void MainWindow::on_action_Color_triggered()
 
     if (text != "")
     {
-        ui->textEdit->selectAll();
-        ui->textEdit->setTextColor(QColorDialog::getColor(ui->textEdit->textColor(),this));
-        ui->textEdit->setTextCursor( cursor );
+        QColor color = QColorDialog::getColor(ui->textEdit->textColor());
+        if (color.isValid())
+        {
+            ui->textEdit->selectAll();
+            ui->textEdit->setTextColor(color);
+            ui->textEdit->setTextCursor( cursor );
+        }
+        else
+        {
+            return;
+        }
     }
     else
     {
-        ui->textEdit->setTextColor(QColorDialog::getColor(ui->textEdit->textColor(),this));
+        QColor color = QColorDialog::getColor(ui->textEdit->textColor());
+        if (color.isValid())
+        {
+            ui->textEdit->setTextColor(color);
+        }
+        else
+        {
+            return;
+        }
     }
 
 }

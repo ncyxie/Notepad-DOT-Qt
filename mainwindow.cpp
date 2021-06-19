@@ -155,10 +155,6 @@ void MainWindow::on_action_Color_triggered()
             ui->textEdit->setTextColor(color);
             ui->textEdit->setTextCursor( cursor );
         }
-        else
-        {
-            return;
-        }
     }
     else
     {
@@ -166,10 +162,6 @@ void MainWindow::on_action_Color_triggered()
         if (color.isValid())
         {
             ui->textEdit->setTextColor(color);
-        }
-        else
-        {
-            return;
         }
     }
 
@@ -281,10 +273,6 @@ void MainWindow::on_action_Appearance_triggered()
         QPalette p = ui->textEdit->palette();
         p.setColor(QPalette::Base, color);
         ui->textEdit->setPalette(p);
-    }
-    else
-    {
-        return;
     }
 }
 

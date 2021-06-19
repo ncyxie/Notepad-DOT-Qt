@@ -36,7 +36,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>23</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -100,7 +100,17 @@
     <property name="title">
      <string>&amp;Settings</string>
     </property>
+    <widget class="QMenu" name="menu_Menu_Bar">
+     <property name="title">
+      <string>&amp;Menu Bar</string>
+     </property>
+     <addaction name="action_menubar_Appearance"/>
+     <addaction name="separator"/>
+     <addaction name="action_menubar_Font"/>
+     <addaction name="action_menubar_Font_Color"/>
+    </widget>
     <addaction name="action_Appearance"/>
+    <addaction name="menu_Menu_Bar"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -330,6 +340,21 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Shift+U</string>
+   </property>
+  </action>
+  <action name="action_menubar_Appearance">
+   <property name="text">
+    <string>&amp;Appearance</string>
+   </property>
+  </action>
+  <action name="action_menubar_Font">
+   <property name="text">
+    <string>&amp;Font</string>
+   </property>
+  </action>
+  <action name="action_menubar_Font_Color">
+   <property name="text">
+    <string>&amp;Font Color</string>
    </property>
   </action>
  </widget>

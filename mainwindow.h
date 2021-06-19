@@ -81,9 +81,17 @@ private slots:
 
     void on_action_Lowercase_triggered();
 
+    void on_action_menubar_Appearance_triggered();
+
+    void on_action_menubar_Font_triggered();
+
+    void on_action_menubar_Font_Color_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;
+    QString menubarbcolor = "";
+    QString menubarfcolor = "";
     QDateTime dateTime;
 
     AboutDialog *aboutdialog;

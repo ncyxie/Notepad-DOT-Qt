@@ -295,3 +295,48 @@ void MainWindow::on_action_Lowercase_triggered()
     }
 }
 
+void MainWindow::on_action_menubar_Appearance_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::white, this);
+
+    if (color.isValid())
+    {
+        menubarbcolor = color.name();
+
+        if (menubarfcolor != "")
+        {
+            ui->menubar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + menubarfcolor + ";");
+        }
+        else
+        {
+            ui->menubar->setStyleSheet("background-color: " + color.name() + ";");
+        }
+    }
+}
+
+
+void MainWindow::on_action_menubar_Font_triggered()
+{
+    ui->menubar->setFont(QFontDialog::getFont(nullptr,ui->menubar->font(),this));
+}
+
+
+void MainWindow::on_action_menubar_Font_Color_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::white, this);
+
+    if (color.isValid())
+    {
+        menubarfcolor = color.name();
+
+        if (menubarbcolor != "")
+        {
+            ui->menubar->setStyleSheet("background-color: " + menubarbcolor + ";" + "color: " + color.name() + ";");
+        }
+        else
+        {
+            ui->menubar->setStyleSheet("color: " + color.name() + ";");
+        }
+    }
+}
+

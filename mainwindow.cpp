@@ -153,7 +153,7 @@ void MainWindow::on_action_Color_triggered()
         {
             ui->textEdit->selectAll();
             ui->textEdit->setTextColor(color);
-            ui->textEdit->setTextCursor( cursor );
+            ui->textEdit->setTextCursor(cursor);
         }
     }
     else
@@ -285,7 +285,6 @@ void MainWindow::on_action_Uppercase_triggered()
     }
 }
 
-
 void MainWindow::on_action_Lowercase_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
@@ -314,12 +313,10 @@ void MainWindow::on_action_menubar_Appearance_triggered()
     }
 }
 
-
 void MainWindow::on_action_menubar_Font_triggered()
 {
     ui->menubar->setFont(QFontDialog::getFont(nullptr,ui->menubar->font(),this));
 }
-
 
 void MainWindow::on_action_menubar_Font_Color_triggered()
 {
@@ -339,4 +336,3 @@ void MainWindow::on_action_menubar_Font_Color_triggered()
         }
     }
 }
-

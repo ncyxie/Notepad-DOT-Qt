@@ -1,4 +1,4 @@
-*Last time information was updated: 19/06/2021*
+*Last time information was updated: 20/06/2021*
 
 # Notepad DOT Qt
 
@@ -32,7 +32,7 @@ As it is open source, you can modify it and even make it better.
 
 4. Switch to the Permissions tab;
 
-5. Click the ‘Allow executing file as program’ checkbox if you are using a Nautilus-based file manager (Files, Nemo, Caja), or click the ‘Is executable’ checkbox if you                    are using Dolphin, or change the ‘Execute’ drop down list to ‘Anyone’ if you are using PCManFM;
+5. Click the ‘Allow executing file as program’ checkbox if you are using a Nautilus-based file manager (Files, Nemo, Caja), or click the ‘Is executable’ checkbox if you are using Dolphin, or change the ‘Execute’ drop down list to ‘Anyone’ if you are using PCManFM;
 
 6. Close the dialog;
 
@@ -45,9 +45,9 @@ As it is open source, you can modify it and even make it better.
 
 3. Change to the directory containing the AppImage, e.g., using ``cd <my directory>``;
 
-4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-b3.AppImage``;
+4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-b4.AppImage``;
 
-5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b3.AppImage``.
+5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b4.AppImage``.
 
 ## Windows
 

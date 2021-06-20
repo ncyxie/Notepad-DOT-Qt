@@ -24,7 +24,7 @@ As it is open source, you can modify it and even make it better.
 ## Linux ([Guide source](https://docs.appimage.org/introduction/quickstart.html))
 
 **Using the GUI**
-1. [Download latest Notepad DOT Qt version '.AppImage' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases);
+1. [Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open your file manager and browse to the location of the Notepad DOT AppImage;
 

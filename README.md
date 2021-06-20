@@ -4,7 +4,7 @@
 
 ## Latest Information
 
-**Third beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
+**Fourth beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
 
 ## Introduction
 
@@ -39,7 +39,7 @@ As it is open source, you can modify it and even make it better.
 7. Double-click on the Notepad DOT AppImage file to run.
 
 **Using the Terminal**
-1. [Download latest Notepad DOT Qt version '.AppImage' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases);
+1. [Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open a terminal;
 
@@ -51,7 +51,7 @@ As it is open source, you can modify it and even make it better.
 
 ## Windows
 
-[Download latest Notepad DOT Qt version '.exe' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases) and follow further Notepad DOT Setup guide;
+[Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file and follow further Notepad DOT Setup guide;
 
 ## Screenshots
 
@@ -69,7 +69,7 @@ Friend recommended me to do it, and it is fun to mess up with files.
 
 2. **Can I "kang" a little of this Notepad code?**
 
-For sure. This is why it is open-source. Do not hesitate, make it better :).
+For sure. This is why it is open-source. Do not hesitate, make it better. :)
 
 3. **Does this Notepad runs on Linux?**
 

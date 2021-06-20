@@ -75,8 +75,6 @@ private slots:
 
     void on_action_Discord_support_triggered();
 
-    void on_action_Appearance_triggered();
-
     void on_action_Uppercase_triggered();
 
     void on_action_Lowercase_triggered();
@@ -86,6 +84,14 @@ private slots:
     void on_action_menubar_Font_triggered();
 
     void on_action_menubar_Font_Color_triggered();
+
+    void on_action_textEdit_Appearance_triggered();
+
+    void on_action_widget_Appearance_triggered();
+
+    void on_action_widget_Appearance_Reset_to_default_triggered();
+
+    void on_action_menubar_Appearance_Reset_to_default_triggered();
 
 private:
     Ui::MainWindow *ui;

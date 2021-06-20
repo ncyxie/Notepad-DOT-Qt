@@ -108,8 +108,25 @@
      <addaction name="separator"/>
      <addaction name="action_menubar_Font"/>
      <addaction name="action_menubar_Font_Color"/>
+     <addaction name="separator"/>
+     <addaction name="action_menubar_Appearance_Reset_to_default"/>
     </widget>
-    <addaction name="action_Appearance"/>
+    <widget class="QMenu" name="menu_Text_Edit">
+     <property name="title">
+      <string>&amp;Text Edit</string>
+     </property>
+     <addaction name="action_textEdit_Appearance"/>
+    </widget>
+    <widget class="QMenu" name="menu_Widget">
+     <property name="title">
+      <string>&amp;Widget</string>
+     </property>
+     <addaction name="action_widget_Appearance"/>
+     <addaction name="separator"/>
+     <addaction name="action_widget_Appearance_Reset_to_default"/>
+    </widget>
+    <addaction name="menu_Widget"/>
+    <addaction name="menu_Text_Edit"/>
     <addaction name="menu_Menu_Bar"/>
    </widget>
    <addaction name="menuFile"/>
@@ -321,11 +338,6 @@
     <string>&amp;Discord support</string>
    </property>
   </action>
-  <action name="action_Appearance">
-   <property name="text">
-    <string>&amp;Appearance</string>
-   </property>
-  </action>
   <action name="action_Uppercase">
    <property name="text">
     <string>&amp;Uppercase</string>
@@ -355,6 +367,26 @@
   <action name="action_menubar_Font_Color">
    <property name="text">
     <string>&amp;Font Color</string>
+   </property>
+  </action>
+  <action name="action_textEdit_Appearance">
+   <property name="text">
+    <string>Appearance</string>
+   </property>
+  </action>
+  <action name="action_widget_Appearance">
+   <property name="text">
+    <string>&amp;Appearance</string>
+   </property>
+  </action>
+  <action name="action_widget_Appearance_Reset_to_default">
+   <property name="text">
+    <string>&amp;Reset to default</string>
+   </property>
+  </action>
+  <action name="action_menubar_Appearance_Reset_to_default">
+   <property name="text">
+    <string>&amp;Reset to default</string>
    </property>
   </action>
  </widget>

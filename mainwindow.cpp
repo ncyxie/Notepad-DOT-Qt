@@ -264,18 +264,6 @@ void MainWindow::on_action_Discord_support_triggered()
     ddialog->show();
 }
 
-void MainWindow::on_action_Appearance_triggered()
-{
-    QColor color = QColorDialog::getColor(Qt::white, this);
-
-    if (color.isValid())
-    {
-        QPalette p = ui->textEdit->palette();
-        p.setColor(QPalette::Base, color);
-        ui->textEdit->setPalette(p);
-    }
-}
-
 void MainWindow::on_action_Uppercase_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
@@ -336,3 +324,41 @@ void MainWindow::on_action_menubar_Font_Color_triggered()
         }
     }
 }
+
+void MainWindow::on_action_textEdit_Appearance_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::white, this);
+
+    if (color.isValid())
+    {
+        QPalette p = ui->textEdit->palette();
+        p.setColor(QPalette::Base, color);
+        ui->textEdit->setPalette(p);
+    }
+}
+
+void MainWindow::on_action_widget_Appearance_triggered()
+{
+    QColor color = QColorDialog::getColor(Qt::white, this);
+
+    if (color.isValid())
+    {
+        setStyleSheet("background-color: " + color.name() + ";");
+        setStyleSheet("background-color: " + color.name() + ";");
+    }
+}
+
+
+void MainWindow::on_action_widget_Appearance_Reset_to_default_triggered()
+{
+    setStyleSheet("");
+}
+
+
+void MainWindow::on_action_menubar_Appearance_Reset_to_default_triggered()
+{
+    ui->menubar->setStyleSheet("");
+    menubarbcolor = "";
+    menubarfcolor = "";
+}
+

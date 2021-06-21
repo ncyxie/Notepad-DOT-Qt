@@ -1,10 +1,10 @@
-*Last time information was updated: 19/06/2021*
+*Last time information was updated: 20/06/2021*
 
 # Notepad DOT Qt
 
 ## Latest Information
 
-**Third beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
+**Fourth beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
 
 ## Introduction
 
@@ -24,7 +24,7 @@ As it is open source, you can modify it and even make it better.
 ## Linux ([Guide source](https://docs.appimage.org/introduction/quickstart.html))
 
 **Using the GUI**
-1. [Download latest Notepad DOT Qt version '.AppImage' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases);
+1. [Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open your file manager and browse to the location of the Notepad DOT AppImage;
 
@@ -32,26 +32,26 @@ As it is open source, you can modify it and even make it better.
 
 4. Switch to the Permissions tab;
 
-5. Click the ‘Allow executing file as program’ checkbox if you are using a Nautilus-based file manager (Files, Nemo, Caja), or click the ‘Is executable’ checkbox if you                    are using Dolphin, or change the ‘Execute’ drop down list to ‘Anyone’ if you are using PCManFM;
+5. Click the ‘Allow executing file as program’ checkbox if you are using a Nautilus-based file manager (Files, Nemo, Caja), or click the ‘Is executable’ checkbox if you are using Dolphin, or change the ‘Execute’ drop down list to ‘Anyone’ if you are using PCManFM;
 
 6. Close the dialog;
 
 7. Double-click on the Notepad DOT AppImage file to run.
 
 **Using the Terminal**
-1. [Download latest Notepad DOT Qt version '.AppImage' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases);
+1. [Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open a terminal;
 
 3. Change to the directory containing the AppImage, e.g., using ``cd <my directory>``;
 
-4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-b3.AppImage``;
+4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-b4.AppImage``;
 
-5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b3.AppImage``.
+5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b4.AppImage``.
 
 ## Windows
 
-[Download latest Notepad DOT Qt version '.exe' file](https://github.com/ncyxie/Notepad-DOT-Qt/releases) and follow further Notepad DOT Setup guide;
+[Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file and follow further Notepad DOT Setup guide;
 
 ## Screenshots
 
@@ -69,7 +69,7 @@ Friend recommended me to do it, and it is fun to mess up with files.
 
 2. **Can I "kang" a little of this Notepad code?**
 
-For sure. This is why it is open-source. Do not hesitate, make it better :).
+For sure. This is why it is open-source. Do not hesitate, make it better. :)
 
 3. **Does this Notepad runs on Linux?**
 

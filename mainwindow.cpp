@@ -48,6 +48,7 @@ void MainWindow::on_action_New_triggered()
 
 void MainWindow::on_action_Open_triggered()
 {
+    QTextCursor cursor = ui->textEdit->textCursor();
     QString fileName = QFileDialog::getOpenFileName(this, "Open the file");
     QFile file(fileName);
     currentFile = fileName;
@@ -59,6 +60,7 @@ void MainWindow::on_action_Open_triggered()
     QString text = in.readAll();
     this->setWindowTitle(currentFile + " - Notepad DOT");
     ui->textEdit->setText(text);
+    ui->textEdit->setTextCursor(cursor);
     file.close();
 }
 

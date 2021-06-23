@@ -371,13 +371,29 @@ void MainWindow::on_action_menubar_Font_Color_triggered()
 
 void MainWindow::on_action_textEdit_Appearance_triggered()
 {
-    QColor color = QColorDialog::getColor(Qt::white, this);
-
-    if (color.isValid())
+    if (texteditbcolor != "")
     {
-        QPalette p = ui->textEdit->palette();
-        p.setColor(QPalette::Base, color);
-        ui->textEdit->setPalette(p);
+        QColor color = QColorDialog::getColor(texteditbcolor, this);
+
+        if (color.isValid())
+        {
+            texteditbcolor = color.name();
+            QPalette p = ui->textEdit->palette();
+            p.setColor(QPalette::Base, color);
+            ui->textEdit->setPalette(p);
+        }
+    }
+    else
+    {
+        QColor color = QColorDialog::getColor(Qt::white, this);
+
+        if (color.isValid())
+        {
+            texteditbcolor = color.name();
+            QPalette p = ui->textEdit->palette();
+            p.setColor(QPalette::Base, color);
+            ui->textEdit->setPalette(p);
+        }
     }
 }
 

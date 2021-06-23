@@ -99,6 +99,7 @@ private:
     QString menubarbcolor = "";
     QString menubarfcolor = "";
     QString widgetbcolor = "";
+    QString texteditbcolor = "";
     QDateTime dateTime;
 
     AboutDialog *aboutdialog;

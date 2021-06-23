@@ -98,6 +98,7 @@ private:
     QString currentFile;
     QString menubarbcolor = "";
     QString menubarfcolor = "";
+    QString widgetbcolor = "";
     QDateTime dateTime;
 
     AboutDialog *aboutdialog;

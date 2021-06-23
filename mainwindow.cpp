@@ -286,19 +286,40 @@ void MainWindow::on_action_Lowercase_triggered()
 
 void MainWindow::on_action_menubar_Appearance_triggered()
 {
-    QColor color = QColorDialog::getColor(Qt::white, this);
-
-    if (color.isValid())
+    if (menubarbcolor != "")
     {
-        menubarbcolor = color.name();
+        QColor color = QColorDialog::getColor(menubarbcolor, this);
 
-        if (menubarfcolor != "")
+        if (color.isValid())
         {
-            ui->menubar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + menubarfcolor + ";");
+            menubarbcolor = color.name();
+
+            if (menubarfcolor != "")
+            {
+                ui->menubar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + menubarfcolor + ";");
+            }
+            else
+            {
+                ui->menubar->setStyleSheet("background-color: " + color.name() + ";");
+            }
         }
-        else
+    }
+    else
+    {
+        QColor color = QColorDialog::getColor(Qt::white, this);
+
+        if (color.isValid())
         {
-            ui->menubar->setStyleSheet("background-color: " + color.name() + ";");
+            menubarbcolor = color.name();
+
+            if (menubarfcolor != "")
+            {
+                ui->menubar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + menubarfcolor + ";");
+            }
+            else
+            {
+                ui->menubar->setStyleSheet("background-color: " + color.name() + ";");
+            }
         }
     }
 }
@@ -310,19 +331,40 @@ void MainWindow::on_action_menubar_Font_triggered()
 
 void MainWindow::on_action_menubar_Font_Color_triggered()
 {
-    QColor color = QColorDialog::getColor(Qt::white, this);
-
-    if (color.isValid())
+    if (menubarfcolor != "")
     {
-        menubarfcolor = color.name();
+        QColor color = QColorDialog::getColor(menubarfcolor, this);
 
-        if (menubarbcolor != "")
+        if (color.isValid())
         {
-            ui->menubar->setStyleSheet("background-color: " + menubarbcolor + ";" + "color: " + color.name() + ";");
+            menubarfcolor = color.name();
+
+            if (menubarbcolor != "")
+            {
+                ui->menubar->setStyleSheet("background-color: " + menubarbcolor + ";" + "color: " + color.name() + ";");
+            }
+            else
+            {
+                ui->menubar->setStyleSheet("color: " + color.name() + ";");
+            }
         }
-        else
+    }
+    else
+    {
+        QColor color = QColorDialog::getColor(Qt::black, this);
+
+        if (color.isValid())
         {
-            ui->menubar->setStyleSheet("color: " + color.name() + ";");
+            menubarfcolor = color.name();
+
+            if (menubarbcolor != "")
+            {
+                ui->menubar->setStyleSheet("background-color: " + menubarbcolor + ";" + "color: " + color.name() + ";");
+            }
+            else
+            {
+                ui->menubar->setStyleSheet("color: " + color.name() + ";");
+            }
         }
     }
 }
@@ -341,12 +383,29 @@ void MainWindow::on_action_textEdit_Appearance_triggered()
 
 void MainWindow::on_action_widget_Appearance_triggered()
 {
-    QColor color = QColorDialog::getColor(Qt::white, this);
-
-    if (color.isValid())
+    if (widgetbcolor != "")
     {
-        setStyleSheet("background-color: " + color.name() + ";");
-        ui->action_textEdit_Appearance->setEnabled(false);
+        QColor color = QColorDialog::getColor(widgetbcolor, this);
+
+        if (color.isValid())
+        {
+            widgetbcolor = color.name();
+
+            setStyleSheet("background-color: " + color.name() + ";");
+            ui->action_textEdit_Appearance->setEnabled(false);
+        }
+    }
+    else
+    {
+        QColor color = QColorDialog::getColor(Qt::white, this);
+
+        if (color.isValid())
+        {
+            widgetbcolor = color.name();
+
+            setStyleSheet("background-color: " + color.name() + ";");
+            ui->action_textEdit_Appearance->setEnabled(false);
+        }
     }
 }
 
@@ -362,4 +421,3 @@ void MainWindow::on_action_menubar_Appearance_Reset_to_default_triggered()
     menubarbcolor = "";
     menubarfcolor = "";
 }
-

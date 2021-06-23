@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Untitled - Notepad DOT");
+    this->setWindowTitle("Untitled - Notepad DOT Qt");
 }
 MainWindow::~MainWindow()
 {
@@ -43,7 +43,7 @@ void MainWindow::on_action_New_triggered()
 {
     currentFile.clear();
     ui->textEdit->setText(QString());
-    this->setWindowTitle("Untitled - Notepad DOT");
+    this->setWindowTitle("Untitled - Notepad DOT Qt");
 }
 
 void MainWindow::on_action_Open_triggered()
@@ -58,7 +58,7 @@ void MainWindow::on_action_Open_triggered()
     setWindowTitle(fileName);
     QTextStream in(&file);
     QString text = in.readAll();
-    this->setWindowTitle(currentFile + " - Notepad DOT");
+    this->setWindowTitle(currentFile + " - Notepad DOT Qt");
     ui->textEdit->setText(text);
     ui->textEdit->setTextCursor(cursor);
     file.close();
@@ -78,7 +78,7 @@ void MainWindow::on_action_Save_triggered()
         if (!file.open(QIODevice::WriteOnly | QFile::Text)) {
             return;
         }
-        this->setWindowTitle(currentFile + " - Notepad DOT");
+        this->setWindowTitle(currentFile + " - Notepad DOT Qt");
         QTextStream out(&file);
         QString text = ui->textEdit->toPlainText();
         out << text;
@@ -98,7 +98,7 @@ void MainWindow::on_action_Save_As_triggered()
     QTextStream out(&file);
     QString text = ui->textEdit->toPlainText();
     out << text;
-    this->setWindowTitle(currentFile + " - Notepad DOT");
+    this->setWindowTitle(currentFile + " - Notepad DOT Qt");
     file.close();
 }
 

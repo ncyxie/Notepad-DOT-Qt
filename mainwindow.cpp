@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Untitled - Notepad DOT Qt");
+    ui->action_Word_Wrap->setCheckable(true);
 }
 MainWindow::~MainWindow()
 {
@@ -436,4 +437,16 @@ void MainWindow::on_action_menubar_Appearance_Reset_to_default_triggered()
     ui->menubar->setStyleSheet("");
     menubarbcolor = "";
     menubarfcolor = "";
+}
+
+void MainWindow::on_action_Word_Wrap_triggered()
+{
+    if (ui->action_Word_Wrap->isChecked())
+    {
+        ui->textEdit->setLineWrapMode(QTextEdit::WidgetWidth);
+    }
+    else
+    {
+        ui->textEdit->setLineWrapMode(QTextEdit::NoWrap);
+    }
 }

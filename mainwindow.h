@@ -93,6 +93,8 @@ private slots:
 
     void on_action_menubar_Appearance_Reset_to_default_triggered();
 
+    void on_action_Word_Wrap_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

@@ -479,48 +479,40 @@ void MainWindow::on_action_Word_Wrap_triggered()
 
 void MainWindow::on_action_Vertical_triggered()
 {
-    if (ui->action_Vertical->isChecked())
-    {
-        ui->action_Horizontal->setChecked(false);
-        ui->action_Both->setChecked(false);
-        ui->action_None->setChecked(false);
-        ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    }
+    ui->action_Vertical->setChecked(true);
+    ui->action_Horizontal->setChecked(false);
+    ui->action_Both->setChecked(false);
+    ui->action_None->setChecked(false);
+    ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 }
 
 void MainWindow::on_action_Horizontal_triggered()
 {
-    if (ui->action_Horizontal->isChecked())
-    {
-        ui->action_Vertical->setChecked(false);
-        ui->action_Both->setChecked(false);
-        ui->action_None->setChecked(false);
-        ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-        ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    }
+    ui->action_Horizontal->setChecked(true);
+    ui->action_Vertical->setChecked(false);
+    ui->action_Both->setChecked(false);
+    ui->action_None->setChecked(false);
+    ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 void MainWindow::on_action_Both_triggered()
 {
-    if (ui->action_Both->isChecked())
-    {
-        ui->action_Vertical->setChecked(false);
-        ui->action_Horizontal->setChecked(false);
-        ui->action_None->setChecked(false);
-        ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-        ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
-    }
+    ui->action_Both->setChecked(true);
+    ui->action_Vertical->setChecked(false);
+    ui->action_Horizontal->setChecked(false);
+    ui->action_None->setChecked(false);
+    ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+    ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
 }
 
 void MainWindow::on_action_None_triggered()
 {
-    if (ui->action_None->isChecked())
-    {
-        ui->action_Vertical->setChecked(false);
-        ui->action_Horizontal->setChecked(false);
-        ui->action_Both->setChecked(false);
-        ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-        ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    }
+    ui->action_None->setChecked(true);
+    ui->action_Vertical->setChecked(false);
+    ui->action_Horizontal->setChecked(false);
+    ui->action_Both->setChecked(false);
+    ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }

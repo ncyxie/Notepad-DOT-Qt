@@ -124,9 +124,19 @@
      <addaction name="separator"/>
      <addaction name="action_widget_Appearance_Reset_to_default"/>
     </widget>
+    <widget class="QMenu" name="menu_Scroll_Bar">
+     <property name="title">
+      <string>&amp;Scroll Bar</string>
+     </property>
+     <addaction name="action_Vertical"/>
+     <addaction name="action_Horizontal"/>
+     <addaction name="action_Both"/>
+     <addaction name="action_None"/>
+    </widget>
     <addaction name="menu_Widget"/>
     <addaction name="menu_Text_Edit"/>
     <addaction name="menu_Menu_Bar"/>
+    <addaction name="menu_Scroll_Bar"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -391,6 +401,26 @@
   <action name="action_Word_Wrap">
    <property name="text">
     <string>&amp;Word Wrap</string>
+   </property>
+  </action>
+  <action name="action_Vertical">
+   <property name="text">
+    <string>&amp;Vertical</string>
+   </property>
+  </action>
+  <action name="action_Horizontal">
+   <property name="text">
+    <string>&amp;Horizontal</string>
+   </property>
+  </action>
+  <action name="action_Both">
+   <property name="text">
+    <string>&amp;Both</string>
+   </property>
+  </action>
+  <action name="action_None">
+   <property name="text">
+    <string>&amp;None</string>
    </property>
   </action>
  </widget>

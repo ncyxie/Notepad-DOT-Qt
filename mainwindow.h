@@ -95,6 +95,14 @@ private slots:
 
     void on_action_Word_Wrap_triggered();
 
+    void on_action_Vertical_triggered();
+
+    void on_action_Horizontal_triggered();
+
+    void on_action_Both_triggered();
+
+    void on_action_None_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

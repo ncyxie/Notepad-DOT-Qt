@@ -114,7 +114,18 @@
      <property name="title">
       <string>&amp;Text Edit</string>
      </property>
+     <widget class="QMenu" name="menu_Frame_Shape">
+      <property name="title">
+       <string>&amp;Frame Shape</string>
+      </property>
+      <addaction name="action_Box"/>
+      <addaction name="action_Panel"/>
+      <addaction name="action_Win_Panel"/>
+      <addaction name="action_Styled_Panel"/>
+      <addaction name="action_No_Frame"/>
+     </widget>
      <addaction name="action_textEdit_Appearance"/>
+     <addaction name="menu_Frame_Shape"/>
     </widget>
     <widget class="QMenu" name="menu_Widget">
      <property name="title">
@@ -421,6 +432,31 @@
   <action name="action_None">
    <property name="text">
     <string>&amp;None</string>
+   </property>
+  </action>
+  <action name="action_Box">
+   <property name="text">
+    <string>&amp;Box</string>
+   </property>
+  </action>
+  <action name="action_Panel">
+   <property name="text">
+    <string>&amp;Panel</string>
+   </property>
+  </action>
+  <action name="action_Win_Panel">
+   <property name="text">
+    <string>&amp;Win Panel</string>
+   </property>
+  </action>
+  <action name="action_Styled_Panel">
+   <property name="text">
+    <string>&amp;Styled Panel</string>
+   </property>
+  </action>
+  <action name="action_No_Frame">
+   <property name="text">
+    <string>&amp;No Frame</string>
    </property>
   </action>
  </widget>

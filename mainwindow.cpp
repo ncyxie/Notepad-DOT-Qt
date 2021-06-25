@@ -25,7 +25,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_Both->setCheckable(true);
     ui->action_None->setCheckable(true);
     ui->action_Both->setChecked(true);
+    ui->action_Box->setCheckable(true);
+    ui->action_Panel->setCheckable(true);
+    ui->action_Win_Panel->setCheckable(true);
+    ui->action_Styled_Panel->setCheckable(true);
+    ui->action_No_Frame->setCheckable(true);
+    ui->action_Styled_Panel->setChecked(true);
 }
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -43,7 +50,6 @@ void MainWindow::closeEvent (QCloseEvent *event)
         event->accept();
     }
 }
-
 
 void MainWindow::on_action_New_triggered()
 {
@@ -515,4 +521,54 @@ void MainWindow::on_action_None_triggered()
     ui->action_Both->setChecked(false);
     ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+}
+
+void MainWindow::on_action_Box_triggered()
+{
+    ui->action_Box->setChecked(true);
+    ui->action_Panel->setChecked(false);
+    ui->action_Win_Panel->setChecked(false);
+    ui->action_Styled_Panel->setChecked(false);
+    ui->action_No_Frame->setChecked(false);
+    ui->textEdit->setFrameShape(QFrame::Box);
+}
+
+void MainWindow::on_action_Panel_triggered()
+{
+    ui->action_Panel->setChecked(true);
+    ui->action_Box->setChecked(false);
+    ui->action_Win_Panel->setChecked(false);
+    ui->action_Styled_Panel->setChecked(false);
+    ui->action_No_Frame->setChecked(false);
+    ui->textEdit->setFrameShape(QFrame::Panel);
+}
+
+void MainWindow::on_action_Win_Panel_triggered()
+{
+    ui->action_Win_Panel->setChecked(true);
+    ui->action_Panel->setChecked(false);
+    ui->action_Box->setChecked(false);
+    ui->action_Styled_Panel->setChecked(false);
+    ui->action_No_Frame->setChecked(false);
+    ui->textEdit->setFrameShape(QFrame::WinPanel);
+}
+
+void MainWindow::on_action_Styled_Panel_triggered()
+{
+    ui->action_Styled_Panel->setChecked(true);
+    ui->action_Win_Panel->setChecked(false);
+    ui->action_Panel->setChecked(false);
+    ui->action_Box->setChecked(false);
+    ui->action_No_Frame->setChecked(false);
+    ui->textEdit->setFrameShape(QFrame::StyledPanel);
+}
+
+void MainWindow::on_action_No_Frame_triggered()
+{
+    ui->action_No_Frame->setChecked(true);
+    ui->action_Styled_Panel->setChecked(false);
+    ui->action_Win_Panel->setChecked(false);
+    ui->action_Panel->setChecked(false);
+    ui->action_Box->setChecked(false);
+    ui->textEdit->setFrameShape(QFrame::NoFrame);
 }

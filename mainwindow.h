@@ -103,6 +103,16 @@ private slots:
 
     void on_action_None_triggered();
 
+    void on_action_Box_triggered();
+
+    void on_action_Panel_triggered();
+
+    void on_action_Win_Panel_triggered();
+
+    void on_action_Styled_Panel_triggered();
+
+    void on_action_No_Frame_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

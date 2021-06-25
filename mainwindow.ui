@@ -17,11 +17,11 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTextEdit" name="textEdit">
-      <property name="frameShape">
-       <enum>QFrame::Box</enum>
-      </property>
       <property name="lineWrapMode">
        <enum>QTextEdit::NoWrap</enum>
+      </property>
+      <property name="acceptRichText">
+       <bool>false</bool>
       </property>
      </widget>
     </item>

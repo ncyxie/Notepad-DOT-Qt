@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Untitled - Notepad DOT Qt");
+    fileText = ui->textEdit->toPlainText();
     ui->action_Word_Wrap->setCheckable(true);
     ui->action_Vertical->setCheckable(true);
     ui->action_Horizontal->setCheckable(true);
@@ -36,6 +37,22 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::on_textEdit_textChanged()
+{
+    if (fileText != ui->textEdit->toPlainText())
+    {
+
+        if (isFresh == false)
+        {
+            this->setWindowTitle("*" + currentFile + " - Notepad DOT Qt");
+        }
+        else
+        {
+            this->setWindowTitle("*Untitled - Notepad DOT Qt");
+        }
+    }
 }
 
 void MainWindow::closeEvent (QCloseEvent *event)
@@ -56,6 +73,7 @@ void MainWindow::on_action_New_triggered()
     currentFile.clear();
     ui->textEdit->setText(QString());
     this->setWindowTitle("Untitled - Notepad DOT Qt");
+    isFresh = true;
 }
 
 void MainWindow::on_action_Open_triggered()
@@ -67,13 +85,14 @@ void MainWindow::on_action_Open_triggered()
     if (!file.open(QIODevice::ReadOnly | QFile::Text)) {
         return;
     }
-    setWindowTitle(fileName);
     QTextStream in(&file);
     QString text = in.readAll();
-    this->setWindowTitle(currentFile + " - Notepad DOT Qt");
     ui->textEdit->setText(text);
     ui->textEdit->setTextCursor(cursor);
+    this->setWindowTitle(currentFile + " - Notepad DOT Qt");
     file.close();
+    isFresh = false;
+    fileText = ui->textEdit->toPlainText();
 }
 
 void MainWindow::on_action_Save_triggered()
@@ -95,6 +114,8 @@ void MainWindow::on_action_Save_triggered()
         QString text = ui->textEdit->toPlainText();
         out << text;
         file.close();
+        isFresh = false;
+        fileText = ui->textEdit->toPlainText();
 }
 
 void MainWindow::on_action_Save_As_triggered()
@@ -106,12 +127,13 @@ void MainWindow::on_action_Save_As_triggered()
         return;
     }
     currentFile = fileName;
-    setWindowTitle(fileName);
     QTextStream out(&file);
     QString text = ui->textEdit->toPlainText();
     out << text;
     this->setWindowTitle(currentFile + " - Notepad DOT Qt");
     file.close();
+    isFresh = false;
+    fileText = ui->textEdit->toPlainText();
 }
 
 void MainWindow::on_action_Paste_triggered()

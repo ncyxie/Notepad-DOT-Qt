@@ -113,13 +113,17 @@ private slots:
 
     void on_action_No_Frame_triggered();
 
+    void on_textEdit_textChanged();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;
+    QString fileText;
     QString menubarbcolor = "";
     QString menubarfcolor = "";
     QString widgetbcolor = "";
     QString texteditbcolor = "";
+    bool isFresh = true;
     QDateTime dateTime;
 
     AboutDialog *aboutdialog;

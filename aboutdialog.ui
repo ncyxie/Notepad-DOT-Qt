@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>429</width>
-    <height>310</height>
+    <height>330</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,8 +16,8 @@
   <widget class="QLabel" name="appname">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>0</y>
+     <x>20</x>
+     <y>10</y>
      <width>201</width>
      <height>41</height>
     </rect>
@@ -37,8 +37,8 @@
   <widget class="QLabel" name="desc">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>40</y>
+     <x>20</x>
+     <y>50</y>
      <width>241</width>
      <height>221</height>
     </rect>
@@ -58,8 +58,8 @@ and customizable text editor.
 Works on Windows and Linux
 operating systems.
 
-Version: 1.0.0-b4
-Build date: 20/06/2021
+Version: 1.0.0-b5
+Build date: 27/06/2021
 Based on Qt and C++
 Made by ncyxie
 Thanks to zero9178
@@ -71,7 +71,7 @@ Thanks to XeZrunner
    <property name="geometry">
     <rect>
      <x>240</x>
-     <y>20</y>
+     <y>30</y>
      <width>161</width>
      <height>191</height>
     </rect>
@@ -84,7 +84,7 @@ Thanks to XeZrunner
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>260</y>
+     <y>280</y>
      <width>101</width>
      <height>31</height>
     </rect>

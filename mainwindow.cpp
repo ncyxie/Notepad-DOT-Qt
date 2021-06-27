@@ -412,9 +412,7 @@ void MainWindow::on_action_textEdit_Appearance_triggered()
         if (color.isValid())
         {
             texteditbcolor = color.name();
-            QPalette p = ui->textEdit->palette();
-            p.setColor(QPalette::Base, color);
-            ui->textEdit->setPalette(p);
+            ui->textEdit->setStyleSheet("background-color: " + color.name());
         }
     }
     else
@@ -424,9 +422,7 @@ void MainWindow::on_action_textEdit_Appearance_triggered()
         if (color.isValid())
         {
             texteditbcolor = color.name();
-            QPalette p = ui->textEdit->palette();
-            p.setColor(QPalette::Base, color);
-            ui->textEdit->setPalette(p);
+            ui->textEdit->setStyleSheet("background-color: " + color.name());
         }
     }
 }

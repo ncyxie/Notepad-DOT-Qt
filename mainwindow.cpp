@@ -460,9 +460,16 @@ void MainWindow::on_action_widget_Appearance_Reset_to_default_triggered()
 
 void MainWindow::on_action_menubar_Appearance_Reset_to_default_triggered()
 {
-    ui->menubar->setStyleSheet("");
     menubarbcolor = "";
-    menubarfcolor = "";
+
+    if (menubarfcolor != "")
+    {
+        ui->menubar->setStyleSheet("color: " + menubarfcolor + ";");
+    }
+    else
+    {
+        ui->menubar->setStyleSheet("");
+    }
 }
 
 void MainWindow::on_action_textEdit_Reset_to_default_triggered()

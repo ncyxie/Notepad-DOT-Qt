@@ -104,11 +104,10 @@
       <string>&amp;Menu Bar</string>
      </property>
      <addaction name="action_menubar_Appearance"/>
+     <addaction name="action_menubar_Appearance_Reset_to_default"/>
      <addaction name="separator"/>
      <addaction name="action_menubar_Font"/>
      <addaction name="action_menubar_Font_Color"/>
-     <addaction name="separator"/>
-     <addaction name="action_menubar_Appearance_Reset_to_default"/>
     </widget>
     <widget class="QMenu" name="menu_Text_Edit">
      <property name="title">
@@ -134,7 +133,6 @@
       <string>&amp;Widget</string>
      </property>
      <addaction name="action_widget_Appearance"/>
-     <addaction name="separator"/>
      <addaction name="action_widget_Appearance_Reset_to_default"/>
     </widget>
     <widget class="QMenu" name="menu_Scroll_Bar">

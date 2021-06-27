@@ -125,6 +125,8 @@
       <addaction name="action_No_Frame"/>
      </widget>
      <addaction name="action_textEdit_Appearance"/>
+     <addaction name="action_textEdit_Reset_to_default"/>
+     <addaction name="separator"/>
      <addaction name="menu_Frame_Shape"/>
     </widget>
     <widget class="QMenu" name="menu_Widget">
@@ -457,6 +459,11 @@
   <action name="action_No_Frame">
    <property name="text">
     <string>&amp;No Frame</string>
+   </property>
+  </action>
+  <action name="action_textEdit_Reset_to_default">
+   <property name="text">
+    <string>&amp;Reset to default</string>
    </property>
   </action>
  </widget>

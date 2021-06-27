@@ -115,6 +115,8 @@ private slots:
 
     void on_textEdit_textChanged();
 
+    void on_action_textEdit_Reset_to_default_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

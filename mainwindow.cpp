@@ -438,7 +438,6 @@ void MainWindow::on_action_widget_Appearance_triggered()
             widgetbcolor = color.name();
 
             setStyleSheet("background-color: " + color.name() + ";");
-            ui->action_textEdit_Appearance->setEnabled(false);
         }
     }
     else
@@ -450,7 +449,6 @@ void MainWindow::on_action_widget_Appearance_triggered()
             widgetbcolor = color.name();
 
             setStyleSheet("background-color: " + color.name() + ";");
-            ui->action_textEdit_Appearance->setEnabled(false);
         }
     }
 }
@@ -458,7 +456,6 @@ void MainWindow::on_action_widget_Appearance_triggered()
 void MainWindow::on_action_widget_Appearance_Reset_to_default_triggered()
 {
     setStyleSheet("");
-    ui->action_textEdit_Appearance->setEnabled(true);
 }
 
 void MainWindow::on_action_menubar_Appearance_Reset_to_default_triggered()

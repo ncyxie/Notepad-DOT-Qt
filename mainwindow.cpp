@@ -79,7 +79,7 @@ void MainWindow::on_action_New_triggered()
 void MainWindow::on_action_Open_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
-    QString fileName = QFileDialog::getOpenFileName(this, "Open the file");
+    QString fileName = QFileDialog::getOpenFileName(this, "Open the file", QDir::currentPath(), tr("Text Documents (*.txt)(*.txt);;All files (*.*)(*)"));
     QFile file(fileName);
     currentFile = fileName;
     if (!file.open(QIODevice::ReadOnly | QFile::Text)) {
@@ -100,7 +100,7 @@ void MainWindow::on_action_Save_triggered()
     QString fileName;
 
         if (currentFile.isEmpty()) {
-            fileName = QFileDialog::getSaveFileName(this, "Save");
+            fileName = QFileDialog::getSaveFileName(this,"Save File", QDir::currentPath(), tr("Text Documents (*.txt)(*.txt);;All files (*.*)(*)"));
             currentFile = fileName;
         } else {
             fileName = currentFile;
@@ -120,7 +120,7 @@ void MainWindow::on_action_Save_triggered()
 
 void MainWindow::on_action_Save_As_triggered()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, "Save As");
+    QString fileName = QFileDialog::getSaveFileName(this,"Save File", QDir::currentPath(), tr("Text Documents (*.txt)(*.txt);;All files (*.*)(*)"));
     QFile file(fileName);
 
     if (!file.open(QFile::WriteOnly | QFile::Text)) {

@@ -58,23 +58,33 @@ void MainWindow::closeEvent (QCloseEvent *event)
 {
     if (fileText != ui->textEdit->toPlainText())
     {
-        QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Exit",
-                                                                tr("Do you want to save changes to file?\n"),
-                                                                QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel,
-                                                                QMessageBox::Cancel);
-        if (resBtn == QMessageBox::No) {
-            event->accept();
-        } else if (resBtn == QMessageBox::Cancel) {
-            event->ignore();
-        }
-        else if (resBtn == QMessageBox::Yes) {
+        if (isFresh == false)
+        {
+            QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Exit", "Do you want to save changes to " + currentFile + "?\n",
+                                                                    QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel,
+                                                                    QMessageBox::Cancel);
 
-            if (isFresh == false)
-            {
+            if (resBtn == QMessageBox::No) {
+                event->accept();
+            } else if (resBtn == QMessageBox::Cancel) {
+                event->ignore();
+            }
+            else if (resBtn == QMessageBox::Yes) {
                 on_action_Save_triggered();
             }
-            else
-            {
+        }
+        else
+        {
+            QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Exit", "Do you want to save changes to Untitled?\n",
+                                                                    QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel,
+                                                                    QMessageBox::Cancel);
+
+            if (resBtn == QMessageBox::No) {
+                event->accept();
+            } else if (resBtn == QMessageBox::Cancel) {
+                event->ignore();
+            }
+            else if (resBtn == QMessageBox::Yes) {
                 on_action_Save_As_triggered();
             }
         }

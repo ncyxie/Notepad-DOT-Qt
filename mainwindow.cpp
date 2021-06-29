@@ -43,7 +43,6 @@ void MainWindow::on_textEdit_textChanged()
 {
     if (fileText != ui->textEdit->toPlainText())
     {
-
         if (isFresh == false)
         {
             this->setWindowTitle("*" + currentFile + " - Notepad DOT Qt");
@@ -57,14 +56,28 @@ void MainWindow::on_textEdit_textChanged()
 
 void MainWindow::closeEvent (QCloseEvent *event)
 {
-    QMessageBox::StandardButton resBtn = QMessageBox::question( this, "Exit",
-                                                                tr("Are you sure you want to exit application?\n"),
-                                                                QMessageBox::No | QMessageBox::Yes,
-                                                                QMessageBox::Yes);
-    if (resBtn != QMessageBox::Yes) {
-        event->ignore();
-    } else {
-        event->accept();
+    if (fileText != ui->textEdit->toPlainText())
+    {
+        QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Exit",
+                                                                tr("Do you want to save changes to file?\n"),
+                                                                QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel,
+                                                                QMessageBox::Cancel);
+        if (resBtn == QMessageBox::No) {
+            event->accept();
+        } else if (resBtn == QMessageBox::Cancel) {
+            event->ignore();
+        }
+        else if (resBtn == QMessageBox::Yes) {
+
+            if (isFresh == false)
+            {
+                on_action_Save_triggered();
+            }
+            else
+            {
+                on_action_Save_As_triggered();
+            }
+        }
     }
 }
 

@@ -117,10 +117,13 @@ private slots:
 
     void on_action_textEdit_Reset_to_default_triggered();
 
+    void outsideNotepadOpen();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;
     QString fileText;
+    QString outsideFileName;
     QString menubarbcolor = "";
     QString menubarfcolor = "";
     QString widgetbcolor = "";

@@ -32,6 +32,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_Styled_Panel->setCheckable(true);
     ui->action_No_Frame->setCheckable(true);
     ui->action_Styled_Panel->setChecked(true);
+
+    QStringList arguments = QCoreApplication::arguments();
+        if(arguments.length() > 1)
+        {
+            outsideFileName = arguments[1];
+            this->outsideNotepadOpen();
+        }
 }
 
 MainWindow::~MainWindow()
@@ -88,6 +95,35 @@ void MainWindow::closeEvent (QCloseEvent *event)
                 on_action_Save_As_triggered();
             }
         }
+    }
+}
+
+void MainWindow::outsideNotepadOpen()
+{
+    if(!outsideFileName.isEmpty())
+    {
+            QFile *file = new QFile;
+            file->setFileName(outsideFileName);
+            currentFile = outsideFileName;
+
+            bool isOpen = file->open(QIODevice::ReadOnly);
+            if(isOpen)
+            {
+                ui->textEdit->clear();
+                QTextStream in(file);
+
+                while (!in.atEnd())
+                {
+                    ui->textEdit->append(in.readLine());
+                    ui->textEdit->moveCursor(QTextCursor::End);
+                }
+
+                ui->textEdit->document()->toPlainText();
+                this->setWindowTitle(currentFile + " - Notepad DOT Qt");
+                file->close();
+                isFresh = false;
+                fileText = ui->textEdit->toPlainText();
+            }
     }
 }
 

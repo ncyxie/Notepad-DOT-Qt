@@ -138,7 +138,7 @@ void MainWindow::on_action_New_triggered()
 void MainWindow::on_action_Open_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
-    QString fileName = QFileDialog::getOpenFileName(this, "Open the file", QDir::currentPath(), tr("Text Documents (*.txt)(*.txt);;All files (*.*)(*)"));
+    QString fileName = QFileDialog::getOpenFileName(this, "Open the file");
     QFile file(fileName);
     currentFile = fileName;
     if (!file.open(QIODevice::ReadOnly | QFile::Text)) {
@@ -158,41 +158,41 @@ void MainWindow::on_action_Save_triggered()
 {
     QString fileName;
 
-        if (currentFile.isEmpty()) {
-            fileName = QFileDialog::getSaveFileName(this,"Save File", QDir::currentPath(), tr("Text Documents (*.txt)(*.txt);;All files (*.*)(*)"));
-            currentFile = fileName;
-        } else {
-            fileName = currentFile;
-        }
-        QFile file(fileName);
-        if (!file.open(QIODevice::WriteOnly | QFile::Text)) {
-            return;
-        }
-        this->setWindowTitle(currentFile + " - Notepad DOT Qt");
-        QTextStream out(&file);
-        QString text = ui->textEdit->toPlainText();
-        out << text;
-        file.close();
-        isFresh = false;
-        fileText = ui->textEdit->toPlainText();
+            if (currentFile.isEmpty()) {
+                fileName = QFileDialog::getSaveFileName(this, "Save");
+                currentFile = fileName;
+            } else {
+                fileName = currentFile;
+            }
+            QFile file(fileName);
+            if (!file.open(QIODevice::WriteOnly | QFile::Text)) {
+                return;
+            }
+            this->setWindowTitle(currentFile + " - Notepad DOT Qt");
+            QTextStream out(&file);
+            QString text = ui->textEdit->toPlainText();
+            out << text;
+            file.close();
+            isFresh = false;
+            fileText = ui->textEdit->toPlainText();
 }
 
 void MainWindow::on_action_Save_As_triggered()
 {
-    QString fileName = QFileDialog::getSaveFileName(this,"Save File", QDir::currentPath(), tr("Text Documents (*.txt)(*.txt);;All files (*.*)(*)"));
-    QFile file(fileName);
+    QString fileName = QFileDialog::getSaveFileName(this, "Save As");
+        QFile file(fileName);
 
-    if (!file.open(QFile::WriteOnly | QFile::Text)) {
-        return;
-    }
-    currentFile = fileName;
-    QTextStream out(&file);
-    QString text = ui->textEdit->toPlainText();
-    out << text;
-    this->setWindowTitle(currentFile + " - Notepad DOT Qt");
-    file.close();
-    isFresh = false;
-    fileText = ui->textEdit->toPlainText();
+        if (!file.open(QFile::WriteOnly | QFile::Text)) {
+            return;
+        }
+        currentFile = fileName;
+        QTextStream out(&file);
+        QString text = ui->textEdit->toPlainText();
+        out << text;
+        this->setWindowTitle(currentFile + " - Notepad DOT Qt");
+        file.close();
+        isFresh = false;
+        fileText = ui->textEdit->toPlainText();
 }
 
 void MainWindow::on_action_Paste_triggered()

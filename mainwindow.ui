@@ -144,10 +144,18 @@
      <addaction name="action_Both"/>
      <addaction name="action_None"/>
     </widget>
+    <widget class="QMenu" name="menu_Status_Bar">
+     <property name="title">
+      <string>&amp;Status Bar</string>
+     </property>
+     <addaction name="action_statusBar_On"/>
+     <addaction name="action_statusBar_Off"/>
+    </widget>
     <addaction name="menu_Widget"/>
     <addaction name="menu_Text_Edit"/>
     <addaction name="menu_Menu_Bar"/>
     <addaction name="menu_Scroll_Bar"/>
+    <addaction name="menu_Status_Bar"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -462,6 +470,16 @@
   <action name="action_textEdit_Reset_to_default">
    <property name="text">
     <string>&amp;Reset to default</string>
+   </property>
+  </action>
+  <action name="action_statusBar_On">
+   <property name="text">
+    <string>&amp;On</string>
+   </property>
+  </action>
+  <action name="action_statusBar_Off">
+   <property name="text">
+    <string>&amp;Off</string>
    </property>
   </action>
  </widget>

@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Untitled - Notepad DOT Qt");
+    ui->statusbar->hide();
     fileText = ui->textEdit->toPlainText();
     ui->action_Word_Wrap->setCheckable(true);
     ui->action_Vertical->setCheckable(true);
@@ -32,6 +33,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_Styled_Panel->setCheckable(true);
     ui->action_No_Frame->setCheckable(true);
     ui->action_Styled_Panel->setChecked(true);
+    ui->action_statusBar_On->setCheckable(true);
+    ui->action_statusBar_Off->setCheckable(true);
+    ui->action_statusBar_Off->setChecked(true);
 
     QStringList arguments = QCoreApplication::arguments();
         if(arguments.length() > 1)
@@ -659,3 +663,19 @@ void MainWindow::on_action_No_Frame_triggered()
     ui->action_Box->setChecked(false);
     ui->textEdit->setFrameShape(QFrame::NoFrame);
 }
+
+void MainWindow::on_action_statusBar_On_triggered()
+{
+    ui->action_statusBar_On->setChecked(true);
+    ui->action_statusBar_Off->setChecked(false);
+    ui->statusbar->show();
+}
+
+
+void MainWindow::on_action_statusBar_Off_triggered()
+{
+    ui->action_statusBar_On->setChecked(false);
+    ui->action_statusBar_Off->setChecked(true);
+    ui->statusbar->hide();
+}
+

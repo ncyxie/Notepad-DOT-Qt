@@ -119,6 +119,10 @@ private slots:
 
     void outsideNotepadOpen();
 
+    void on_action_statusBar_On_triggered();
+
+    void on_action_statusBar_Off_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString currentFile;

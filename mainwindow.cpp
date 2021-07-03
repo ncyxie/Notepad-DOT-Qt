@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QFile>
+#include <QLabel>
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMessageBox>
@@ -19,7 +20,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setWindowTitle("Untitled - Notepad DOT Qt");
-    ui->statusbar->hide();
     fileText = ui->textEdit->toPlainText();
     ui->action_Word_Wrap->setCheckable(true);
     ui->action_Vertical->setCheckable(true);
@@ -36,6 +36,33 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_statusBar_On->setCheckable(true);
     ui->action_statusBar_Off->setCheckable(true);
     ui->action_statusBar_Off->setChecked(true);
+    ui->action_Word_Counter_On->setCheckable(true);
+    ui->action_Word_Counter_Off->setCheckable(true);
+    ui->action_Word_Counter_Off->setChecked(true);
+    ui->action_Character_Counter_On->setCheckable(true);
+    ui->action_Character_Counter_Off->setCheckable(true);
+    ui->action_Character_Counter_Off->setChecked(true);
+    ui->action_Lines_Counter_On->setCheckable(true);
+    ui->action_Lines_Counter_Off->setCheckable(true);
+    ui->action_Lines_Counter_Off->setChecked(true);
+
+    ui->action_statusBar_On->setChecked(false);
+    ui->action_statusBar_Off->setChecked(true);
+    ui->action_Word_Counter_On->setDisabled(true);
+    ui->action_Word_Counter_Off->setDisabled(true);
+    ui->action_Character_Counter_On->setDisabled(true);
+    ui->action_Character_Counter_Off->setDisabled(true);
+    ui->action_Lines_Counter_On->setDisabled(true);
+    ui->action_Lines_Counter_Off->setDisabled(true);
+    ui->statusbar->hide();
+
+    wordCountLabel = new QLabel(this);
+    charCountLabel = new QLabel(this);
+    linesCountLabel = new QLabel(this);
+
+    ui->statusbar->addPermanentWidget(wordCountLabel, 1);
+    ui->statusbar->addPermanentWidget(charCountLabel, 15);
+    ui->statusbar->addPermanentWidget(linesCountLabel, 300);
 
     QStringList arguments = QCoreApplication::arguments();
         if(arguments.length() > 1)
@@ -62,6 +89,23 @@ void MainWindow::on_textEdit_textChanged()
         {
             this->setWindowTitle("*Untitled - Notepad DOT Qt");
         }
+    }
+
+    if (wordsOn == true)
+    {
+        wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegExp("(\\s|\\n|\\r)+"), Qt::SkipEmptyParts).count()));
+    }
+
+    if (charOn == true)
+    {
+        charCountLabel->setText(tr("Characters: ") + QString::number(ui->textEdit->document()->characterCount() - 1));
+    }
+
+    if (linesOn == true)
+    {
+        QString flags;
+
+        linesCountLabel->setText(tr("Lines: ") + QString::number(ui->textEdit->document()->lineCount()) + flags);
     }
 }
 
@@ -668,14 +712,74 @@ void MainWindow::on_action_statusBar_On_triggered()
 {
     ui->action_statusBar_On->setChecked(true);
     ui->action_statusBar_Off->setChecked(false);
+    ui->action_Word_Counter_On->setEnabled(true);
+    ui->action_Word_Counter_Off->setEnabled(true);
+    ui->action_Character_Counter_On->setEnabled(true);
+    ui->action_Character_Counter_Off->setEnabled(true);
+    ui->action_Lines_Counter_On->setEnabled(true);
+    ui->action_Lines_Counter_Off->setEnabled(true);
     ui->statusbar->show();
 }
-
 
 void MainWindow::on_action_statusBar_Off_triggered()
 {
     ui->action_statusBar_On->setChecked(false);
     ui->action_statusBar_Off->setChecked(true);
+    ui->action_Word_Counter_On->setDisabled(true);
+    ui->action_Word_Counter_Off->setDisabled(true);
+    ui->action_Character_Counter_On->setDisabled(true);
+    ui->action_Character_Counter_Off->setDisabled(true);
+    ui->action_Lines_Counter_On->setDisabled(true);
+    ui->action_Lines_Counter_Off->setDisabled(true);
     ui->statusbar->hide();
 }
 
+void MainWindow::on_action_Word_Counter_On_triggered()
+{
+    ui->action_Word_Counter_On->setChecked(true);
+    ui->action_Word_Counter_Off->setChecked(false);
+    wordsOn = true;
+    wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegExp("(\\s|\\n|\\r)+"), Qt::SkipEmptyParts).count()));
+}
+
+void MainWindow::on_action_Word_Counter_Off_triggered()
+{
+    ui->action_Word_Counter_On->setChecked(false);
+    ui->action_Word_Counter_Off->setChecked(true);
+    wordsOn = false;
+    wordCountLabel->setText("");
+}
+
+void MainWindow::on_action_Character_Counter_On_triggered()
+{
+    ui->action_Character_Counter_On->setChecked(true);
+    ui->action_Character_Counter_Off->setChecked(false);
+    charOn = true;
+    charCountLabel->setText(tr("Characters: ") + QString::number(ui->textEdit->document()->characterCount() - 1));
+}
+
+void MainWindow::on_action_Character_Counter_Off_triggered()
+{
+    ui->action_Character_Counter_On->setChecked(false);
+    ui->action_Character_Counter_Off->setChecked(true);
+    charOn = false;
+    charCountLabel->setText("");
+}
+
+void MainWindow::on_action_Lines_Counter_On_triggered()
+{
+    QString flags;
+
+    ui->action_Lines_Counter_On->setChecked(true);
+    ui->action_Lines_Counter_Off->setChecked(false);
+    linesOn = true;
+    linesCountLabel->setText(tr("Lines: ") + QString::number(ui->textEdit->document()->lineCount()) + flags);
+}
+
+void MainWindow::on_action_Lines_Counter_Off_triggered()
+{
+    ui->action_Lines_Counter_On->setChecked(false);
+    ui->action_Lines_Counter_Off->setChecked(true);
+    linesOn = false;
+    linesCountLabel->setText("");
+}

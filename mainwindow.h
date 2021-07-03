@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QDateTime>
+#include <QLabel>
 #include "aboutdialog.h"
 #include "discorddialog.h"
 
@@ -123,8 +124,23 @@ private slots:
 
     void on_action_statusBar_Off_triggered();
 
+    void on_action_Word_Counter_On_triggered();
+
+    void on_action_Word_Counter_Off_triggered();
+
+    void on_action_Character_Counter_On_triggered();
+
+    void on_action_Character_Counter_Off_triggered();
+
+    void on_action_Lines_Counter_On_triggered();
+
+    void on_action_Lines_Counter_Off_triggered();
+
 private:
     Ui::MainWindow *ui;
+    QLabel *wordCountLabel;
+    QLabel *charCountLabel;
+    QLabel *linesCountLabel;
     QString currentFile;
     QString fileText;
     QString outsideFileName;
@@ -133,6 +149,10 @@ private:
     QString widgetbcolor = "";
     QString texteditbcolor = "";
     bool isFresh = true;
+    bool wordsOn = false;
+    bool charOn = false;
+    bool linesOn = false;
+    Qt::WindowFlags flags = this->windowFlags();
     QDateTime dateTime;
 
     AboutDialog *aboutdialog;

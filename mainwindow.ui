@@ -148,8 +148,33 @@
      <property name="title">
       <string>&amp;Status Bar</string>
      </property>
+     <widget class="QMenu" name="menu_Word_Counter">
+      <property name="title">
+       <string>&amp;Word Counter</string>
+      </property>
+      <addaction name="action_Word_Counter_On"/>
+      <addaction name="action_Word_Counter_Off"/>
+     </widget>
+     <widget class="QMenu" name="menu_Character_Counter">
+      <property name="title">
+       <string>&amp;Character Counter</string>
+      </property>
+      <addaction name="action_Character_Counter_On"/>
+      <addaction name="action_Character_Counter_Off"/>
+     </widget>
+     <widget class="QMenu" name="menu_Lines_Counter">
+      <property name="title">
+       <string>&amp;Lines Counter</string>
+      </property>
+      <addaction name="action_Lines_Counter_On"/>
+      <addaction name="action_Lines_Counter_Off"/>
+     </widget>
      <addaction name="action_statusBar_On"/>
      <addaction name="action_statusBar_Off"/>
+     <addaction name="separator"/>
+     <addaction name="menu_Word_Counter"/>
+     <addaction name="menu_Character_Counter"/>
+     <addaction name="menu_Lines_Counter"/>
     </widget>
     <addaction name="menu_Widget"/>
     <addaction name="menu_Text_Edit"/>
@@ -478,6 +503,36 @@
    </property>
   </action>
   <action name="action_statusBar_Off">
+   <property name="text">
+    <string>&amp;Off</string>
+   </property>
+  </action>
+  <action name="action_Word_Counter_On">
+   <property name="text">
+    <string>&amp;On</string>
+   </property>
+  </action>
+  <action name="action_Word_Counter_Off">
+   <property name="text">
+    <string>&amp;Off</string>
+   </property>
+  </action>
+  <action name="action_Character_Counter_On">
+   <property name="text">
+    <string>&amp;On</string>
+   </property>
+  </action>
+  <action name="action_Character_Counter_Off">
+   <property name="text">
+    <string>&amp;Off</string>
+   </property>
+  </action>
+  <action name="action_Lines_Counter_On">
+   <property name="text">
+    <string>&amp;On</string>
+   </property>
+  </action>
+  <action name="action_Lines_Counter_Off">
    <property name="text">
     <string>&amp;Off</string>
    </property>

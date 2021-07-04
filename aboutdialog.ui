@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>429</width>
-    <height>330</height>
+    <height>318</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,9 +38,9 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>50</y>
+     <y>60</y>
      <width>241</width>
-     <height>221</height>
+     <height>191</height>
     </rect>
    </property>
    <property name="font">
@@ -53,10 +53,9 @@
     </font>
    </property>
    <property name="text">
-    <string>A open source, lightweight
-and customizable text editor.
-Works on Windows and Linux
-operating systems.
+    <string>An open-source,
+cross-platform and highly
+customizable text editor.
 
 Version: 1.0.0-b5
 Build date: 27/06/2021
@@ -84,7 +83,7 @@ Thanks to XeZrunner
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>280</y>
+     <y>260</y>
      <width>101</width>
      <height>31</height>
     </rect>

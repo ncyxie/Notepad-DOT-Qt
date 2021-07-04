@@ -898,4 +898,3 @@ void MainWindow::on_action_statusBar_Reset_to_default_triggered()
         ui->statusbar->setStyleSheet("");
     }
 }
-

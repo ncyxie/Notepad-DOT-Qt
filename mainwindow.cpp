@@ -54,6 +54,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_Character_Counter_Off->setDisabled(true);
     ui->action_Lines_Counter_On->setDisabled(true);
     ui->action_Lines_Counter_Off->setDisabled(true);
+    ui->action_statusBar_Font->setDisabled(true);
+    ui->action_statusBar_Font_Color->setDisabled(true);
     ui->statusbar->hide();
 
     wordCountLabel = new QLabel(this);
@@ -718,6 +720,8 @@ void MainWindow::on_action_statusBar_On_triggered()
     ui->action_Character_Counter_Off->setEnabled(true);
     ui->action_Lines_Counter_On->setEnabled(true);
     ui->action_Lines_Counter_Off->setEnabled(true);
+    ui->action_statusBar_Font->setEnabled(true);
+    ui->action_statusBar_Font_Color->setEnabled(true);
     ui->statusbar->show();
 }
 
@@ -731,6 +735,8 @@ void MainWindow::on_action_statusBar_Off_triggered()
     ui->action_Character_Counter_Off->setDisabled(true);
     ui->action_Lines_Counter_On->setDisabled(true);
     ui->action_Lines_Counter_Off->setDisabled(true);
+    ui->action_statusBar_Font->setDisabled(true);
+    ui->action_statusBar_Font_Color->setDisabled(true);
     ui->statusbar->hide();
 }
 

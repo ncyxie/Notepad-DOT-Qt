@@ -56,6 +56,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_Lines_Counter_Off->setDisabled(true);
     ui->action_statusBar_Font->setDisabled(true);
     ui->action_statusBar_Font_Color->setDisabled(true);
+    ui->action_statusBar_Appearance->setDisabled(true);
+    ui->action_statusBar_Reset_to_default->setDisabled(true);
     ui->statusbar->hide();
 
     wordCountLabel = new QLabel(this);
@@ -722,6 +724,8 @@ void MainWindow::on_action_statusBar_On_triggered()
     ui->action_Lines_Counter_Off->setEnabled(true);
     ui->action_statusBar_Font->setEnabled(true);
     ui->action_statusBar_Font_Color->setEnabled(true);
+    ui->action_statusBar_Appearance->setEnabled(true);
+    ui->action_statusBar_Reset_to_default->setEnabled(true);
     ui->statusbar->show();
 }
 
@@ -737,6 +741,8 @@ void MainWindow::on_action_statusBar_Off_triggered()
     ui->action_Lines_Counter_Off->setDisabled(true);
     ui->action_statusBar_Font->setDisabled(true);
     ui->action_statusBar_Font_Color->setDisabled(true);
+    ui->action_statusBar_Appearance->setDisabled(true);
+    ui->action_statusBar_Reset_to_default->setDisabled(true);
     ui->statusbar->hide();
 }
 
@@ -832,6 +838,60 @@ void MainWindow::on_action_statusBar_Font_Color_triggered()
                 ui->statusbar->setStyleSheet("color: " + color.name() + ";");
             }
         }
+    }
+}
+
+void MainWindow::on_action_statusBar_Appearance_triggered()
+{
+    if (statusbarbcolor != "")
+    {
+        QColor color = QColorDialog::getColor(statusbarbcolor, this);
+
+        if (color.isValid())
+        {
+            statusbarbcolor = color.name();
+
+            if (statusbarfcolor != "")
+            {
+                ui->statusbar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + statusbarfcolor + ";");
+            }
+            else
+            {
+                ui->statusbar->setStyleSheet("background-color: " + color.name() + ";");
+            }
+        }
+    }
+    else
+    {
+        QColor color = QColorDialog::getColor(Qt::white, this);
+
+        if (color.isValid())
+        {
+            statusbarbcolor = color.name();
+
+            if (statusbarfcolor != "")
+            {
+                ui->statusbar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + statusbarfcolor + ";");
+            }
+            else
+            {
+                ui->statusbar->setStyleSheet("background-color: " + color.name() + ";");
+            }
+        }
+    }
+}
+
+void MainWindow::on_action_statusBar_Reset_to_default_triggered()
+{
+    statusbarbcolor = "";
+
+    if (statusbarfcolor != "")
+    {
+        ui->statusbar->setStyleSheet("color: " + statusbarfcolor + ";");
+    }
+    else
+    {
+        ui->statusbar->setStyleSheet("");
     }
 }
 

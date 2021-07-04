@@ -172,6 +172,9 @@
      <addaction name="action_statusBar_On"/>
      <addaction name="action_statusBar_Off"/>
      <addaction name="separator"/>
+     <addaction name="action_statusBar_Appearance"/>
+     <addaction name="action_statusBar_Reset_to_default"/>
+     <addaction name="separator"/>
      <addaction name="action_statusBar_Font"/>
      <addaction name="action_statusBar_Font_Color"/>
      <addaction name="separator"/>
@@ -548,6 +551,16 @@
   <action name="action_statusBar_Font_Color">
    <property name="text">
     <string>&amp;Font Color</string>
+   </property>
+  </action>
+  <action name="action_statusBar_Appearance">
+   <property name="text">
+    <string>&amp;Appearance</string>
+   </property>
+  </action>
+  <action name="action_statusBar_Reset_to_default">
+   <property name="text">
+    <string>&amp;Reset to default</string>
    </property>
   </action>
  </widget>

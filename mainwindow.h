@@ -140,6 +140,10 @@ private slots:
 
     void on_action_statusBar_Font_Color_triggered();
 
+    void on_action_statusBar_Appearance_triggered();
+
+    void on_action_statusBar_Reset_to_default_triggered();
+
 private:
     Ui::MainWindow *ui;
     QLabel *wordCountLabel;

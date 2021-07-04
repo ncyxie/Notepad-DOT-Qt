@@ -799,6 +799,10 @@ void MainWindow::on_action_Lines_Counter_Off_triggered()
 void MainWindow::on_action_statusBar_Font_triggered()
 {
     ui->statusbar->setFont(QFontDialog::getFont(nullptr,ui->statusbar->font(),this));
+
+    wordCountLabel->setFont(ui->statusbar->font());
+    charCountLabel->setFont(ui->statusbar->font());
+    linesCountLabel->setFont(ui->statusbar->font());
 }
 
 void MainWindow::on_action_statusBar_Font_Color_triggered()

@@ -783,3 +783,49 @@ void MainWindow::on_action_Lines_Counter_Off_triggered()
     linesOn = false;
     linesCountLabel->setText("");
 }
+
+void MainWindow::on_action_statusBar_Font_triggered()
+{
+    ui->statusbar->setFont(QFontDialog::getFont(nullptr,ui->statusbar->font(),this));
+}
+
+void MainWindow::on_action_statusBar_Font_Color_triggered()
+{
+    if (statusbarfcolor != "")
+    {
+        QColor color = QColorDialog::getColor(statusbarfcolor, this);
+
+        if (color.isValid())
+        {
+            statusbarfcolor = color.name();
+
+            if (statusbarbcolor != "")
+            {
+                ui->statusbar->setStyleSheet("background-color: " + statusbarbcolor + ";" + "color: " + color.name() + ";");
+            }
+            else
+            {
+                ui->statusbar->setStyleSheet("color: " + color.name() + ";");
+            }
+        }
+    }
+    else
+    {
+        QColor color = QColorDialog::getColor(Qt::black, this);
+
+        if (color.isValid())
+        {
+            statusbarfcolor = color.name();
+
+            if (statusbarbcolor != "")
+            {
+                ui->statusbar->setStyleSheet("background-color: " + statusbarbcolor + ";" + "color: " + color.name() + ";");
+            }
+            else
+            {
+                ui->statusbar->setStyleSheet("color: " + color.name() + ";");
+            }
+        }
+    }
+}
+

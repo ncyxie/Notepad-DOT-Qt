@@ -136,6 +136,10 @@ private slots:
 
     void on_action_Lines_Counter_Off_triggered();
 
+    void on_action_statusBar_Font_triggered();
+
+    void on_action_statusBar_Font_Color_triggered();
+
 private:
     Ui::MainWindow *ui;
     QLabel *wordCountLabel;
@@ -148,6 +152,8 @@ private:
     QString menubarfcolor = "";
     QString widgetbcolor = "";
     QString texteditbcolor = "";
+    QString statusbarbcolor = "";
+    QString statusbarfcolor = "";
     bool isFresh = true;
     bool wordsOn = false;
     bool charOn = false;

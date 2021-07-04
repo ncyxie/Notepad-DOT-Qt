@@ -172,6 +172,9 @@
      <addaction name="action_statusBar_On"/>
      <addaction name="action_statusBar_Off"/>
      <addaction name="separator"/>
+     <addaction name="action_statusBar_Font"/>
+     <addaction name="action_statusBar_Font_Color"/>
+     <addaction name="separator"/>
      <addaction name="menu_Word_Counter"/>
      <addaction name="menu_Character_Counter"/>
      <addaction name="menu_Lines_Counter"/>
@@ -179,8 +182,8 @@
     <addaction name="menu_Widget"/>
     <addaction name="menu_Text_Edit"/>
     <addaction name="menu_Menu_Bar"/>
-    <addaction name="menu_Scroll_Bar"/>
     <addaction name="menu_Status_Bar"/>
+    <addaction name="menu_Scroll_Bar"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -535,6 +538,16 @@
   <action name="action_Lines_Counter_Off">
    <property name="text">
     <string>&amp;Off</string>
+   </property>
+  </action>
+  <action name="action_statusBar_Font">
+   <property name="text">
+    <string>&amp;Font</string>
+   </property>
+  </action>
+  <action name="action_statusBar_Font_Color">
+   <property name="text">
+    <string>&amp;Font Color</string>
    </property>
   </action>
  </widget>

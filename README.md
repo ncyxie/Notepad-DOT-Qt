@@ -6,7 +6,7 @@
 
 **Fifth beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
 
-I am currently working on Qt Settings (so your preferences will be saved into config and will be remembered for next session).
+I am currently working on Qt Settings (so your preferences will be saved into config and will be remembered for the next session).
 
 ## Introduction
 

@@ -63,7 +63,7 @@ As it is open source, you can modify it and even make it better.
 
 ## Bug reports
 
-Since you are here, you just need to enter [Issues](https://github.com/ncyxie/Notepad-DOT-Qt/issues/) page in GitHub, or contact with me using Discord or Telegram.
+You can report bugs in the [Issues](https://github.com/ncyxie/Notepad-DOT-Qt/issues/) page on GitHub, or contact me using Discord or Telegram.
 
 ## FAQ
 

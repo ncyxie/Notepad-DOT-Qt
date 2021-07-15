@@ -269,7 +269,7 @@
   </action>
   <action name="action_About">
    <property name="text">
-    <string>About</string>
+    <string>&amp;About</string>
    </property>
   </action>
   <action name="action_Exit">
@@ -308,7 +308,7 @@
   </action>
   <action name="actionPrint">
    <property name="text">
-    <string>Print</string>
+    <string>&amp;Print</string>
    </property>
    <property name="shortcut">
     <string>Ctrl+P</string>
@@ -430,7 +430,7 @@
   </action>
   <action name="action_textEdit_Appearance">
    <property name="text">
-    <string>Appearance</string>
+    <string>&amp;Appearance</string>
    </property>
   </action>
   <action name="action_widget_Appearance">

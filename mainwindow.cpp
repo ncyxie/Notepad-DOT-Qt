@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <QSettings>
 #include <QFile>
 #include <QLabel>
 #include <QFileDialog>
@@ -74,11 +75,267 @@ MainWindow::MainWindow(QWidget *parent)
             outsideFileName = arguments[1];
             this->outsideNotepadOpen();
         }
+
+    LoadSettings();
+
+    QColor textfcolor = ui->textEdit->textColor();
+    textfontcolor = textfcolor.name();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::SaveSettings()
+{
+    QSettings setting("ncyxie", "Notepad-DOT-Qt");
+
+    setting.beginGroup("MainWindow");
+    setting.setValue("geometry", saveGeometry());
+    setting.setValue("windowState", saveState());
+    setting.endGroup();
+
+    setting.beginGroup("Widget");
+    setting.setValue("widget.stylesheet", styleSheet());
+    setting.setValue("widgetbcolor", widgetbcolor);
+    setting.endGroup();
+
+    setting.beginGroup("TextEdit");
+    setting.setValue("textedit.word.wrap", ui->action_Word_Wrap->isChecked());
+    setting.setValue("textedit.stylesheet", ui->textEdit->styleSheet());
+    setting.setValue("textedit.font.color", ui->textEdit->textColor());
+    setting.setValue("textedit.frame.shape.box", ui->action_Box->isChecked());
+    setting.setValue("textedit.frame.shape.panel", ui->action_Panel->isChecked());
+    setting.setValue("textedit.frame.shape.win.panel", ui->action_Win_Panel->isChecked());
+    setting.setValue("textedit.frame.shape.styled.panel", ui->action_Styled_Panel->isChecked());
+    setting.setValue("textedit.frame.shape.no.frame", ui->action_No_Frame->isChecked());
+    setting.setValue("textedit.scroll.bar.vertical", ui->action_Vertical->isChecked());
+    setting.setValue("textedit.scroll.bar.horizontal", ui->action_Horizontal->isChecked());
+    setting.setValue("textedit.scroll.bar.both", ui->action_Both->isChecked());
+    setting.setValue("textedit.scroll.bar.none", ui->action_None->isChecked());
+    setting.setValue("tfontfamily", tfontfamily);
+    setting.setValue("tfontsize", tfontsize);
+    setting.setValue("tfontweight", tfontweight);
+    setting.setValue("tfontstyle", tfontstyle);
+    setting.setValue("tfontdecoration", tfontdecoration);
+    setting.setValue("texteditbcolor", texteditbcolor);
+    setting.endGroup();
+
+    setting.beginGroup("MenuBar");
+    setting.setValue("menubar.stylesheet", ui->menubar->styleSheet());
+    setting.setValue("menubarbcolor", menubarbcolor);
+    setting.setValue("menubarfcolor", menubarfcolor);
+    setting.endGroup();
+
+    setting.beginGroup("StatusBar");
+    setting.setValue("statusbar.on", ui->action_statusBar_On->isChecked());
+    setting.setValue("statusbar.off", ui->action_statusBar_Off->isChecked());
+    setting.setValue("statusbar.stylesheet", ui->statusbar->styleSheet());
+    setting.setValue("statusbar.word.counter.on", ui->action_Word_Counter_On->isChecked());
+    setting.setValue("statusbar.word.counter.off", ui->action_Word_Counter_Off->isChecked());
+    setting.setValue("statusbar.char.counter.on", ui->action_Character_Counter_On->isChecked());
+    setting.setValue("statusbar.char.counter.off", ui->action_Character_Counter_Off->isChecked());
+    setting.setValue("statusbar.lines.counter.on", ui->action_Lines_Counter_On->isChecked());
+    setting.setValue("statusbar.lines.counter.off", ui->action_Lines_Counter_Off->isChecked());
+
+    setting.endGroup();
+}
+
+void MainWindow::LoadSettings()
+{
+    QSettings setting("ncyxie", "Notepad-DOT-Qt");
+
+    setting.beginGroup("MainWindow");
+    restoreGeometry(setting.value("geometry").toByteArray());
+    restoreState(setting.value("windowState").toByteArray());
+    setting.endGroup();
+
+    setting.beginGroup("Widget");
+    QString widgetstylesheet = setting.value("widget.stylesheet").toString();
+    setStyleSheet(widgetstylesheet);
+    widgetbcolor = setting.value("widgetbcolor").toString();
+    setting.endGroup();
+
+    setting.beginGroup("TextEdit");
+    bool wordwrapchecked = setting.value("textedit.word.wrap").toBool();
+
+    if (wordwrapchecked == true)
+    {
+        ui->action_Word_Wrap->setChecked(true);
+        ui->textEdit->setLineWrapMode(QTextEdit::WidgetWidth);
+
+        if (ui->action_Horizontal->isChecked())
+        {
+            ui->action_Horizontal->setChecked(false);
+            ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            ui->action_None->setChecked(true);
+        }
+
+        if (ui->action_Both->isChecked())
+        {
+            ui->action_Both->setChecked(false);
+            ui->textEdit->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+            ui->textEdit->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+            ui->action_Vertical->setChecked(true);
+        }
+
+        ui->action_Horizontal->setEnabled(false);
+        ui->action_Both->setEnabled(false);
+    }
+    else
+    {
+        ui->action_Word_Wrap->setChecked(false);
+        ui->textEdit->setLineWrapMode(QTextEdit::NoWrap);
+        ui->action_Horizontal->setEnabled(true);
+        ui->action_Both->setEnabled(true);
+    }
+
+
+    QString texteditstylesheet = setting.value("textedit.stylesheet").toString();
+    ui->textEdit->setStyleSheet(texteditstylesheet);
+    QString texteditfontcolor = setting.value("textedit.font.color").toString();
+    ui->textEdit->setTextColor(texteditfontcolor);
+
+    bool isframeboxchecked = setting.value("textedit.frame.shape.box").toBool();
+
+    if (isframeboxchecked == true)
+    {
+        on_action_Box_triggered();
+    }
+
+    bool isframepanelchecked = setting.value("textedit.frame.shape.panel").toBool();
+
+    if (isframepanelchecked == true)
+    {
+        on_action_Panel_triggered();
+    }
+
+    bool isframewinpanelchecked = setting.value("textedit.frame.shape.win.panel").toBool();
+
+    if (isframewinpanelchecked == true)
+    {
+        on_action_Win_Panel_triggered();
+    }
+
+    bool isframestyledpanelchecked = setting.value("textedit.frame.shape.styled.panel").toBool();
+
+    if (isframestyledpanelchecked == true)
+    {
+        on_action_Styled_Panel_triggered();
+    }
+
+    bool isframenoframechecked = setting.value("textedit.frame.shape.no.frame").toBool();
+
+    if (isframenoframechecked == true)
+    {
+        on_action_No_Frame_triggered();
+    }
+
+    bool scrollbarvertical = setting.value("textedit.scroll.bar.vertical").toBool();
+
+    if (scrollbarvertical == true)
+    {
+        on_action_Vertical_triggered();
+    }
+
+    bool scrollbarhorizontal = setting.value("textedit.scroll.bar.horizontal").toBool();
+
+    if (scrollbarhorizontal == true)
+    {
+        on_action_Horizontal_triggered();
+    }
+
+    bool scrollbarboth = setting.value("textedit.scroll.bar.both").toBool();
+
+    if (scrollbarboth == true)
+    {
+        on_action_Both_triggered();
+    }
+
+    bool scrollbarnone = setting.value("textedit.scroll.bar.none").toBool();
+
+    if (scrollbarnone == true)
+    {
+        on_action_None_triggered();
+    }
+    tfontfamily = setting.value("tfontfamily").toString();
+    tfontsize = setting.value("tfontsize").toString();
+    tfontweight = setting.value("tfontweight").toString();
+    tfontstyle = setting.value("tfontstyle").toString();
+    tfontdecoration = setting.value("tfontdecoration").toString();
+    texteditbcolor = setting.value("texteditbcolor").toString();
+    setting.endGroup();
+
+    setting.beginGroup("MenuBar");
+    QString menubarstylesheet = setting.value("menubar.stylesheet").toString();
+    ui->menubar->setStyleSheet(menubarstylesheet);
+    menubarbcolor = setting.value("menubarbcolor").toString();
+    menubarfcolor = setting.value("menubarfcolor").toString();
+    setting.endGroup();
+
+    setting.beginGroup("StatusBar");
+
+    bool statusbaron = setting.value("statusbar.on").toBool();
+
+    if (statusbaron == true)
+    {
+        on_action_statusBar_On_triggered();
+    }
+
+    bool statusbaroff = setting.value("statusbar.off").toBool();
+
+    if (statusbaroff == true)
+    {
+        on_action_statusBar_Off_triggered();
+    }
+
+    QString statusbarstylesheet = setting.value("statusbar.stylesheet").toString();
+    ui->statusbar->setStyleSheet(statusbarstylesheet);
+
+    bool statusbarwordcounteron = setting.value("statusbar.word.counter.on").toBool();
+
+    if (statusbarwordcounteron == true)
+    {
+        on_action_Word_Counter_On_triggered();
+    }
+
+    bool statusbarwordcounteroff = setting.value("statusbar.word.counter.off").toBool();
+
+    if (statusbarwordcounteroff == true)
+    {
+        on_action_Word_Counter_Off_triggered();
+    }
+
+    bool statusbarcharcounteron = setting.value("statusbar.char.counter.on").toBool();
+
+    if (statusbarcharcounteron == true)
+    {
+        on_action_Character_Counter_On_triggered();
+    }
+
+    bool statusbarcharcounteroff = setting.value("statusbar.word.counter.off").toBool();
+
+    if (statusbarcharcounteroff == true)
+    {
+        on_action_Character_Counter_Off_triggered();
+    }
+
+    bool statusbarlinescounteron = setting.value("statusbar.lines.counter.on").toBool();
+
+    if (statusbarlinescounteron == true)
+    {
+        on_action_Lines_Counter_On_triggered();
+    }
+
+    bool statusbarlinescounteroff = setting.value("statusbar.lines.counter.off").toBool();
+
+    if (statusbarlinescounteroff == true)
+    {
+        on_action_Lines_Counter_Off_triggered();
+    }
+    setting.endGroup();
 }
 
 void MainWindow::on_textEdit_textChanged()
@@ -92,6 +349,17 @@ void MainWindow::on_textEdit_textChanged()
         else
         {
             this->setWindowTitle("*Untitled - Notepad DOT Qt");
+        }
+    }
+    else
+    {
+        if (isFresh == false)
+        {
+            this->setWindowTitle(currentFile + " - Notepad DOT Qt");
+        }
+        else
+        {
+            this->setWindowTitle("Untitled - Notepad DOT Qt");
         }
     }
 
@@ -111,6 +379,12 @@ void MainWindow::on_textEdit_textChanged()
 
         linesCountLabel->setText(tr("Lines: ") + QString::number(ui->textEdit->document()->lineCount()) + flags);
     }
+
+    if (ui->textEdit->toPlainText() == "")
+    {
+        ui->textEdit->setTextColor(textfontcolor);
+    }
+
 }
 
 void MainWindow::closeEvent (QCloseEvent *event)
@@ -148,6 +422,8 @@ void MainWindow::closeEvent (QCloseEvent *event)
             }
         }
     }
+
+    SaveSettings();
 }
 
 void MainWindow::outsideNotepadOpen()
@@ -285,7 +561,81 @@ void MainWindow::on_action_Exit_triggered()
 
 void MainWindow::on_action_Font_triggered()
 {
-    ui->textEdit->setFont(QFontDialog::getFont(nullptr,ui->textEdit->font(),this));
+    bool ok;
+    tfont = QFontDialog::getFont(&ok, ui->textEdit->font(), this);
+    if(ok)
+    {
+        tfontsize = QString::number(tfont.pointSize());
+
+        tfontfamily = tfont.family();
+        if (tfont.weight() == 0)
+        {
+            tfontweight = "100";
+        }
+        else if (tfont.weight() == 12)
+        {
+            tfontweight = "200";
+        }
+        else if (tfont.weight() == 25)
+        {
+            tfontweight = "300";
+        }
+        else if (tfont.weight() == 50)
+        {
+            tfontweight = "400";
+        }
+        else if (tfont.weight() == 57)
+        {
+            tfontweight = "500";
+        }
+        else if (tfont.weight() == 63)
+        {
+            tfontweight = "600";
+        }
+        else if (tfont.weight() == 75)
+        {
+            tfontweight = "700";
+        }
+        else if (tfont.weight() == 81)
+        {
+            tfontweight = "800";
+        }
+        else if (tfont.weight() == 87)
+        {
+            tfontweight = "900";
+        }
+
+        if (tfont.italic() == true)
+        {
+            tfontstyle = "italic";
+        }
+        else
+        {
+            tfontstyle = "normal";
+        }
+
+        if (tfont.underline() == true)
+        {
+            tfontdecoration = "underline";
+        }
+        else if (tfont.strikeOut() == true)
+        {
+            tfontdecoration = "line-through";
+        }
+        else
+        {
+            tfontdecoration = "none";
+        }
+
+            if (texteditbcolor != "")
+            {
+                ui->textEdit->setStyleSheet("background-color: " + texteditbcolor + "; font-family: " + tfontfamily + "; font-size: " + tfontsize + "pt" + "; font-weight: " + tfontweight + "; font-style: " + tfontstyle + "; text-decoration: " + tfontdecoration + ";");
+            }
+            else
+            {
+                ui->textEdit->setStyleSheet("font-family: " + tfontfamily + "; font-size: " + tfontsize + "pt" + "; font-weight: " + tfontweight + "; font-style: " + tfontstyle + "; text-decoration: " + tfontdecoration + ";");
+            }
+    }
 }
 
 void MainWindow::on_action_Color_triggered()
@@ -523,7 +873,15 @@ void MainWindow::on_action_textEdit_Appearance_triggered()
         if (color.isValid())
         {
             texteditbcolor = color.name();
-            ui->textEdit->setStyleSheet("background-color: " + color.name());
+
+            if (texteditbcolor != "")
+            {
+                ui->textEdit->setStyleSheet("background-color: " + texteditbcolor + "; font-family: " + tfontfamily + "; font-size: " + tfontsize + "pt" + "; font-weight: " + tfontweight + "; font-style: " + tfontstyle + "; text-decoration: " + tfontdecoration + ";");
+            }
+            else
+            {
+                ui->textEdit->setStyleSheet("font-family: " + tfontfamily + "; font-size: " + tfontsize + "pt" + "; font-weight: " + tfontweight + "; font-style: " + tfontstyle + "; text-decoration: " + tfontdecoration + ";");
+            }
         }
     }
     else
@@ -533,7 +891,14 @@ void MainWindow::on_action_textEdit_Appearance_triggered()
         if (color.isValid())
         {
             texteditbcolor = color.name();
-            ui->textEdit->setStyleSheet("background-color: " + color.name());
+            if (texteditbcolor != "")
+            {
+                ui->textEdit->setStyleSheet("background-color: " + texteditbcolor + "; font-family: " + tfontfamily + "; font-size: " + tfontsize + "pt" + "; font-weight: " + tfontweight + "; font-style: " + tfontstyle + "; text-decoration: " + tfontdecoration + ";");
+            }
+            else
+            {
+                ui->textEdit->setStyleSheet("font-family: " + tfontfamily + "; font-size: " + tfontsize + "pt" + "; font-weight: " + tfontweight + "; font-style: " + tfontstyle + "; text-decoration: " + tfontdecoration + ";");
+            }
         }
     }
 }
@@ -566,6 +931,7 @@ void MainWindow::on_action_widget_Appearance_triggered()
 
 void MainWindow::on_action_widget_Appearance_Reset_to_default_triggered()
 {
+    widgetbcolor = "";
     setStyleSheet("");
 }
 
@@ -593,6 +959,7 @@ void MainWindow::on_action_Word_Wrap_triggered()
 {
     if (ui->action_Word_Wrap->isChecked())
     {
+        ui->action_Word_Wrap->setChecked(true);
         ui->textEdit->setLineWrapMode(QTextEdit::WidgetWidth);
 
         if (ui->action_Horizontal->isChecked())
@@ -616,6 +983,7 @@ void MainWindow::on_action_Word_Wrap_triggered()
     }
     else
     {
+        ui->action_Word_Wrap->setChecked(false);
         ui->textEdit->setLineWrapMode(QTextEdit::NoWrap);
         ui->action_Horizontal->setEnabled(true);
         ui->action_Both->setEnabled(true);

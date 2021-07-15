@@ -152,6 +152,7 @@ private:
     QString currentFile;
     QString fileText;
     QString outsideFileName;
+    QString textfontcolor;
     QString menubarbcolor = "";
     QString menubarfcolor = "";
     QString widgetbcolor = "";
@@ -164,9 +165,18 @@ private:
     bool linesOn = false;
     Qt::WindowFlags flags = this->windowFlags();
     QDateTime dateTime;
+    QFont tfont;
+    QString tfontfamily;
+    QString tfontsize;
+    QString tfontweight;
+    QString tfontstyle;
+    QString tfontdecoration;
 
     AboutDialog *aboutdialog;
     discorddialog *ddialog;
+
+    void SaveSettings();
+    void LoadSettings();
 };
 
 

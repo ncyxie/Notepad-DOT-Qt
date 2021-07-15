@@ -166,11 +166,17 @@ private:
     Qt::WindowFlags flags = this->windowFlags();
     QDateTime dateTime;
     QFont tfont;
+    QFont mfont;
     QString tfontfamily;
     QString tfontsize;
     QString tfontweight;
     QString tfontstyle;
     QString tfontdecoration;
+    QString mfontfamily;
+    QString mfontsize;
+    QString mfontweight;
+    QString mfontstyle;
+    QString mfontdecoration;
 
     AboutDialog *aboutdialog;
     discorddialog *ddialog;

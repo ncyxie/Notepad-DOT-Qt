@@ -124,6 +124,11 @@ void MainWindow::SaveSettings()
 
     setting.beginGroup("MenuBar");
     setting.setValue("menubar.stylesheet", ui->menubar->styleSheet());
+    setting.setValue("mfontfamily", mfontfamily);
+    setting.setValue("mfontsize", mfontsize);
+    setting.setValue("mfontweight", mfontweight);
+    setting.setValue("mfontstyle", mfontstyle);
+    setting.setValue("mfontdecoration", mfontdecoration);
     setting.setValue("menubarbcolor", menubarbcolor);
     setting.setValue("menubarfcolor", menubarfcolor);
     setting.endGroup();
@@ -271,6 +276,11 @@ void MainWindow::LoadSettings()
     setting.beginGroup("MenuBar");
     QString menubarstylesheet = setting.value("menubar.stylesheet").toString();
     ui->menubar->setStyleSheet(menubarstylesheet);
+    mfontfamily = setting.value("mfontfamily").toString();
+    mfontsize = setting.value("mfontsize").toString();
+    mfontweight = setting.value("mfontweight").toString();
+    mfontstyle = setting.value("mfontstyle").toString();
+    mfontdecoration = setting.value("mfontdecoration").toString();
     menubarbcolor = setting.value("menubarbcolor").toString();
     menubarfcolor = setting.value("menubarfcolor").toString();
     setting.endGroup();
@@ -791,11 +801,11 @@ void MainWindow::on_action_menubar_Appearance_triggered()
 
             if (menubarfcolor != "")
             {
-                ui->menubar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + menubarfcolor + ";");
+                ui->menubar->setStyleSheet("background-color: " + color.name() + "; color: " + menubarfcolor + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
             }
             else
             {
-                ui->menubar->setStyleSheet("background-color: " + color.name() + ";");
+                ui->menubar->setStyleSheet("background-color: " + color.name() + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
             }
         }
     }
@@ -809,11 +819,11 @@ void MainWindow::on_action_menubar_Appearance_triggered()
 
             if (menubarfcolor != "")
             {
-                ui->menubar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + menubarfcolor + ";");
+                ui->menubar->setStyleSheet("background-color: " + color.name() + "; color: " + menubarfcolor + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
             }
             else
             {
-                ui->menubar->setStyleSheet("background-color: " + color.name() + ";");
+                ui->menubar->setStyleSheet("background-color: " + color.name() + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
             }
         }
     }
@@ -821,7 +831,96 @@ void MainWindow::on_action_menubar_Appearance_triggered()
 
 void MainWindow::on_action_menubar_Font_triggered()
 {
-    ui->menubar->setFont(QFontDialog::getFont(nullptr,ui->menubar->font(),this));
+    bool ok;
+    mfont = QFontDialog::getFont(&ok, ui->menubar->font(), this);
+    if(ok)
+    {
+        mfontsize = QString::number(mfont.pointSize());
+
+        mfontfamily = mfont.family();
+        if (mfont.weight() == 0)
+        {
+            mfontweight = "100";
+        }
+        else if (mfont.weight() == 12)
+        {
+            mfontweight = "200";
+        }
+        else if (mfont.weight() == 25)
+        {
+            mfontweight = "300";
+        }
+        else if (mfont.weight() == 50)
+        {
+            mfontweight = "400";
+        }
+        else if (mfont.weight() == 57)
+        {
+            mfontweight = "500";
+        }
+        else if (mfont.weight() == 63)
+        {
+            mfontweight = "600";
+        }
+        else if (mfont.weight() == 75)
+        {
+            mfontweight = "700";
+        }
+        else if (mfont.weight() == 81)
+        {
+            mfontweight = "800";
+        }
+        else if (mfont.weight() == 87)
+        {
+            mfontweight = "900";
+        }
+
+        if (mfont.italic() == true)
+        {
+            mfontstyle = "italic";
+        }
+        else
+        {
+            mfontstyle = "normal";
+        }
+
+        if (mfont.underline() == true)
+        {
+            mfontdecoration = "underline";
+        }
+        else if (mfont.strikeOut() == true)
+        {
+            mfontdecoration = "line-through";
+        }
+        else
+        {
+            mfontdecoration = "none";
+        }
+
+            if (menubarbcolor != "")
+            {
+                if (menubarfcolor != "")
+                {
+                    ui->menubar->setStyleSheet("background-color: " + menubarbcolor + "; color: " + menubarfcolor + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
+                }
+                else
+                {
+                    ui->menubar->setStyleSheet("background-color: " + menubarbcolor + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
+                }
+
+            }
+            else
+            {
+                if (menubarfcolor != "")
+                {
+                    ui->menubar->setStyleSheet("color: " + menubarfcolor + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
+                }
+                else
+                {
+                    ui->menubar->setStyleSheet("font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
+                }
+            }
+    }
 }
 
 void MainWindow::on_action_menubar_Font_Color_triggered()
@@ -836,11 +935,11 @@ void MainWindow::on_action_menubar_Font_Color_triggered()
 
             if (menubarbcolor != "")
             {
-                ui->menubar->setStyleSheet("background-color: " + menubarbcolor + ";" + "color: " + color.name() + ";");
+                ui->menubar->setStyleSheet("background-color: " + menubarbcolor + + "; color: " + color.name() + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
             }
             else
             {
-                ui->menubar->setStyleSheet("color: " + color.name() + ";");
+                ui->menubar->setStyleSheet("color: " + color.name() + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
             }
         }
     }
@@ -854,11 +953,11 @@ void MainWindow::on_action_menubar_Font_Color_triggered()
 
             if (menubarbcolor != "")
             {
-                ui->menubar->setStyleSheet("background-color: " + menubarbcolor + ";" + "color: " + color.name() + ";");
+                ui->menubar->setStyleSheet("background-color: " + menubarbcolor + + "; color: " + color.name() + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
             }
             else
             {
-                ui->menubar->setStyleSheet("color: " + color.name() + ";");
+                ui->menubar->setStyleSheet("color: " + color.name() + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
             }
         }
     }

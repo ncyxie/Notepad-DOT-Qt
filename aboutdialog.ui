@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>429</width>
-    <height>318</height>
+    <height>350</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@
      <x>20</x>
      <y>60</y>
      <width>241</width>
-     <height>191</height>
+     <height>221</height>
     </rect>
    </property>
    <property name="font">
@@ -56,10 +56,11 @@
     <string>An open-source,
 cross-platform and highly
 customizable text editor.
+Written in C++ language
+and based on Qt framework. 
 
 Version: 1.0.0-b5
 Build date: 27/06/2021
-Based on Qt and C++
 Made by ncyxie
 Thanks to zero9178
 Thanks to XeZrunner
@@ -83,7 +84,7 @@ Thanks to XeZrunner
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>260</y>
+     <y>290</y>
      <width>101</width>
      <height>31</height>
     </rect>

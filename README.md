@@ -28,7 +28,7 @@ As it is open source, you can modify it and even make it better.
 ## Linux ([Guide source](https://docs.appimage.org/introduction/quickstart.html))
 
 **Using the GUI**
-1. [Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
+1. [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open your file manager and browse to the location of the Notepad DOT AppImage;
 
@@ -43,7 +43,7 @@ As it is open source, you can modify it and even make it better.
 7. Double-click on the Notepad DOT AppImage file to run.
 
 **Using the Terminal**
-1. [Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
+1. [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open a terminal;
 

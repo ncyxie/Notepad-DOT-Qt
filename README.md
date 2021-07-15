@@ -55,7 +55,7 @@ As it is open source, you can modify it and even make it better.
 
 ## Windows
 
-[Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file and follow further Notepad DOT Setup guide;
+[Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file and follow further Notepad DOT Setup guide;
 
 ## Screenshots
 

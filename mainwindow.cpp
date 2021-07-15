@@ -1040,17 +1040,17 @@ void MainWindow::on_action_menubar_Appearance_Reset_to_default_triggered()
 
     if (menubarfcolor != "")
     {
-        ui->menubar->setStyleSheet("color: " + menubarfcolor + ";");
+        ui->menubar->setStyleSheet("color: " + menubarfcolor + "; font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
     }
     else
     {
-        ui->menubar->setStyleSheet("");
+        ui->menubar->setStyleSheet("font-family: " + mfontfamily + "; font-size: " + mfontsize + "pt" + "; font-weight: " + mfontweight + "; font-style: " + mfontstyle + "; text-decoration: " + mfontdecoration + ";");
     }
 }
 
 void MainWindow::on_action_textEdit_Reset_to_default_triggered()
 {
-    ui->textEdit->setStyleSheet("");
+    ui->textEdit->setStyleSheet("font-family: " + tfontfamily + "; font-size: " + tfontsize + "pt" + "; font-weight: " + tfontweight + "; font-style: " + tfontstyle + "; text-decoration: " + tfontdecoration + ";");
     texteditbcolor = "";
 }
 

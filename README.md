@@ -6,7 +6,9 @@
 
 **Fifth beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
 
-This or next week, the first Notepad DOT Qt stable release should roll out. :)
+This or next week beginning, the first Notepad DOT Qt release candidate should roll out. :)
+
+Stable release will be slightly delayed to ensure application stability.
 
 ## Introduction
 

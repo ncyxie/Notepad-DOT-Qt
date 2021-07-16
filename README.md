@@ -83,7 +83,7 @@ Yes, it does. Just make sure you download the '.AppImage' file and allow it to e
 
 Yes, it does. Just make sure you download the '.exe' file and setup the application.
 
-5. **What are this Notepad system requirements?**
+5. **What are this Notepad operating system requirements?**
 
 **For Windows operating systems:**
 * Minimum: Windows 7 SP1;

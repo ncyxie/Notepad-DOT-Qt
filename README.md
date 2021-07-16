@@ -89,9 +89,13 @@ Yes, it does. Just make sure you download the '.exe' file and setup the applicat
 * Minimum: Windows 7 SP1;
 * **Recommended: Windows 10 21H1.**
 
+* **Architecture: x86_64**
+
 **For Linux operating systems:**
 * Minimum: Ubuntu 21.04 / Fedora 34 / Latest Arch Linux release;
 * **Recommended: Ubuntu 21.04 / Fedora 34 / Latest Arch Linux release.**
+
+* **Architecture: x86_64**
 
 If your OS meets the requirements and Notepad DOT Qt doesn't work properly, make sure your 
 operating system is up to date.

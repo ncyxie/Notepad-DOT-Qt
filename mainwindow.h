@@ -167,6 +167,7 @@ private:
     QDateTime dateTime;
     QFont tfont;
     QFont mfont;
+    QFont sfont;
     QString tfontfamily;
     QString tfontsize;
     QString tfontweight;
@@ -177,6 +178,11 @@ private:
     QString mfontweight;
     QString mfontstyle;
     QString mfontdecoration;
+    QString sfontfamily;
+    QString sfontsize;
+    QString sfontweight;
+    QString sfontstyle;
+    QString sfontdecoration;
 
     AboutDialog *aboutdialog;
     discorddialog *ddialog;

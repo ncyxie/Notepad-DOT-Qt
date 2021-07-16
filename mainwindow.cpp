@@ -143,6 +143,13 @@ void MainWindow::SaveSettings()
     setting.setValue("statusbar.char.counter.off", ui->action_Character_Counter_Off->isChecked());
     setting.setValue("statusbar.lines.counter.on", ui->action_Lines_Counter_On->isChecked());
     setting.setValue("statusbar.lines.counter.off", ui->action_Lines_Counter_Off->isChecked());
+    setting.setValue("sfontfamily", sfontfamily);
+    setting.setValue("sfontsize", sfontsize);
+    setting.setValue("sfontweight", sfontweight);
+    setting.setValue("sfontstyle", sfontstyle);
+    setting.setValue("sfontdecoration", sfontdecoration);
+    setting.setValue("statusbarbcolor", statusbarbcolor);
+    setting.setValue("statusbarfcolor", statusbarfcolor);
 
     setting.endGroup();
 }
@@ -345,6 +352,14 @@ void MainWindow::LoadSettings()
     {
         on_action_Lines_Counter_Off_triggered();
     }
+
+    sfontfamily = setting.value("sfontfamily").toString();
+    sfontsize = setting.value("sfontsize").toString();
+    sfontweight = setting.value("sfontweight").toString();
+    sfontstyle = setting.value("sfontstyle").toString();
+    sfontdecoration = setting.value("sfontdecoration").toString();
+    statusbarbcolor = setting.value("statusbarbcolor").toString();
+    statusbarfcolor = setting.value("statusbarfcolor").toString();
     setting.endGroup();
 }
 
@@ -1265,7 +1280,96 @@ void MainWindow::on_action_Lines_Counter_Off_triggered()
 
 void MainWindow::on_action_statusBar_Font_triggered()
 {
-    ui->statusbar->setFont(QFontDialog::getFont(nullptr,ui->statusbar->font(),this));
+    bool ok;
+    sfont = QFontDialog::getFont(&ok, ui->statusbar->font(), this);
+    if(ok)
+    {
+        sfontsize = QString::number(sfont.pointSize());
+
+        sfontfamily = sfont.family();
+        if (sfont.weight() == 0)
+        {
+            sfontweight = "100";
+        }
+        else if (sfont.weight() == 12)
+        {
+            sfontweight = "200";
+        }
+        else if (sfont.weight() == 25)
+        {
+            sfontweight = "300";
+        }
+        else if (sfont.weight() == 50)
+        {
+            sfontweight = "400";
+        }
+        else if (sfont.weight() == 57)
+        {
+            sfontweight = "500";
+        }
+        else if (sfont.weight() == 63)
+        {
+            sfontweight = "600";
+        }
+        else if (sfont.weight() == 75)
+        {
+            sfontweight = "700";
+        }
+        else if (sfont.weight() == 81)
+        {
+            sfontweight = "800";
+        }
+        else if (sfont.weight() == 87)
+        {
+            sfontweight = "900";
+        }
+
+        if (sfont.italic() == true)
+        {
+            sfontstyle = "italic";
+        }
+        else
+        {
+            sfontstyle = "normal";
+        }
+
+        if (sfont.underline() == true)
+        {
+            sfontdecoration = "underline";
+        }
+        else if (sfont.strikeOut() == true)
+        {
+            sfontdecoration = "line-through";
+        }
+        else
+        {
+            sfontdecoration = "none";
+        }
+
+            if (statusbarbcolor != "")
+            {
+                if (statusbarfcolor != "")
+                {
+                    ui->statusbar->setStyleSheet("background-color: " + statusbarbcolor + "; color: " + statusbarfcolor + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
+                }
+                else
+                {
+                    ui->statusbar->setStyleSheet("background-color: " + statusbarbcolor + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
+                }
+
+            }
+            else
+            {
+                if (statusbarfcolor != "")
+                {
+                    ui->statusbar->setStyleSheet("color: " + statusbarfcolor + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
+                }
+                else
+                {
+                    ui->statusbar->setStyleSheet("font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
+                }
+            }
+    }
 
     wordCountLabel->setFont(ui->statusbar->font());
     charCountLabel->setFont(ui->statusbar->font());
@@ -1284,11 +1388,11 @@ void MainWindow::on_action_statusBar_Font_Color_triggered()
 
             if (statusbarbcolor != "")
             {
-                ui->statusbar->setStyleSheet("background-color: " + statusbarbcolor + ";" + "color: " + color.name() + ";");
+                ui->statusbar->setStyleSheet("background-color: " + statusbarbcolor + + "; color: " + color.name() + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
             }
             else
             {
-                ui->statusbar->setStyleSheet("color: " + color.name() + ";");
+                ui->statusbar->setStyleSheet("color: " + color.name() + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
             }
         }
     }
@@ -1302,11 +1406,11 @@ void MainWindow::on_action_statusBar_Font_Color_triggered()
 
             if (statusbarbcolor != "")
             {
-                ui->statusbar->setStyleSheet("background-color: " + statusbarbcolor + ";" + "color: " + color.name() + ";");
+                ui->statusbar->setStyleSheet("background-color: " + statusbarbcolor + + "; color: " + color.name() + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
             }
             else
             {
-                ui->statusbar->setStyleSheet("color: " + color.name() + ";");
+                ui->statusbar->setStyleSheet("color: " + color.name() + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
             }
         }
     }
@@ -1324,11 +1428,11 @@ void MainWindow::on_action_statusBar_Appearance_triggered()
 
             if (statusbarfcolor != "")
             {
-                ui->statusbar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + statusbarfcolor + ";");
+                ui->statusbar->setStyleSheet("background-color: " + color.name() + "; color: " + statusbarfcolor + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
             }
             else
             {
-                ui->statusbar->setStyleSheet("background-color: " + color.name() + ";");
+                ui->statusbar->setStyleSheet("background-color: " + color.name() + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
             }
         }
     }
@@ -1342,11 +1446,11 @@ void MainWindow::on_action_statusBar_Appearance_triggered()
 
             if (statusbarfcolor != "")
             {
-                ui->statusbar->setStyleSheet("background-color: " + color.name() + ";" + "color: " + statusbarfcolor + ";");
+                ui->statusbar->setStyleSheet("background-color: " + color.name() + "; color: " + statusbarfcolor + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
             }
             else
             {
-                ui->statusbar->setStyleSheet("background-color: " + color.name() + ";");
+                ui->statusbar->setStyleSheet("background-color: " + color.name() + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
             }
         }
     }
@@ -1358,10 +1462,10 @@ void MainWindow::on_action_statusBar_Reset_to_default_triggered()
 
     if (statusbarfcolor != "")
     {
-        ui->statusbar->setStyleSheet("color: " + statusbarfcolor + ";");
+        ui->statusbar->setStyleSheet("color: " + statusbarfcolor + "; font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
     }
     else
     {
-        ui->statusbar->setStyleSheet("");
+        ui->statusbar->setStyleSheet("font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
     }
 }

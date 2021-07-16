@@ -25,7 +25,7 @@ As it is open source, you can modify it and even make it better.
 
 ## Installation guide
 
-## Linux ([Guide source](https://docs.appimage.org/introduction/quickstart.html))
+### Linux ([Guide source](https://docs.appimage.org/introduction/quickstart.html))
 
 **Using the GUI**
 1. [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
@@ -53,7 +53,7 @@ As it is open source, you can modify it and even make it better.
 
 5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b5.AppImage``.
 
-## Windows
+### Windows
 
 [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file and follow further Notepad DOT Setup guide;
 

@@ -28,7 +28,7 @@ As it is open source, you can modify it and even make it better.
 ## Linux ([Guide source](https://docs.appimage.org/introduction/quickstart.html))
 
 **Using the GUI**
-1. [Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
+1. [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open your file manager and browse to the location of the Notepad DOT AppImage;
 
@@ -43,7 +43,7 @@ As it is open source, you can modify it and even make it better.
 7. Double-click on the Notepad DOT AppImage file to run.
 
 **Using the Terminal**
-1. [Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
+1. [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open a terminal;
 
@@ -55,7 +55,7 @@ As it is open source, you can modify it and even make it better.
 
 ## Windows
 
-[Download latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file and follow further Notepad DOT Setup guide;
+[Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file and follow further Notepad DOT Setup guide;
 
 ## Screenshots
 
@@ -63,7 +63,7 @@ As it is open source, you can modify it and even make it better.
 
 ## Bug reports
 
-Since you are here, you just need to enter [Issues](https://github.com/ncyxie/Notepad-DOT-Qt/issues/) page in GitHub, or contact with me using Discord or Telegram.
+You can report bugs in the [Issues](https://github.com/ncyxie/Notepad-DOT-Qt/issues/) page on GitHub, or contact me using Discord or Telegram.
 
 ## FAQ
 
@@ -83,9 +83,18 @@ Yes, it does. Just make sure you download the '.AppImage' file and allow it to e
 
 Yes, it does. Just make sure you download the '.exe' file and setup the application.
 
-5. **What are this Notepad system requirements?**
+5. **What are this Notepad operating system requirements?**
 
-No special requirements are needed, even very low-end PC can run this application.
+**For Windows operating systems:**
+* Minimum: Windows 7 SP1;
+* **Recommended: Windows 10 21H1.**
+
+**For Linux operating systems:**
+* Minimum: Ubuntu 21.04 / Fedora 34 / Latest Arch Linux release;
+* **Recommended: Ubuntu 21.04 / Fedora 34 / Latest Arch Linux release.**
+
+If your OS meets the requirements and Notepad DOT Qt doesn't work properly, make sure your 
+operating system is up to date.
 
 6. **Why Notepad DOT Qt doesn't officially support macOS?**
 

@@ -2,6 +2,19 @@
 
 # Notepad DOT Qt
 
+## Table of contents
+
+- [Latest Information](#latest-information)
+- [Introduction](#introduction)
+- [Download](#download)
+- [Installation guide](#installation-guide)
+	- [Linux](#linux-guide-source)
+	- [Windows](#windows)
+- [Screenshots](#screenshots)
+- [Bug reports](#bug-reports)
+- [FAQ](#faq)
+- [Thanks to](#thanks-to)
+
 ## Latest Information
 
 **Fifth beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
@@ -25,7 +38,7 @@ As it is open source, you can modify it and even make it better.
 
 ## Installation guide
 
-## Linux ([Guide source](https://docs.appimage.org/introduction/quickstart.html))
+### Linux ([Guide source](https://docs.appimage.org/introduction/quickstart.html))
 
 **Using the GUI**
 1. [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
@@ -53,7 +66,7 @@ As it is open source, you can modify it and even make it better.
 
 5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b5.AppImage``.
 
-## Windows
+### Windows
 
 [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file and follow further Notepad DOT Setup guide;
 
@@ -67,23 +80,19 @@ You can report bugs in the [Issues](https://github.com/ncyxie/Notepad-DOT-Qt/iss
 
 ## FAQ
 
-1. **Why did you decided to make a notepad?**
-
-Friend recommended me to do it, and it is fun to mess up with files.
-
-2. **Can I "kang" a little of this Notepad code?**
+1. **Can I "kang" a little of this Notepad code?**
 
 For sure. This is why it is open-source. Do not hesitate, make it better. :)
 
-3. **Does this Notepad runs on Linux?**
+2. **Does this Notepad runs on Linux?**
 
 Yes, it does. Just make sure you download the '.AppImage' file and allow it to execute.
 
-4. **Does this Notepad runs on Windows?**
+3. **Does this Notepad runs on Windows?**
 
 Yes, it does. Just make sure you download the '.exe' file and setup the application.
 
-5. **What are this Notepad operating system requirements?**
+4. **What are this Notepad operating system requirements?**
 
 **For Windows operating systems:**
 * Minimum: Windows 7 SP1;
@@ -100,7 +109,7 @@ Yes, it does. Just make sure you download the '.exe' file and setup the applicat
 If your OS meets the requirements and Notepad DOT Qt doesn't work properly, make sure your 
 operating system is up to date.
 
-6. **Why Notepad DOT Qt doesn't officially support macOS?**
+5. **Why Notepad DOT Qt doesn't officially support macOS?**
 
 I don't have macOS computer, so I cannot test for bugs, how it works and etc. 
 Actually, Notepad DOT Qt *might* work on macOS, but you will have to compile and test application

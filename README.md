@@ -17,9 +17,7 @@
 
 ## Latest Information
 
-**Fifth beta build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
-
-A first release candidate update will be released this weekend or early next week. :)
+**First release candidate build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
 
 The stable release will be slightly delayed to ensure application stability.
 
@@ -62,9 +60,9 @@ As it is open-source, you can modify it and even make it better.
 
 3. Change to the directory containing the AppImage, e.g., using ``cd <my directory>``;
 
-4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-b5.AppImage``;
+4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-rc1.AppImage``;
 
-5. Run the AppImage: ``./Notepad_DOT_v1.0.0-b5.AppImage``.
+5. Run the AppImage: ``./Notepad_DOT_v1.0.0-rc1.AppImage``.
 
 ### Windows
 
@@ -117,8 +115,8 @@ yourself.
 
 ## Thanks to
 
-- [XeZrunner](https://github.com/XeZrunner/);
 - [zero9178](https://github.com/zero9178/);
+- [XeZrunner](https://github.com/XeZrunner/);
 - YouTube tutorials;
 - Forums support;
 - and most importantly.. YOU!

@@ -4,10 +4,14 @@
 
 int main(int argc, char *argv[])
 {
-    QApplication a(argc, argv);
-    a.setWindowIcon(QIcon(":/img/Notepad-DOT-icon.ico"));
+    QApplication app(argc, argv);
+
+    app.setOrganizationName("ncyxie");
+    app.setApplicationName("Notepad DOT Qt");
+    app.setApplicationVersion("1.0.0-rc1");
+    app.setWindowIcon(QIcon(":/img/Notepad-DOT-icon.ico"));
     MainWindow w;
     w.show();
 
-    return a.exec();
+    return app.exec();
 }

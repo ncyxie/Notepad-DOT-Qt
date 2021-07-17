@@ -150,7 +150,6 @@ void MainWindow::SaveSettings()
     setting.setValue("sfontdecoration", sfontdecoration);
     setting.setValue("statusbarbcolor", statusbarbcolor);
     setting.setValue("statusbarfcolor", statusbarfcolor);
-
     setting.endGroup();
 }
 
@@ -293,7 +292,6 @@ void MainWindow::LoadSettings()
     setting.endGroup();
 
     setting.beginGroup("StatusBar");
-
     bool statusbaron = setting.value("statusbar.on").toBool();
 
     if (statusbaron == true)

@@ -69,14 +69,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->addPermanentWidget(charCountLabel, 15);
     ui->statusbar->addPermanentWidget(linesCountLabel, 300);
 
+    LoadSettings();
+
     QStringList arguments = QCoreApplication::arguments();
         if(arguments.length() > 1)
         {
             outsideFileName = arguments[1];
             this->outsideNotepadOpen();
         }
-
-    LoadSettings();
 
     QColor textfcolor = ui->textEdit->textColor();
     textfontcolor = textfcolor.name();

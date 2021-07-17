@@ -24,7 +24,7 @@ The stable release will be slightly delayed to ensure application stability.
 ## Introduction
 
 **Notepad DOT Qt** is an open-source, cross-platform and highly customizable text editor.
-It has all basic notepad functions and more customization options. 
+It has all essential notepad functions with more handy stuff.
 It is suitable for daily driving, from newbies to advanced users.
 
 ## Download

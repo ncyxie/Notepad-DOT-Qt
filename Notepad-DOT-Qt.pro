@@ -32,3 +32,9 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     resource.qrc
+
+win32
+{
+    OTHER_FILES += Notepad-DOT-Qt.rc
+    RC_FILE = Notepad-DOT-Qt.rc
+}

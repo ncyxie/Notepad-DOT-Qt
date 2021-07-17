@@ -1092,6 +1092,9 @@ void MainWindow::on_action_Word_Wrap_triggered()
 
         ui->action_Horizontal->setEnabled(false);
         ui->action_Both->setEnabled(false);
+        on_action_Lines_Counter_Off_triggered();
+        ui->action_Lines_Counter_On->setDisabled(true);
+        ui->action_Lines_Counter_Off->setDisabled(true);
     }
     else
     {
@@ -1099,6 +1102,8 @@ void MainWindow::on_action_Word_Wrap_triggered()
         ui->textEdit->setLineWrapMode(QTextEdit::NoWrap);
         ui->action_Horizontal->setEnabled(true);
         ui->action_Both->setEnabled(true);
+        ui->action_Lines_Counter_On->setEnabled(true);
+        ui->action_Lines_Counter_Off->setEnabled(true);
     }
 }
 

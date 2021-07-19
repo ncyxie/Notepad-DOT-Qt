@@ -1,4 +1,4 @@
-*Last time information was updated: 17/07/2021*
+*Last time information was updated: 19/07/2021*
 
 # Notepad DOT Qt
 
@@ -17,7 +17,7 @@
 
 ## Latest Information
 
-**First release candidate build of Notepad DOT Qt is out now. [Download Notepad DOT Qt.](https://github.com/ncyxie/Notepad-DOT-Qt/releases/)**
+**First release candidate build of Notepad DOT Qt is out now.**
 
 The stable release will be slightly delayed to ensure application stability.
 

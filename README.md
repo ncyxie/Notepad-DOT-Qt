@@ -93,7 +93,7 @@ Yes, it does. Just make sure you download the '.exe' file and setup the applicat
 
 **For Windows operating systems:**
 * Minimum: Windows 7 SP1;
-* **Recommended: Windows 10 21H1;**
+* **Recommended: Windows 10 21H1 *(or Windows 11 Insider build);***
 
 * **Architecture: x86_64.**
 

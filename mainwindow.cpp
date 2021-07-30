@@ -62,13 +62,13 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_statusBar_Reset_to_default->setDisabled(true);
     ui->statusbar->hide();
 
-    wordCountLabel = new QLabel(this);
-    charCountLabel = new QLabel(this);
     linesCountLabel = new QLabel(this);
+    charCountLabel = new QLabel(this);
+    wordCountLabel = new QLabel(this);
 
-    ui->statusbar->addPermanentWidget(wordCountLabel, 1);
-    ui->statusbar->addPermanentWidget(charCountLabel, 15);
-    ui->statusbar->addPermanentWidget(linesCountLabel, 300);
+    ui->statusbar->addPermanentWidget(linesCountLabel);
+    ui->statusbar->addPermanentWidget(charCountLabel);
+    ui->statusbar->addPermanentWidget(wordCountLabel);
 
     LoadSettings();
 

@@ -331,7 +331,7 @@ void MainWindow::LoadSettings()
         on_action_Character_Counter_On_triggered();
     }
 
-    bool statusbarcharcounteroff = setting.value("statusbar.word.counter.off").toBool();
+    bool statusbarcharcounteroff = setting.value("statusbar.char.counter.off").toBool();
 
     if (statusbarcharcounteroff == true)
     {

@@ -81,15 +81,12 @@ You can report bugs in the [Issues](https://github.com/ncyxie/Notepad-DOT-Qt/iss
 
 For sure. This is why it is open-source. Do not hesitate, make it better. :)
 
-2. **Does this Notepad runs on Linux?**
+2. **Does this Notepad run on Windows and Linux?**
 
-Yes, it does. Just make sure you download the '.AppImage' file and allow it to execute.
+Yes, it does. If you are Windows user, make sure you download the '.exe' file and setup the application. 
+If you are Linux user, download the '.AppImage' file and allow it to execute.
 
-3. **Does this Notepad runs on Windows?**
-
-Yes, it does. Just make sure you download the '.exe' file and setup the application.
-
-4. **What are this Notepad operating system requirements?**
+3. **What are this Notepad operating system requirements?**
 
 **For Windows operating systems:**
 * Minimum: Windows 7 SP1;
@@ -98,13 +95,17 @@ Yes, it does. Just make sure you download the '.exe' file and setup the applicat
 * **Architecture: x86_64.**
 
 **For Linux operating systems:**
-* Minimum: Ubuntu 21.04 / Fedora 34 / Latest Arch Linux release;
-* **Recommended: Ubuntu 21.04 / Fedora 34 / Latest Arch Linux release;**
+* Minimum: Any Linux Distribution with glibc version 2.27 (e.g. Ubuntu 18.04 LTS);
+* **Recommended: Any Linux Distribution with glibc version 2.33 (e.g. Ubuntu 21.04);**
 
 * **Architecture: x86_64.**
 
 If your OS meets the requirements and Notepad DOT Qt doesn't work properly, make sure your 
 operating system is up to date.
+	
+4. **How to check my Linux distribution glibc version?**
+	
+It's very simple. Open up terminal and enter this command-line: ``ldd --version``.
 
 5. **Why Notepad DOT Qt doesn't officially support macOS?**
 

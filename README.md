@@ -69,7 +69,9 @@ It is suitable for daily driving, from newbies to advanced users.
 
 ## Screenshots
 
-*N/A*
+<p align="center">
+<img src="https://github.com/ncyxie/Notepad-DOT-Qt/blob/master/img/Screenshot-1.png" width="410" style="max-width:100%;">
+<img src="https://github.com/ncyxie/Notepad-DOT-Qt/blob/master/img/Screenshot-2.png" width="410" style="max-width:100%;">
 
 ## Bug reports
 

@@ -100,7 +100,7 @@ If you are Linux user, download the '.AppImage' file and allow it to execute.
 
 * **Architecture: x86_64.**
 
-If your OS meets the requirements and Notepad DOT Qt doesn't work properly, make sure your 
+If your OS meets the requirements *(or if doesn't)* and Notepad DOT Qt doesn't work properly, make sure your 
 operating system is up to date.
 	
 4. **How to check my Linux distribution glibc version?**

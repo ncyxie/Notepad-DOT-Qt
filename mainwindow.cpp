@@ -165,7 +165,14 @@ void MainWindow::LoadSettings()
 
     setting.beginGroup("Widget");
     QString widgetstylesheet = setting.value("widget.stylesheet").toString();
-    setStyleSheet(widgetstylesheet);
+    if (widgetstylesheet != "")
+    {
+        setStyleSheet(widgetstylesheet);
+    }
+    else
+    {
+        setStyleSheet("QStatusBar::item {border: None;}");
+    }
     widgetbcolor = setting.value("widgetbcolor").toString();
     setting.endGroup();
 
@@ -1026,7 +1033,7 @@ void MainWindow::on_action_widget_Appearance_triggered()
         {
             widgetbcolor = color.name();
 
-            setStyleSheet("background-color: " + color.name() + ";");
+            setStyleSheet("QStatusBar::item {border: None;} QWidget {background-color: " + color.name() + ";}");
         }
     }
     else
@@ -1037,7 +1044,7 @@ void MainWindow::on_action_widget_Appearance_triggered()
         {
             widgetbcolor = color.name();
 
-            setStyleSheet("background-color: " + color.name() + ";");
+            setStyleSheet("QStatusBar::item {border: None;} QWidget {background-color: " + color.name() + ";}");
         }
     }
 }
@@ -1045,7 +1052,7 @@ void MainWindow::on_action_widget_Appearance_triggered()
 void MainWindow::on_action_widget_Appearance_Reset_to_default_triggered()
 {
     widgetbcolor = "";
-    setStyleSheet("");
+    setStyleSheet("QStatusBar::item {border: None;}");
 }
 
 void MainWindow::on_action_menubar_Appearance_Reset_to_default_triggered()

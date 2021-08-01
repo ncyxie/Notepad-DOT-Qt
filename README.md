@@ -73,7 +73,7 @@ It is suitable for daily driving, from newbies to advanced users.
 
 ## Bug reports
 
-You can report bugs in the [Issues](https://github.com/ncyxie/Notepad-DOT-Qt/issues/) page on GitHub, or contact me using Discord or Telegram.
+You can report bugs in the [Issues](https://github.com/ncyxie/Notepad-DOT-Qt/issues/) page on GitHub, or contact me using [Telegram](https://t.me/ncyxie) or Discord (ncyxie#0290).
 
 ## FAQ
 

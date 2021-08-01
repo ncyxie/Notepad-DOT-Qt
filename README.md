@@ -6,26 +6,30 @@
 
 - [Latest Information](#latest-information)
 - [Introduction](#introduction)
+- [Screenshots](#screenshots)
 - [Download](#download)
 - [Installation guide](#installation-guide)
 	- [Linux](#linux-guide-source)
 	- [Windows](#windows)
-- [Screenshots](#screenshots)
 - [Bug reports](#bug-reports)
 - [FAQ](#faq)
 - [Thanks to](#thanks-to)
 
 ## Latest Information
 
-**First release candidate build of Notepad DOT Qt is out now.**
-
-The stable release will be slightly delayed to ensure application stability.
+**First stable build of Notepad DOT Qt is out now.**
 
 ## Introduction
 
 **Notepad DOT Qt** is an open-source, cross-platform and highly customizable text editor.
 It has all essential notepad functions with more handy stuff.
 It is suitable for daily driving, from newbies to advanced users.
+
+## Screenshots
+
+<p align="center">
+<img src="https://github.com/ncyxie/Notepad-DOT-Qt/blob/master/img/Screenshot-1.png" width="410" style="max-width:100%;">
+<img src="https://github.com/ncyxie/Notepad-DOT-Qt/blob/master/img/Screenshot-2.png" width="410" style="max-width:100%;">
 
 ## Download
 
@@ -66,12 +70,6 @@ It is suitable for daily driving, from newbies to advanced users.
 ### Windows
 
 [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file, open it up and follow further Notepad DOT Setup guide;
-
-## Screenshots
-
-<p align="center">
-<img src="https://github.com/ncyxie/Notepad-DOT-Qt/blob/master/img/Screenshot-1.png" width="410" style="max-width:100%;">
-<img src="https://github.com/ncyxie/Notepad-DOT-Qt/blob/master/img/Screenshot-2.png" width="410" style="max-width:100%;">
 
 ## Bug reports
 

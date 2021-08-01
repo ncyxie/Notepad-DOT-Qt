@@ -95,7 +95,7 @@ If you are Linux user, download the '.AppImage' file and allow it to execute.
 * **Architecture: x86_64.**
 
 **For Linux operating systems:**
-* Minimum: Any Linux Distribution with glibc version 2.27 (e.g. Ubuntu 18.04 LTS);
+* Minimum: Any Linux Distribution with glibc version 2.27 and higher (e.g. Ubuntu 18.04 LTS and higher);
 * **Recommended: Any Linux Distribution with glibc version 2.33 (e.g. Ubuntu 21.04);**
 
 * **Architecture: x86_64.**

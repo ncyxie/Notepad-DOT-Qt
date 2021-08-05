@@ -63,9 +63,9 @@ It is suitable for daily driving, from newbies to advanced users.
 
 3. Change to the directory containing the AppImage, e.g., using ``cd <my directory>``;
 
-4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.0-s1.AppImage``;
+4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.1-s1.AppImage``;
 
-5. Run the AppImage: ``./Notepad_DOT_v1.0.0-s1.AppImage``.
+5. Run the AppImage: ``./Notepad_DOT_v1.0.1-s1.AppImage``.
 
 ### Windows
 
@@ -88,7 +88,7 @@ If you are Linux user, download the '.AppImage' file and allow it to execute.
 
 3. **What are this Notepad operating system requirements?**
 
-**For Windows operating systems:**
+**For Windows operating system:**
 * Minimum: Windows 7 SP1;
 * **Recommended: Windows 10 21H1 *(or Windows 11 Insider build);***
 
@@ -103,11 +103,21 @@ If you are Linux user, download the '.AppImage' file and allow it to execute.
 If your OS meets the requirements *(or if doesn't)* and Notepad DOT Qt doesn't work properly, make sure your 
 operating system is up to date.
 	
-4. **How to check my Linux distribution glibc version?**
+4. **Where is Notepad DOT Qt config file/folder stored?**
+	
+**For Windows operating system:**
+	
+* Normally it is in registry, located in ``HKEY_CURRENT_USER\Software\ncyxie`` and config folder with config contents is called ``Notepad-DOT-Qt``.
+
+**For Linux operating systems:**
+
+* Normally it is located in ``~/.config/ncyxie`` and config file is called ``Notepad-DOT-Qt.conf``.
+	
+5. **How to check my Linux distribution glibc version?**
 	
 It's very simple. Open up terminal and enter this command-line: ``ldd --version``.
 
-5. **Why Notepad DOT Qt doesn't officially support macOS?**
+6. **Why Notepad DOT Qt doesn't officially support macOS?**
 
 I don't have macOS computer, so I cannot test for bugs, how it works and etc. 
 Actually, Notepad DOT Qt *might* work on macOS, but you will have to compile and test application

@@ -494,10 +494,65 @@ void MainWindow::outsideNotepadOpen()
 
 void MainWindow::on_action_New_triggered()
 {
-    currentFile.clear();
-    ui->textEdit->setText(QString());
-    this->setWindowTitle("Untitled - Notepad DOT Qt");
-    isFresh = true;
+    if (fileText != ui->textEdit->toPlainText())
+    {
+        if (isFresh == false)
+        {
+            QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Exit", "Do you want to save changes to " + currentFile + "?\n",
+                                                                    QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel,
+                                                                    QMessageBox::Cancel);
+
+            if (resBtn == QMessageBox::No) {
+                currentFile.clear();
+                ui->textEdit->setText(QString());
+                this->setWindowTitle("Untitled - Notepad DOT Qt");
+                isFresh = true;
+                fileText = ui->textEdit->toPlainText();
+            } else if (resBtn == QMessageBox::Cancel) {
+                return;
+            }
+            else if (resBtn == QMessageBox::Yes) {
+                on_action_Save_triggered();
+                currentFile.clear();
+                ui->textEdit->setText(QString());
+                this->setWindowTitle("Untitled - Notepad DOT Qt");
+                isFresh = true;
+                fileText = ui->textEdit->toPlainText();
+            }
+        }
+        else
+        {
+            QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Exit", "Do you want to save changes to Untitled?\n",
+                                                                    QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel,
+                                                                    QMessageBox::Cancel);
+
+            if (resBtn == QMessageBox::No) {
+                currentFile.clear();
+                ui->textEdit->setText(QString());
+                this->setWindowTitle("Untitled - Notepad DOT Qt");
+                isFresh = true;
+                fileText = ui->textEdit->toPlainText();
+            } else if (resBtn == QMessageBox::Cancel) {
+                return;
+            }
+            else if (resBtn == QMessageBox::Yes) {
+                on_action_Save_As_triggered();
+                currentFile.clear();
+                ui->textEdit->setText(QString());
+                this->setWindowTitle("Untitled - Notepad DOT Qt");
+                isFresh = true;
+                fileText = ui->textEdit->toPlainText();
+            }
+        }
+    }
+    else
+    {
+        currentFile.clear();
+        ui->textEdit->setText(QString());
+        this->setWindowTitle("Untitled - Notepad DOT Qt");
+        isFresh = true;
+        fileText = ui->textEdit->toPlainText();
+    }
 }
 
 void MainWindow::on_action_Open_triggered()

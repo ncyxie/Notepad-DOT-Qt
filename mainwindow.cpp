@@ -463,7 +463,8 @@ void MainWindow::outsideNotepadOpen()
     {
             QFile *file = new QFile;
             file->setFileName(outsideFileName);
-            currentFile = outsideFileName;
+            QFileInfo fileInfo(file->fileName());
+            currentFile = fileInfo.fileName();
 
             bool isOpen = file->open(QIODevice::ReadOnly);
             if(isOpen)
@@ -504,10 +505,11 @@ void MainWindow::on_action_Open_triggered()
     QTextCursor cursor = ui->textEdit->textCursor();
     QString fileName = QFileDialog::getOpenFileName(this, "Open the file");
     QFile file(fileName);
-    currentFile = fileName;
     if (!file.open(QIODevice::ReadOnly | QFile::Text)) {
         return;
     }
+    QFileInfo fileInfo(fileName);
+    currentFile = fileInfo.fileName();
     QTextStream in(&file);
     QString text = in.readAll();
     ui->textEdit->setText(text);
@@ -532,7 +534,9 @@ void MainWindow::on_action_Save_triggered()
             if (!file.open(QIODevice::WriteOnly | QFile::Text)) {
                 return;
             }
-            this->setWindowTitle(currentFile + " - Notepad DOT Qt");
+            QFileInfo fileInfo(fileName);
+            currentFile = fileInfo.fileName();
+            setWindowTitle(currentFile + " - Notepad DOT Qt");
             QTextStream out(&file);
             QString text = ui->textEdit->toPlainText();
             out << text;
@@ -545,11 +549,11 @@ void MainWindow::on_action_Save_As_triggered()
 {
     QString fileName = QFileDialog::getSaveFileName(this, "Save As");
         QFile file(fileName);
-
         if (!file.open(QFile::WriteOnly | QFile::Text)) {
             return;
         }
-        currentFile = fileName;
+        QFileInfo fileInfo(fileName);
+        currentFile = fileInfo.fileName();
         QTextStream out(&file);
         QString text = ui->textEdit->toPlainText();
         out << text;

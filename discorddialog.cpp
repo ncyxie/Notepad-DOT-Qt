@@ -8,6 +8,7 @@ discorddialog::discorddialog(QWidget *parent) :
     ui->setupUi(this);
     setWindowTitle("Discord support");
     setFixedSize(width(), height());
+    setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
 }
 
 discorddialog::~discorddialog()

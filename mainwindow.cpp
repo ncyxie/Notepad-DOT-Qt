@@ -214,7 +214,7 @@ void MainWindow::LoadSettings()
 
     QString texteditstylesheet = setting.value("textedit.stylesheet").toString();
     ui->textEdit->setStyleSheet(texteditstylesheet);
-    QString texteditfontcolor = setting.value("textedit.font.color").toString();
+    texteditfontcolor = setting.value("textedit.font.color").toString();
     ui->textEdit->setTextColor(texteditfontcolor);
 
     bool isframeboxchecked = setting.value("textedit.frame.shape.box").toBool();
@@ -482,6 +482,11 @@ void MainWindow::outsideNotepadOpen()
                 file->close();
                 isFresh = false;
                 fileText = ui->textEdit->toPlainText();
+                QTextCursor cursor = ui->textEdit->textCursor();
+
+                 ui->textEdit->selectAll();
+                 ui->textEdit->setTextColor(texteditfontcolor);
+                 ui->textEdit->setTextCursor(cursor);
             }
     }
 }

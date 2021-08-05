@@ -183,6 +183,7 @@ private:
     QString sfontweight;
     QString sfontstyle;
     QString sfontdecoration;
+    bool wordwrapchecked;
 
     AboutDialog *aboutdialog;
     discorddialog *ddialog;

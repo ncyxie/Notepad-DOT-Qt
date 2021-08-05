@@ -177,7 +177,7 @@ void MainWindow::LoadSettings()
     setting.endGroup();
 
     setting.beginGroup("TextEdit");
-    bool wordwrapchecked = setting.value("textedit.word.wrap").toBool();
+    wordwrapchecked = setting.value("textedit.word.wrap").toBool();
 
     if (wordwrapchecked == true)
     {
@@ -1103,6 +1103,7 @@ void MainWindow::on_action_Word_Wrap_triggered()
         on_action_Lines_Counter_Off_triggered();
         ui->action_Lines_Counter_On->setDisabled(true);
         ui->action_Lines_Counter_Off->setDisabled(true);
+        wordwrapchecked = true;
     }
     else
     {
@@ -1112,6 +1113,7 @@ void MainWindow::on_action_Word_Wrap_triggered()
         ui->action_Both->setEnabled(true);
         ui->action_Lines_Counter_On->setEnabled(true);
         ui->action_Lines_Counter_Off->setEnabled(true);
+        wordwrapchecked = false;
     }
 }
 
@@ -1207,19 +1209,38 @@ void MainWindow::on_action_No_Frame_triggered()
 
 void MainWindow::on_action_statusBar_On_triggered()
 {
-    ui->action_statusBar_On->setChecked(true);
-    ui->action_statusBar_Off->setChecked(false);
-    ui->action_Word_Counter_On->setEnabled(true);
-    ui->action_Word_Counter_Off->setEnabled(true);
-    ui->action_Character_Counter_On->setEnabled(true);
-    ui->action_Character_Counter_Off->setEnabled(true);
-    ui->action_Lines_Counter_On->setEnabled(true);
-    ui->action_Lines_Counter_Off->setEnabled(true);
-    ui->action_statusBar_Font->setEnabled(true);
-    ui->action_statusBar_Font_Color->setEnabled(true);
-    ui->action_statusBar_Appearance->setEnabled(true);
-    ui->action_statusBar_Reset_to_default->setEnabled(true);
-    ui->statusbar->show();
+    if (wordwrapchecked == false)
+    {
+        ui->action_statusBar_On->setChecked(true);
+        ui->action_statusBar_Off->setChecked(false);
+        ui->action_Word_Counter_On->setEnabled(true);
+        ui->action_Word_Counter_Off->setEnabled(true);
+        ui->action_Character_Counter_On->setEnabled(true);
+        ui->action_Character_Counter_Off->setEnabled(true);
+        ui->action_Lines_Counter_On->setEnabled(true);
+        ui->action_Lines_Counter_Off->setEnabled(true);
+        ui->action_statusBar_Font->setEnabled(true);
+        ui->action_statusBar_Font_Color->setEnabled(true);
+        ui->action_statusBar_Appearance->setEnabled(true);
+        ui->action_statusBar_Reset_to_default->setEnabled(true);
+        ui->statusbar->show();
+    }
+    else
+    {   ui->action_statusBar_On->setChecked(true);
+        ui->action_statusBar_Off->setChecked(false);
+        ui->action_Word_Counter_On->setEnabled(true);
+        ui->action_Word_Counter_Off->setEnabled(true);
+        ui->action_Character_Counter_On->setEnabled(true);
+        ui->action_Character_Counter_Off->setEnabled(true);
+        ui->action_statusBar_Font->setEnabled(true);
+        ui->action_statusBar_Font_Color->setEnabled(true);
+        ui->action_statusBar_Appearance->setEnabled(true);
+        ui->action_statusBar_Reset_to_default->setEnabled(true);
+        on_action_Lines_Counter_Off_triggered();
+        ui->action_Lines_Counter_On->setDisabled(true);
+        ui->action_Lines_Counter_Off->setDisabled(true);
+        ui->statusbar->show();
+    }
 }
 
 void MainWindow::on_action_statusBar_Off_triggered()

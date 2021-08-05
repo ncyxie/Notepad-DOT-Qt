@@ -107,11 +107,11 @@ operating system is up to date.
 	
 **For Windows operating system:**
 	
-* Normally it is in registry, located in ``HKEY_CURRENT_USER\Software\ncyxie`` and folder with config contents called ``Notepad-DOT-Qt``.
+* Normally it is in registry, located in ``HKEY_CURRENT_USER\Software\ncyxie`` and config folder with config contents is called ``Notepad-DOT-Qt``.
 
 **For Linux operating systems:**
 
-* Normally it is located in ``~/.config/ncyxie`` and file is called ``Notepad-DOT-Qt.conf``.
+* Normally it is located in ``~/.config/ncyxie`` and config file is called ``Notepad-DOT-Qt.conf``.
 	
 5. **How to check my Linux distribution glibc version?**
 	

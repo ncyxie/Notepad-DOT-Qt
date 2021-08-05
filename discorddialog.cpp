@@ -6,7 +6,7 @@ discorddialog::discorddialog(QWidget *parent) :
     ui(new Ui::discorddialog)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Discord support");
+    setWindowTitle("Discord support");
     setFixedSize(width(), height());
 }
 
@@ -17,5 +17,5 @@ discorddialog::~discorddialog()
 
 void discorddialog::on_closeButton_clicked()
 {
-    this->close();
+    close();
 }

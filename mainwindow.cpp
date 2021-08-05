@@ -21,7 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    this->setWindowTitle("Untitled - Notepad DOT Qt");
+    setWindowTitle("Untitled - Notepad DOT Qt");
     fileText = ui->textEdit->toPlainText();
     ui->action_Word_Wrap->setCheckable(true);
     ui->action_Vertical->setCheckable(true);
@@ -76,7 +76,7 @@ MainWindow::MainWindow(QWidget *parent)
         if(arguments.length() > 1)
         {
             outsideFileName = arguments[1];
-            this->outsideNotepadOpen();
+            outsideNotepadOpen();
         }
 
     QColor textfcolor = ui->textEdit->textColor();
@@ -375,11 +375,11 @@ void MainWindow::on_textEdit_textChanged()
     {
         if (isFresh == false)
         {
-            this->setWindowTitle("*" + currentFile + " - Notepad DOT Qt");
+            setWindowTitle("*" + currentFile + " - Notepad DOT Qt");
         }
         else
         {
-            this->setWindowTitle("*Untitled - Notepad DOT Qt");
+            setWindowTitle("*Untitled - Notepad DOT Qt");
         }
     }
     else
@@ -548,7 +548,7 @@ void MainWindow::on_action_Save_As_triggered()
         QTextStream out(&file);
         QString text = ui->textEdit->toPlainText();
         out << text;
-        this->setWindowTitle(currentFile + " - Notepad DOT Qt");
+        setWindowTitle(currentFile + " - Notepad DOT Qt");
         file.close();
         isFresh = false;
         fileText = ui->textEdit->toPlainText();

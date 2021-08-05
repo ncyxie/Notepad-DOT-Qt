@@ -103,7 +103,7 @@ If you are Linux user, download the '.AppImage' file and allow it to execute.
 If your OS meets the requirements *(or if doesn't)* and Notepad DOT Qt doesn't work properly, make sure your 
 operating system is up to date.
 	
-4. **Where is Notepad DOT Qt config file stored?**
+4. **Where is Notepad DOT Qt config file/folder stored?**
 	
 **For Windows operating system:**
 	

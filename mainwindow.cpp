@@ -840,6 +840,11 @@ void MainWindow::on_action_Search_with_Yahoo_triggered()
 void MainWindow::on_action_New_Window_triggered()
 {
     MainWindow *newWindow = new MainWindow();
+    newWindow->currentFile.clear();
+    newWindow->ui->textEdit->setText(QString());
+    newWindow->setWindowTitle("Untitled - Notepad DOT Qt");
+    newWindow->isFresh = true;
+    newWindow->fileText = ui->textEdit->toPlainText();
     newWindow->show();
 }
 

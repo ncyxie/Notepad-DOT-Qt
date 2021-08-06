@@ -483,11 +483,19 @@ void MainWindow::outsideNotepadOpen()
                 file->close();
                 isFresh = false;
                 fileText = ui->textEdit->toPlainText();
+
                 QTextCursor cursor = ui->textEdit->textCursor();
 
-                 ui->textEdit->selectAll();
-                 ui->textEdit->setTextColor(texteditfontcolor);
-                 ui->textEdit->setTextCursor(cursor);
+                if (ui->textEdit->toPlainText() != "")
+                {
+                    ui->textEdit->selectAll();
+                    ui->textEdit->setTextColor(texteditfontcolor);
+                    ui->textEdit->setTextCursor(cursor);
+                }
+                else
+                {
+                    ui->textEdit->setTextColor(texteditfontcolor);
+                }
             }
     }
 }
@@ -736,9 +744,8 @@ void MainWindow::on_action_Font_triggered()
 void MainWindow::on_action_Color_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
-    QString text = ui->textEdit->toPlainText();
 
-    if (text != "")
+    if (ui->textEdit->toPlainText() != "")
     {
         QColor color = QColorDialog::getColor(ui->textEdit->textColor());
         if (color.isValid())

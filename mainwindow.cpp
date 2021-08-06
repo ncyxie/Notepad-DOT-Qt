@@ -411,11 +411,10 @@ void MainWindow::on_textEdit_textChanged()
         linesCountLabel->setText(tr("Lines: ") + QString::number(ui->textEdit->document()->lineCount()) + flags);
     }
 
-    if (ui->textEdit->toPlainText() == "")
+    if (ui->textEdit->toPlainText().isEmpty())
     {
         ui->textEdit->setTextColor(textfontcolor);
     }
-
 }
 
 void MainWindow::closeEvent (QCloseEvent *event)
@@ -486,15 +485,15 @@ void MainWindow::outsideNotepadOpen()
 
                 QTextCursor cursor = ui->textEdit->textCursor();
 
-                if (ui->textEdit->toPlainText() != "")
+                if (ui->textEdit->toPlainText().isEmpty())
+                {
+                    ui->textEdit->setTextColor(texteditfontcolor);
+                }
+                else
                 {
                     ui->textEdit->selectAll();
                     ui->textEdit->setTextColor(texteditfontcolor);
                     ui->textEdit->setTextCursor(cursor);
-                }
-                else
-                {
-                    ui->textEdit->setTextColor(texteditfontcolor);
                 }
             }
     }
@@ -745,14 +744,12 @@ void MainWindow::on_action_Color_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
 
-    if (ui->textEdit->toPlainText() != "")
+    if (ui->textEdit->toPlainText().isEmpty())
     {
         QColor color = QColorDialog::getColor(ui->textEdit->textColor());
         if (color.isValid())
         {
-            ui->textEdit->selectAll();
             ui->textEdit->setTextColor(color);
-            ui->textEdit->setTextCursor(cursor);
         }
     }
     else
@@ -760,7 +757,9 @@ void MainWindow::on_action_Color_triggered()
         QColor color = QColorDialog::getColor(ui->textEdit->textColor());
         if (color.isValid())
         {
+            ui->textEdit->selectAll();
             ui->textEdit->setTextColor(color);
+            ui->textEdit->setTextCursor(cursor);
         }
     }
 

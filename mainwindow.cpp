@@ -413,7 +413,14 @@ void MainWindow::on_textEdit_textChanged()
 
     if (ui->textEdit->toPlainText().isEmpty())
     {
-        ui->textEdit->setTextColor(textfontcolor);
+        if (sessiontfontcolor == "")
+        {
+            ui->textEdit->setTextColor(textfontcolor);
+        }
+        else
+        {
+            ui->textEdit->setTextColor(sessiontfontcolor);
+        }
     }
 }
 
@@ -750,6 +757,7 @@ void MainWindow::on_action_Color_triggered()
         if (color.isValid())
         {
             ui->textEdit->setTextColor(color);
+            sessiontfontcolor = color.name();
         }
     }
     else
@@ -760,6 +768,7 @@ void MainWindow::on_action_Color_triggered()
             ui->textEdit->selectAll();
             ui->textEdit->setTextColor(color);
             ui->textEdit->setTextCursor(cursor);
+            sessiontfontcolor = color.name();
         }
     }
 

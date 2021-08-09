@@ -185,6 +185,7 @@ private:
     QString sfontdecoration;
     bool wordwrapchecked;
     QString texteditfontcolor;
+    QString sessiontfontcolor = "";
 
     AboutDialog *aboutdialog;
     discorddialog *ddialog;

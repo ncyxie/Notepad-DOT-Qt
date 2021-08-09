@@ -1,4 +1,4 @@
-*Last time information was updated: 06/08/2021*
+*Last time information was updated: 09/08/2021*
 
 # Notepad DOT Qt
 
@@ -63,9 +63,9 @@ It is suitable for daily driving, from newbies to advanced users.
 
 3. Change to the directory containing the AppImage, e.g., using ``cd <my directory>``;
 
-4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.1-s1.AppImage``;
+4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.1-s2.AppImage``;
 
-5. Run the AppImage: ``./Notepad_DOT_v1.0.1-s1.AppImage``.
+5. Run the AppImage: ``./Notepad_DOT_v1.0.1-s2.AppImage``.
 
 ### Windows
 

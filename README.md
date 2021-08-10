@@ -87,7 +87,7 @@ There are several ways to install the winget tool:
 
 **Installing Notepad DOT Qt via winget**
 	
-1. Open up **Command Prompt** or **Windows Powershell** (**Windows Terminal** is suitable as well);
+1. Open up **Command Prompt** or **Windows PowerShell** (**Windows Terminal** is suitable as well);
 	
 2. Enter this command: ``winget install ncyxie.Notepad-DOT-Qt`` and wait for the **winget** tool to finish up the setup process (the installation process is automatic);
 	

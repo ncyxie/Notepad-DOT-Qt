@@ -10,7 +10,11 @@
 - [Download](#download)
 - [Installation guide](#installation-guide)
 	- [Linux](#linux-guide-source)
+		- [Using the GUI](#using-the-gui)
+		- [Using the Terminal](#using-the-terminal)
 	- [Windows](#windows)
+		- [Using the Setup file](#using-the-setup-file)
+		- [Using the winget tool](#using-the-winget-tool-guide-source)
 - [Bug reports](#bug-reports)
 - [FAQ](#faq)
 - [Thanks to](#thanks-to)
@@ -69,7 +73,7 @@ It is suitable for daily driving, from newbies to advanced users.
 
 ### Windows
 
-#### Using the setup file
+#### Using the Setup file
 [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file, open it up and follow further Notepad DOT Setup guide;
 	
 #### Using the winget tool ([Guide source](https://docs.microsoft.com/en-us/windows/package-manager/winget))

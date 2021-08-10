@@ -74,7 +74,7 @@ It is suitable for daily driving, from newbies to advanced users.
 	
 #### Using the winget tool ([Guide source](https://docs.microsoft.com/en-us/windows/package-manager/winget))
 
-*Install winget*
+**Install winget**
 	
 *Note: The winget tool requires Windows 10, version 1809 (10.0.17763), or a later version of Windows 10.*
 	
@@ -85,7 +85,7 @@ There are several ways to install the winget tool:
 
 * Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases).
 
-*Installing Notepad DOT Qt*
+**Installing Notepad DOT Qt via winget**
 	
 1. Open up **Command Prompt** or **Windows Powershell** (**Windows Terminal** is suitable as well);
 	

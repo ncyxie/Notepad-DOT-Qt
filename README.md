@@ -21,7 +21,7 @@
 
 ## Latest Information
 
-**First stable build of Notepad DOT Qt is out now.**
+**Notepad DOT Qt is now available on winget. :)**
 
 ## Introduction
 

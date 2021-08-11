@@ -141,7 +141,7 @@ operating system is up to date.
 	
 5. **How to check my Linux distribution glibc version?**
 	
-It's very simple. Open up terminal and enter this command-line: ``ldd --version``.
+It's simple. Open up terminal and enter this command-line: ``ldd --version``.
 
 6. **Why Notepad DOT Qt doesn't officially support macOS?**
 

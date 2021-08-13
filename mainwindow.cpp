@@ -105,6 +105,9 @@ void MainWindow::SaveSettings()
     setting.beginGroup("Widget");
     setting.setValue("widget.stylesheet", styleSheet());
     setting.setValue("widgetbcolor", widgetbcolor);
+    setting.setValue("gui.style.fusion", ui->action_gui_style_Fusion->isChecked());
+    setting.setValue("gui.style.windows.old", ui->action_gui_style_Windows_old->isChecked());
+    setting.setValue("gui.style.windows.new", ui->action_gui_style_Windows_new->isChecked());
     setting.endGroup();
 
     setting.beginGroup("TextEdit");
@@ -179,6 +182,21 @@ void MainWindow::LoadSettings()
         setStyleSheet("QStatusBar::item {border: None;}");
     }
     widgetbcolor = setting.value("widgetbcolor").toString();
+    bool isfusionchecked = setting.value("gui.style.fusion").toBool();
+    if (isfusionchecked == true)
+    {
+        on_action_gui_style_Fusion_triggered();
+    }
+    bool iswindowsoldchecked = setting.value("gui.style.windows.old").toBool();
+    if (iswindowsoldchecked == true)
+    {
+        on_action_gui_style_Windows_old_triggered();
+    }
+    bool iswindowsnewchecked = setting.value("gui.style.windows.new").toBool();
+    if (iswindowsnewchecked == true)
+    {
+        on_action_gui_style_Windows_new_triggered();
+    }
     setting.endGroup();
 
     setting.beginGroup("TextEdit");

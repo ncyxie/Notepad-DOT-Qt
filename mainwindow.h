@@ -150,6 +150,8 @@ private slots:
 
     void on_action_gui_style_Windows_new_triggered();
 
+    void on_textEdit_selectionChanged();
+
 private:
     Ui::MainWindow *ui;
     QLabel *wordCountLabel;

@@ -24,6 +24,12 @@ MainWindow::MainWindow(QWidget *parent)
     QApplication::setStyle("fusion");
     setWindowTitle("Untitled - Notepad DOT Qt");
     fileText = ui->textEdit->toPlainText();
+
+    ui->action_Copy->setDisabled(true);
+    ui->action_Cut->setDisabled(true);
+    ui->action_Delete->setDisabled(true);
+    ui->action_Select_All->setDisabled(true);
+
     ui->action_Word_Wrap->setCheckable(true);
     ui->action_Vertical->setCheckable(true);
     ui->action_Horizontal->setCheckable(true);
@@ -394,6 +400,15 @@ void MainWindow::LoadSettings()
 
 void MainWindow::on_textEdit_textChanged()
 {
+    if (ui->textEdit->toPlainText() == "")
+    {
+        ui->action_Select_All->setDisabled(true);
+    }
+    else
+    {
+        ui->action_Select_All->setEnabled(true);
+    }
+
     if (fileText != ui->textEdit->toPlainText())
     {
         if (isFresh == false)
@@ -445,6 +460,23 @@ void MainWindow::on_textEdit_textChanged()
             ui->textEdit->setTextColor(sessiontfontcolor);
         }
     }
+}
+
+void MainWindow::on_textEdit_selectionChanged()
+{
+    QTextCursor cursor = ui->textEdit->textCursor();
+        if(cursor.hasSelection())
+        {
+            ui->action_Copy->setEnabled(true);
+            ui->action_Cut->setEnabled(true);
+            ui->action_Delete->setEnabled(true);
+        }
+        else
+        {
+            ui->action_Copy->setDisabled(true);
+            ui->action_Cut->setDisabled(true);
+            ui->action_Delete->setDisabled(true);
+        }
 }
 
 void MainWindow::closeEvent (QCloseEvent *event)
@@ -524,6 +556,15 @@ void MainWindow::outsideNotepadOpen()
                     ui->textEdit->selectAll();
                     ui->textEdit->setTextColor(texteditfontcolor);
                     ui->textEdit->setTextCursor(cursor);
+                }
+
+                if (ui->textEdit->toPlainText() != "")
+                {
+                    ui->action_Select_All->setEnabled(true);
+                }
+                else
+                {
+                    ui->action_Select_All->setDisabled(true);
                 }
             }
     }
@@ -610,6 +651,15 @@ void MainWindow::on_action_Open_triggered()
     file.close();
     isFresh = false;
     fileText = ui->textEdit->toPlainText();
+
+    if (ui->textEdit->toPlainText() != "")
+    {
+        ui->action_Select_All->setEnabled(true);
+    }
+    else
+    {
+        ui->action_Select_All->setDisabled(true);
+    }
 }
 
 void MainWindow::on_action_Save_triggered()
@@ -662,12 +712,20 @@ void MainWindow::on_action_Paste_triggered()
 
 void MainWindow::on_action_Copy_triggered()
 {
-    ui->textEdit->copy();
+    QTextCursor cursor = ui->textEdit->textCursor();
+        if(cursor.hasSelection())
+        {
+            ui->textEdit->copy();
+        }
 }
 
 void MainWindow::on_action_Cut_triggered()
 {
-    ui->textEdit->cut();
+    QTextCursor cursor = ui->textEdit->textCursor();
+        if(cursor.hasSelection())
+        {
+            ui->textEdit->cut();
+        }
 }
 
 void MainWindow::on_action_Undo_triggered()

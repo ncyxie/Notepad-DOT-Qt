@@ -705,6 +705,16 @@ void MainWindow::on_action_Save_As_triggered()
         fileText = ui->textEdit->toPlainText();
 }
 
+void MainWindow::on_action_Undo_triggered()
+{
+    ui->textEdit->undo();
+}
+
+void MainWindow::on_action_Redo_triggered()
+{
+    ui->textEdit->redo();
+}
+
 void MainWindow::on_action_Paste_triggered()
 {
     ui->textEdit->paste();
@@ -728,14 +738,12 @@ void MainWindow::on_action_Cut_triggered()
         }
 }
 
-void MainWindow::on_action_Undo_triggered()
+void MainWindow::on_action_Delete_triggered()
 {
-    ui->textEdit->undo();
-}
-
-void MainWindow::on_action_Redo_triggered()
-{
-    ui->textEdit->redo();
+    QTextCursor cursor = ui->textEdit->textCursor();
+        if(cursor.hasSelection()) {
+            cursor.deleteChar();
+        }
 }
 
 void MainWindow::on_action_About_triggered()
@@ -853,14 +861,6 @@ void MainWindow::on_action_Color_triggered()
         }
     }
 
-}
-
-void MainWindow::on_action_Delete_triggered()
-{
-    QTextCursor cursor = ui->textEdit->textCursor();
-        if(cursor.hasSelection()) {
-            cursor.deleteChar();
-        }
 }
 
 void MainWindow::on_action_Select_All_triggered()

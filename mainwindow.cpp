@@ -61,7 +61,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     #ifdef _WIN32
     ui->action_gui_style_Windows_new->setEnabled(true);
-    #elif linux
+    #else
     ui->action_gui_style_Windows_new->setDisabled(true);
     #endif
 

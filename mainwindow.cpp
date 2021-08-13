@@ -21,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QApplication::setStyle("fusion");
     setWindowTitle("Untitled - Notepad DOT Qt");
     fileText = ui->textEdit->toPlainText();
     ui->action_Word_Wrap->setCheckable(true);
@@ -47,6 +48,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_Lines_Counter_On->setCheckable(true);
     ui->action_Lines_Counter_Off->setCheckable(true);
     ui->action_Lines_Counter_Off->setChecked(true);
+    ui->action_gui_style_Fusion->setCheckable(true);
+    ui->action_gui_style_Windows_old->setCheckable(true);
+    ui->action_gui_style_Windows_new->setCheckable(true);
+    ui->action_gui_style_Fusion->setChecked(true);
 
     ui->action_statusBar_On->setChecked(false);
     ui->action_statusBar_Off->setChecked(true);
@@ -1584,4 +1589,28 @@ void MainWindow::on_action_statusBar_Reset_to_default_triggered()
     {
         ui->statusbar->setStyleSheet("font-family: " + sfontfamily + "; font-size: " + sfontsize + "pt" + "; font-weight: " + sfontweight + "; font-style: " + sfontstyle + "; text-decoration: " + sfontdecoration + ";");
     }
+}
+
+void MainWindow::on_action_gui_style_Fusion_triggered()
+{
+    ui->action_gui_style_Fusion->setChecked(true);
+    ui->action_gui_style_Windows_old->setChecked(false);
+    ui->action_gui_style_Windows_new->setChecked(false);
+    QApplication::setStyle("fusion");
+}
+
+void MainWindow::on_action_gui_style_Windows_old_triggered()
+{
+    ui->action_gui_style_Fusion->setChecked(false);
+    ui->action_gui_style_Windows_old->setChecked(true);
+    ui->action_gui_style_Windows_new->setChecked(false);
+    QApplication::setStyle("windows");
+}
+
+void MainWindow::on_action_gui_style_Windows_new_triggered()
+{
+    ui->action_gui_style_Fusion->setChecked(false);
+    ui->action_gui_style_Windows_old->setChecked(false);
+    ui->action_gui_style_Windows_new->setChecked(true);
+    QApplication::setStyle("windowsvista");
 }

@@ -144,6 +144,12 @@ private slots:
 
     void on_action_statusBar_Reset_to_default_triggered();
 
+    void on_action_gui_style_Fusion_triggered();
+
+    void on_action_gui_style_Windows_old_triggered();
+
+    void on_action_gui_style_Windows_new_triggered();
+
 private:
     Ui::MainWindow *ui;
     QLabel *wordCountLabel;

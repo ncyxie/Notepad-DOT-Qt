@@ -17,6 +17,11 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QTextEdit" name="textEdit">
+      <property name="font">
+       <font>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
       <property name="lineWrapMode">
        <enum>QTextEdit::NoWrap</enum>
       </property>
@@ -132,8 +137,18 @@
      <property name="title">
       <string>&amp;Widget</string>
      </property>
+     <widget class="QMenu" name="menuGUI_Style">
+      <property name="title">
+       <string>GUI Style</string>
+      </property>
+      <addaction name="action_gui_style_Fusion"/>
+      <addaction name="action_gui_style_Windows_old"/>
+      <addaction name="action_gui_style_Windows_new"/>
+     </widget>
      <addaction name="action_widget_Appearance"/>
      <addaction name="action_widget_Appearance_Reset_to_default"/>
+     <addaction name="separator"/>
+     <addaction name="menuGUI_Style"/>
     </widget>
     <widget class="QMenu" name="menu_Scroll_Bar">
      <property name="title">
@@ -565,6 +580,27 @@
   <action name="action_statusBar_Reset_to_default">
    <property name="text">
     <string>&amp;Reset to default</string>
+   </property>
+  </action>
+  <action name="action_gui_style_Fusion">
+   <property name="text">
+    <string>&amp;Fusion</string>
+   </property>
+  </action>
+  <action name="action_gui_style_Windows_old">
+   <property name="text">
+    <string>&amp;Windows (old)</string>
+   </property>
+   <property name="toolTip">
+    <string>Windows (old)</string>
+   </property>
+  </action>
+  <action name="action_gui_style_Windows_new">
+   <property name="text">
+    <string>&amp;Windows (new)</string>
+   </property>
+   <property name="toolTip">
+    <string>Windows (new)</string>
    </property>
   </action>
  </widget>

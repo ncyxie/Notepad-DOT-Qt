@@ -1,4 +1,4 @@
-*Last time information was updated: 09/08/2021*
+*Last time information was updated: 13/08/2021*
 
 # Notepad DOT Qt
 
@@ -10,14 +10,18 @@
 - [Download](#download)
 - [Installation guide](#installation-guide)
 	- [Linux](#linux-guide-source)
+		- [Using the GUI](#using-the-gui)
+		- [Using the Terminal](#using-the-terminal)
 	- [Windows](#windows)
+		- [Using the Setup file](#using-the-setup-file)
+		- [Using the winget tool](#using-the-winget-tool-guide-source)
 - [Bug reports](#bug-reports)
 - [FAQ](#faq)
 - [Thanks to](#thanks-to)
 
 ## Latest Information
 
-**First stable build of Notepad DOT Qt is out now.**
+**Notepad DOT Qt is now available on winget. :)**
 
 ## Introduction
 
@@ -41,7 +45,7 @@ It is suitable for daily driving, from newbies to advanced users.
 
 ### Linux ([Guide source](https://docs.appimage.org/introduction/quickstart.html))
 
-**Using the GUI**
+#### Using the GUI
 1. [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open your file manager and browse to the location of the Notepad DOT AppImage;
@@ -56,7 +60,7 @@ It is suitable for daily driving, from newbies to advanced users.
 
 7. Double-click on the Notepad DOT AppImage file to run.
 
-**Using the Terminal**
+#### Using the Terminal
 1. [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.AppImage' file;
 
 2. Open a terminal;
@@ -69,7 +73,29 @@ It is suitable for daily driving, from newbies to advanced users.
 
 ### Windows
 
+#### Using the Setup file
 [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file, open it up and follow further Notepad DOT Setup guide;
+	
+#### Using the winget tool ([Guide source](https://docs.microsoft.com/en-us/windows/package-manager/winget))
+
+**Install winget**
+	
+*Note: The winget tool requires Windows 10, version 1809 (10.0.17763), or a later version of Windows 10.*
+	
+There are several ways to install the winget tool:
+* The **winget** tool is included in the flight or preview version of [Windows App Installer](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab). You must install the preview version of **App Installer** to use **winget**. To gain early access, submit your request to the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram). Participating in the flight ring will guarantee you see the latest preview updates.
+
+* Participate in the [Windows Insider flight ring](https://insider.windows.com).
+
+* Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases).
+
+**Installing Notepad DOT Qt via winget**
+	
+1. Open up **Command Prompt** or **Windows PowerShell** (**Windows Terminal** is suitable as well);
+	
+2. Enter this command: ``winget install ncyxie.Notepad-DOT-Qt`` and wait for the **winget** tool to finish up the setup process (the installation process is automatic);
+	
+3. That's it. Open up Notepad DOT Qt and enjoy. :P
 
 ## Bug reports
 
@@ -115,7 +141,7 @@ operating system is up to date.
 	
 5. **How to check my Linux distribution glibc version?**
 	
-It's very simple. Open up terminal and enter this command-line: ``ldd --version``.
+It's simple. Open up terminal and enter this command-line: ``ldd --version``.
 
 6. **Why Notepad DOT Qt doesn't officially support macOS?**
 

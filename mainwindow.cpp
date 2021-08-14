@@ -25,12 +25,16 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Untitled - Notepad DOT Qt");
     fileText = ui->textEdit->toPlainText();
 
+    ui->action_Redo->setDisabled(true);
+    ui->action_Undo->setDisabled(true);
     ui->action_Copy->setDisabled(true);
     ui->action_Cut->setDisabled(true);
     ui->action_Delete->setDisabled(true);
     ui->action_Select_All->setDisabled(true);
-    ui->action_Redo->setDisabled(true);
-    ui->action_Undo->setDisabled(true);
+    ui->action_Search_with_Google->setDisabled(true);
+    ui->action_Search_with_Bing->setDisabled(true);
+    ui->action_Search_with_DuckDuckGo->setDisabled(true);
+    ui->action_Search_with_Yahoo->setDisabled(true);
 
     ui->action_Word_Wrap->setCheckable(true);
     ui->action_Vertical->setCheckable(true);
@@ -478,12 +482,20 @@ void MainWindow::on_textEdit_selectionChanged()
             ui->action_Copy->setEnabled(true);
             ui->action_Cut->setEnabled(true);
             ui->action_Delete->setEnabled(true);
+            ui->action_Search_with_Google->setEnabled(true);
+            ui->action_Search_with_Bing->setEnabled(true);
+            ui->action_Search_with_DuckDuckGo->setEnabled(true);
+            ui->action_Search_with_Yahoo->setEnabled(true);
         }
         else
         {
             ui->action_Copy->setDisabled(true);
             ui->action_Cut->setDisabled(true);
             ui->action_Delete->setDisabled(true);
+            ui->action_Search_with_Google->setDisabled(true);
+            ui->action_Search_with_Bing->setDisabled(true);
+            ui->action_Search_with_DuckDuckGo->setDisabled(true);
+            ui->action_Search_with_Yahoo->setDisabled(true);
         }
 }
 

@@ -141,13 +141,12 @@ operating system is up to date.
 	
 5. **How to check my Linux distribution glibc version?**
 	
-It's simple. Open up terminal and enter this command-line: ``ldd --version``.
+It's simple. Open up terminal and enter this line: ``ldd --version``.
 
 6. **Why Notepad DOT Qt doesn't officially support macOS?**
 
 I don't have macOS computer, so I cannot test for bugs, how it works and etc. 
-Actually, Notepad DOT Qt *might* work on macOS, but you will have to compile and test application
-yourself.
+Actually, Notepad DOT Qt *might* work on macOS, but you will have to compile, test and fix application bugs by yourself.
 
 ## Thanks to
 

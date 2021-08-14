@@ -35,6 +35,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_Search_with_Bing->setDisabled(true);
     ui->action_Search_with_DuckDuckGo->setDisabled(true);
     ui->action_Search_with_Yahoo->setDisabled(true);
+    ui->action_Uppercase->setDisabled(true);
+    ui->action_Lowercase->setDisabled(true);
 
     ui->action_Word_Wrap->setCheckable(true);
     ui->action_Vertical->setCheckable(true);
@@ -486,6 +488,8 @@ void MainWindow::on_textEdit_selectionChanged()
             ui->action_Search_with_Bing->setEnabled(true);
             ui->action_Search_with_DuckDuckGo->setEnabled(true);
             ui->action_Search_with_Yahoo->setEnabled(true);
+            ui->action_Uppercase->setEnabled(true);
+            ui->action_Lowercase->setEnabled(true);
         }
         else
         {
@@ -496,6 +500,8 @@ void MainWindow::on_textEdit_selectionChanged()
             ui->action_Search_with_Bing->setDisabled(true);
             ui->action_Search_with_DuckDuckGo->setDisabled(true);
             ui->action_Search_with_Yahoo->setDisabled(true);
+            ui->action_Uppercase->setDisabled(true);
+            ui->action_Lowercase->setDisabled(true);
         }
 }
 

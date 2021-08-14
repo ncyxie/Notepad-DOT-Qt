@@ -946,7 +946,7 @@ void MainWindow::on_action_New_Window_triggered()
     newWindow->ui->textEdit->setText(QString());
     newWindow->setWindowTitle("Untitled - Notepad DOT Qt");
     newWindow->isFresh = true;
-    newWindow->fileText = ui->textEdit->toPlainText();
+    newWindow->fileText = "";
     newWindow->show();
 }
 

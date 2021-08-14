@@ -29,6 +29,8 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_Cut->setDisabled(true);
     ui->action_Delete->setDisabled(true);
     ui->action_Select_All->setDisabled(true);
+    ui->action_Redo->setDisabled(true);
+    ui->action_Undo->setDisabled(true);
 
     ui->action_Word_Wrap->setCheckable(true);
     ui->action_Vertical->setCheckable(true);
@@ -719,6 +721,30 @@ void MainWindow::on_action_Undo_triggered()
 void MainWindow::on_action_Redo_triggered()
 {
     ui->textEdit->redo();
+}
+
+void MainWindow::on_textEdit_undoAvailable(bool b)
+{
+    if (b == true)
+    {
+        ui->action_Undo->setEnabled(true);
+    }
+    else
+    {
+        ui->action_Undo->setDisabled(true);
+    }
+}
+
+void MainWindow::on_textEdit_redoAvailable(bool b)
+{
+    if (b == true)
+    {
+        ui->action_Redo->setEnabled(true);
+    }
+    else
+    {
+        ui->action_Redo->setDisabled(true);
+    }
 }
 
 void MainWindow::on_action_Paste_triggered()

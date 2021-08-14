@@ -152,6 +152,10 @@ private slots:
 
     void on_textEdit_selectionChanged();
 
+    void on_textEdit_undoAvailable(bool b);
+
+    void on_textEdit_redoAvailable(bool b);
+
 private:
     Ui::MainWindow *ui;
     QLabel *wordCountLabel;

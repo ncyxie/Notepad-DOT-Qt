@@ -25,8 +25,8 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Untitled - Notepad DOT Qt");
     fileText = ui->textEdit->toPlainText();
 
-    ui->action_Redo->setDisabled(true);
     ui->action_Undo->setDisabled(true);
+    ui->action_Redo->setDisabled(true);
     ui->action_Copy->setDisabled(true);
     ui->action_Cut->setDisabled(true);
     ui->action_Delete->setDisabled(true);

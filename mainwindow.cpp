@@ -558,6 +558,7 @@ void MainWindow::outsideNotepadOpen()
             {
                 ui->textEdit->clear();
                 QTextStream in(file);
+                in.setCodec("UTF-8");
 
                 while (!in.atEnd())
                 {
@@ -670,6 +671,7 @@ void MainWindow::on_action_Open_triggered()
     QFileInfo fileInfo(fileName);
     currentFile = fileInfo.fileName();
     QTextStream in(&file);
+    in.setCodec("UTF-8");
     QString text = in.readAll();
     ui->textEdit->setText(text);
     ui->textEdit->setTextCursor(cursor);
@@ -706,6 +708,7 @@ void MainWindow::on_action_Save_triggered()
             currentFile = fileInfo.fileName();
             setWindowTitle(currentFile + " - Notepad DOT Qt");
             QTextStream out(&file);
+            out.setCodec("UTF-8");
             QString text = ui->textEdit->toPlainText();
             out << text;
             file.close();
@@ -723,6 +726,7 @@ void MainWindow::on_action_Save_As_triggered()
         QFileInfo fileInfo(fileName);
         currentFile = fileInfo.fileName();
         QTextStream out(&file);
+        out.setCodec("UTF-8");
         QString text = ui->textEdit->toPlainText();
         out << text;
         setWindowTitle(currentFile + " - Notepad DOT Qt");

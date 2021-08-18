@@ -21,7 +21,7 @@
 
 ## Latest Information
 
-**Notepad DOT Qt is now available on winget. :)**
+**Notepad DOT Qt v1.1.0-s1 is now available to download.**
 
 ## Introduction
 
@@ -67,9 +67,9 @@ It is suitable for daily driving, from newbies to advanced users.
 
 3. Change to the directory containing the AppImage, e.g., using ``cd <my directory>``;
 
-4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.0.1-s2.AppImage``;
+4. Make the AppImage executable: ``chmod +x Notepad_DOT_v1.1.0-s2.AppImage``;
 
-5. Run the AppImage: ``./Notepad_DOT_v1.0.1-s2.AppImage``.
+5. Run the AppImage: ``./Notepad_DOT_v1.1.0-s2.AppImage``.
 
 ### Windows
 

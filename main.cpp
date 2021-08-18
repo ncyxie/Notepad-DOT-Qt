@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 
     app.setOrganizationName("ncyxie");
     app.setApplicationName("Notepad DOT Qt");
-    app.setApplicationVersion("1.0.1-s2");
+    app.setApplicationVersion("1.1.0-s1");
     MainWindow w;
     w.show();
 

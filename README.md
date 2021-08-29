@@ -150,8 +150,9 @@ Actually, Notepad DOT Qt *might* work on macOS, but you will have to compile, te
 
 ## Thanks to
 
-- [zero9178](https://github.com/zero9178/);
-- [XeZrunner](https://github.com/XeZrunner/);
+- [zero9178](https://github.com/zero9178);
+- [amirmohsen1384](https://github.com/amirmohsen1384);
+- [XeZrunner](https://github.com/XeZrunner);
 - YouTube tutorials;
 - Forums support;
 - and most importantly.. YOU!

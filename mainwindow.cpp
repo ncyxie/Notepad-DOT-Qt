@@ -684,7 +684,7 @@ void MainWindow::on_action_Open_triggered()
         QMessageBox errorMessage;
         errorMessage.setWindowTitle("Error");
         errorMessage.setIcon(QMessageBox::Warning);
-        errorMessage.setText("Notepad DOT was unable to open this file.");
+        errorMessage.setText("Notepad DOT Qt was unable to open this file.");
         errorMessage.setInformativeText("Make sure this file exists and has permission to read.");
         errorMessage.exec();
         return;
@@ -754,7 +754,7 @@ void MainWindow::on_action_Save_triggered()
         QMessageBox errorMessage;
         errorMessage.setWindowTitle("Error");
         errorMessage.setIcon(QMessageBox::Warning);
-        errorMessage.setText("Notepad DOT was unable to save changes.");
+        errorMessage.setText("Notepad DOT Qt was unable to save changes.");
         errorMessage.setInformativeText("Make sure this file exists and has permission to write.");
         errorMessage.exec();
         return;
@@ -807,7 +807,7 @@ void MainWindow::on_action_Save_As_triggered()
         QMessageBox errorMessage;
         errorMessage.setWindowTitle("Error");
         errorMessage.setIcon(QMessageBox::Warning);
-        errorMessage.setText("Notepad DOT was unable to save changes.");
+        errorMessage.setText("Notepad DOT Qt was unable to save changes.");
         errorMessage.setInformativeText("Make sure this file exists and has permission to write.");
         errorMessage.exec();
         return;

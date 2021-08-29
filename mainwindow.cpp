@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include <QSettings>
 #include <QFile>
+#include <QSaveFile>
 #include <QLabel>
 #include <QFileDialog>
 #include <QTextStream>
@@ -663,24 +664,60 @@ void MainWindow::on_action_New_triggered()
 void MainWindow::on_action_Open_triggered()
 {
     QTextCursor cursor = ui->textEdit->textCursor();
-    QString fileName = QFileDialog::getOpenFileName(this, "Open the file");
-    QFile file(fileName);
-    if (!file.open(QIODevice::ReadOnly | QFile::Text)) {
+    QFile file;
+    {
+        QFileDialog fileDialog;
+        fileDialog.setAcceptMode(QFileDialog::AcceptOpen);
+        fileDialog.setFileMode(QFileDialog::ExistingFile);
+        fileDialog.setViewMode(QFileDialog::Detail);
+        if(fileDialog.exec() != QFileDialog::Rejected)
+        {
+            file.setFileName(fileDialog.selectedFiles().at(0));
+        }
+        else
+        {
+            return;
+        }
+    }
+    if (!file.open(QIODevice::ReadOnly | QFile::Text))
+    {
+        QMessageBox errorMessage;
+        errorMessage.setWindowTitle("Error");
+        errorMessage.setIcon(QMessageBox::Warning);
+        errorMessage.setText("Notepad DOT was unable to open this file.");
+        errorMessage.setInformativeText("Make sure this file exists and has permission to read.");
+        errorMessage.exec();
         return;
     }
-    QFileInfo fileInfo(fileName);
-    currentFile = fileInfo.fileName();
     QTextStream in(&file);
     in.setCodec("UTF-8");
-    QString text = in.readAll();
+
+    QString text;
+    while(!in.atEnd())
+    {
+        text.append(in.readLine() + '\n');
+        if(in.status() != QTextStream::Ok)
+        {
+            QMessageBox errorMessage;
+            errorMessage.setWindowTitle("Error");
+            errorMessage.setIcon(QMessageBox::Critical);
+            errorMessage.setText("An unexpected error has happened while opening this file.");
+            errorMessage.setInformativeText("Please reopen this file or choose another one.");
+            errorMessage.exec();
+            file.close();
+            return;
+        }
+    }
+    file.close();
+
     ui->textEdit->setText(text);
     ui->textEdit->setTextCursor(cursor);
-    this->setWindowTitle(currentFile + " - Notepad DOT Qt");
-    file.close();
+    currentFile = file.fileName();
+    setWindowTitle(QFileInfo(currentFile).fileName() + " - Notepad DOT Qt");
     isFresh = false;
-    fileText = ui->textEdit->toPlainText();
+    fileText = text;
 
-    if (ui->textEdit->toPlainText() != "")
+    if (ui->textEdit->toPlainText().isEmpty())
     {
         ui->action_Select_All->setEnabled(true);
     }
@@ -692,47 +729,113 @@ void MainWindow::on_action_Open_triggered()
 
 void MainWindow::on_action_Save_triggered()
 {
-    QString fileName;
+    QSaveFile file;
+    if (currentFile.isEmpty())
+    {
+        QFileDialog fileDialog;
+        fileDialog.setAcceptMode(QFileDialog::AcceptSave);
+        fileDialog.setFileMode(QFileDialog::AnyFile);
+        fileDialog.setViewMode(QFileDialog::Detail);
+        if(fileDialog.exec() != QFileDialog::Rejected)
+        {
+            file.setFileName(fileDialog.selectedFiles().at(0));
+        }
+        else
+        {
+            return;
+        }
+    }
+    else
+    {
+        file.setFileName(currentFile);
+    }
+    if (!file.open(QIODevice::WriteOnly | QFile::Text))
+    {
+        QMessageBox errorMessage;
+        errorMessage.setWindowTitle("Error");
+        errorMessage.setIcon(QMessageBox::Warning);
+        errorMessage.setText("Notepad DOT was unable to save changes.");
+        errorMessage.setInformativeText("Make sure this file exists and has permission to write.");
+        errorMessage.exec();
+        return;
+    }
+    QTextStream out(&file);
+    out.setCodec("UTF-8");
 
-            if (currentFile.isEmpty()) {
-                fileName = QFileDialog::getSaveFileName(this, "Save");
-                currentFile = fileName;
-            } else {
-                fileName = currentFile;
-            }
-            QFile file(fileName);
-            if (!file.open(QIODevice::WriteOnly | QFile::Text)) {
-                return;
-            }
-            QFileInfo fileInfo(fileName);
-            currentFile = fileInfo.fileName();
-            setWindowTitle(currentFile + " - Notepad DOT Qt");
-            QTextStream out(&file);
-            out.setCodec("UTF-8");
-            QString text = ui->textEdit->toPlainText();
-            out << text;
-            file.close();
-            isFresh = false;
-            fileText = ui->textEdit->toPlainText();
+    out << ui->textEdit->toPlainText();
+    if(out.status() != QTextStream::Ok)
+    {
+        {
+            QMessageBox errorMessage;
+            errorMessage.setWindowTitle("Error");
+            errorMessage.setIcon(QMessageBox::Critical);
+            errorMessage.setText("An unexpected error has happened while saving changes.");
+            errorMessage.setInformativeText("Please reopen this file or choose another one.");
+            errorMessage.exec();
+        }
+        file.cancelWriting();
+        file.commit();
+        return;
+    }
+    file.commit();
+
+    currentFile = file.fileName();
+    setWindowTitle(QFileInfo(currentFile).fileName() + " - Notepad DOT Qt");
+    fileText = ui->textEdit->toPlainText();
+    isFresh = false;
 }
 
 void MainWindow::on_action_Save_As_triggered()
 {
-    QString fileName = QFileDialog::getSaveFileName(this, "Save As");
-        QFile file(fileName);
-        if (!file.open(QFile::WriteOnly | QFile::Text)) {
+    QSaveFile file;
+    {
+        QFileDialog fileDialog;
+        fileDialog.setAcceptMode(QFileDialog::AcceptSave);
+        fileDialog.setFileMode(QFileDialog::AnyFile);
+        fileDialog.setViewMode(QFileDialog::Detail);
+        if(fileDialog.exec() != QFileDialog::Rejected)
+        {
+            file.setFileName(fileDialog.selectedFiles().at(0));
+        }
+        else
+        {
             return;
         }
-        QFileInfo fileInfo(fileName);
-        currentFile = fileInfo.fileName();
-        QTextStream out(&file);
-        out.setCodec("UTF-8");
-        QString text = ui->textEdit->toPlainText();
-        out << text;
-        setWindowTitle(currentFile + " - Notepad DOT Qt");
-        file.close();
-        isFresh = false;
-        fileText = ui->textEdit->toPlainText();
+    }
+    if (!file.open(QFile::WriteOnly | QFile::Text))
+    {
+        QMessageBox errorMessage;
+        errorMessage.setWindowTitle("Error");
+        errorMessage.setIcon(QMessageBox::Warning);
+        errorMessage.setText("Notepad DOT was unable to save changes.");
+        errorMessage.setInformativeText("Make sure this file exists and has permission to write.");
+        errorMessage.exec();
+        return;
+    }
+    QTextStream out(&file);
+    out.setCodec("UTF-8");
+
+    out << ui->textEdit->toPlainText();
+    if(out.status() != QTextStream::Ok)
+    {
+        {
+            QMessageBox errorMessage;
+            errorMessage.setWindowTitle("Error");
+            errorMessage.setIcon(QMessageBox::Critical);
+            errorMessage.setText("An unexpected error has happened while saving changes.");
+            errorMessage.setInformativeText("Please reopen this file or choose another one.");
+            errorMessage.exec();
+        }
+        file.cancelWriting();
+        file.commit();
+        return;
+    }
+    file.commit();
+
+    currentFile = file.fileName();
+    setWindowTitle(QFileInfo(currentFile).fileName() + " - Notepad DOT Qt");
+    fileText = ui->textEdit->toPlainText();
+    isFresh = false;
 }
 
 void MainWindow::on_action_Undo_triggered()

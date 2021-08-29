@@ -712,8 +712,8 @@ void MainWindow::on_action_Open_triggered()
 
     ui->textEdit->setText(text);
     ui->textEdit->setTextCursor(cursor);
-    currentFile = file.fileName();
-    setWindowTitle(QFileInfo(currentFile).fileName() + " - Notepad DOT Qt");
+    setWindowTitle(QFileInfo(file.fileName()).fileName() + " - Notepad DOT Qt");
+    currentFile = QFileInfo(file.fileName()).fileName();
     isFresh = false;
     fileText = text;
 
@@ -779,8 +779,8 @@ void MainWindow::on_action_Save_triggered()
     }
     file.commit();
 
-    currentFile = file.fileName();
-    setWindowTitle(QFileInfo(currentFile).fileName() + " - Notepad DOT Qt");
+    setWindowTitle(QFileInfo(file.fileName()).fileName() + " - Notepad DOT Qt");
+    currentFile = QFileInfo(file.fileName()).fileName();
     fileText = ui->textEdit->toPlainText();
     isFresh = false;
 }
@@ -832,8 +832,8 @@ void MainWindow::on_action_Save_As_triggered()
     }
     file.commit();
 
-    currentFile = file.fileName();
-    setWindowTitle(QFileInfo(currentFile).fileName() + " - Notepad DOT Qt");
+    setWindowTitle(QFileInfo(file.fileName()).fileName() + " - Notepad DOT Qt");
+    currentFile = QFileInfo(file.fileName()).fileName();
     fileText = ui->textEdit->toPlainText();
     isFresh = false;
 }

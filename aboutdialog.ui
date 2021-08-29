@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>429</width>
-    <height>350</height>
+    <height>360</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@
      <x>20</x>
      <y>60</y>
      <width>241</width>
-     <height>221</height>
+     <height>231</height>
     </rect>
    </property>
    <property name="font">
@@ -67,6 +67,7 @@ Version: 1.1.0-s1
 Build date: 18/08/2021
 Made by ncyxie
 Thanks to zero9178
+Thanks to amirmohsen1384
 Thanks to XeZrunner
 </string>
    </property>
@@ -88,7 +89,7 @@ Thanks to XeZrunner
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>290</y>
+     <y>300</y>
      <width>101</width>
      <height>31</height>
     </rect>

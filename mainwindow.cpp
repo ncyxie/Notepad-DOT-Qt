@@ -449,7 +449,7 @@ void MainWindow::on_textEdit_textChanged()
 
     if (wordsOn == true)
     {
-        wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), QString::SkipEmptyParts).count()));
+        wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), Qt::SkipEmptyParts).count()));
     }
 
     if (charOn == true)
@@ -691,31 +691,33 @@ void MainWindow::on_action_Open_triggered()
     }
     QTextStream in(&file);
     in.setCodec("UTF-8");
+
+    QString text;
     while(!in.atEnd())
     {
-        ui->textEdit->append(in.readLine());
+        text.append(in.readLine() + '\n');
         if(in.status() != QTextStream::Ok)
         {
-            ui->textEdit->clear();
-            {
-                QMessageBox errorMessage;
-                errorMessage.setWindowTitle("Error");
-                errorMessage.setIcon(QMessageBox::Critical);
-                errorMessage.setText("An unexpected error has happened while opening this file.");
-                errorMessage.setInformativeText("Please reopen this file or choose another one.");
-                errorMessage.exec();
-            }
+            QMessageBox errorMessage;
+            errorMessage.setWindowTitle("Error");
+            errorMessage.setIcon(QMessageBox::Critical);
+            errorMessage.setText("An unexpected error has happened while opening this file.");
+            errorMessage.setInformativeText("Please reopen this file or choose another one.");
+            errorMessage.exec();
             file.close();
             return;
         }
     }
     file.close();
-    currentFile = file.fileName();
-    setWindowTitle(currentFile + " - Notepad DOT Qt");
+
+    ui->textEdit->setText(text);
     ui->textEdit->setTextCursor(cursor);
+    currentFile = file.fileName();
+    setWindowTitle(QFileInfo(currentFile).fileName() + " - Notepad DOT Qt");
     isFresh = false;
-    fileText = ui->textEdit->toPlainText();
-    if (ui->textEdit->toPlainText() != "")
+    fileText = text;
+
+    if (ui->textEdit->toPlainText().isEmpty())
     {
         ui->action_Select_All->setEnabled(true);
     }
@@ -759,6 +761,7 @@ void MainWindow::on_action_Save_triggered()
     }
     QTextStream out(&file);
     out.setCodec("UTF-8");
+
     out << ui->textEdit->toPlainText();
     if(out.status() != QTextStream::Ok)
     {
@@ -775,10 +778,11 @@ void MainWindow::on_action_Save_triggered()
         return;
     }
     file.commit();
+
     currentFile = file.fileName();
-    setWindowTitle(currentFile + " - Notepad DOT Qt");
-    isFresh = false;
+    setWindowTitle(QFileInfo(currentFile).fileName() + " - Notepad DOT Qt");
     fileText = ui->textEdit->toPlainText();
+    isFresh = false;
 }
 
 void MainWindow::on_action_Save_As_triggered()
@@ -810,6 +814,7 @@ void MainWindow::on_action_Save_As_triggered()
     }
     QTextStream out(&file);
     out.setCodec("UTF-8");
+
     out << ui->textEdit->toPlainText();
     if(out.status() != QTextStream::Ok)
     {
@@ -826,10 +831,11 @@ void MainWindow::on_action_Save_As_triggered()
         return;
     }
     file.commit();
+
     currentFile = file.fileName();
-    setWindowTitle(currentFile + " - Notepad DOT Qt");
-    isFresh = false;
+    setWindowTitle(QFileInfo(currentFile).fileName() + " - Notepad DOT Qt");
     fileText = ui->textEdit->toPlainText();
+    isFresh = false;
 }
 
 void MainWindow::on_action_Undo_triggered()
@@ -1581,7 +1587,7 @@ void MainWindow::on_action_Word_Counter_On_triggered()
     ui->action_Word_Counter_On->setChecked(true);
     ui->action_Word_Counter_Off->setChecked(false);
     wordsOn = true;
-    wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), QString::SkipEmptyParts).count()));
+    wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), Qt::SkipEmptyParts).count()));
 }
 
 void MainWindow::on_action_Word_Counter_Off_triggered()

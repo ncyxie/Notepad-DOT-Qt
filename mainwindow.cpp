@@ -449,7 +449,7 @@ void MainWindow::on_textEdit_textChanged()
 
     if (wordsOn == true)
     {
-        wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), Qt::SkipEmptyParts).count()));
+        wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), QString::SkipEmptyParts).count()));
     }
 
     if (charOn == true)
@@ -1587,7 +1587,7 @@ void MainWindow::on_action_Word_Counter_On_triggered()
     ui->action_Word_Counter_On->setChecked(true);
     ui->action_Word_Counter_Off->setChecked(false);
     wordsOn = true;
-    wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), Qt::SkipEmptyParts).count()));
+    wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), QString::SkipEmptyParts).count()));
 }
 
 void MainWindow::on_action_Word_Counter_Off_triggered()

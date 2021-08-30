@@ -559,7 +559,7 @@ void MainWindow::outsideNotepadOpen()
             {
                 ui->textEdit->clear();
                 QTextStream in(file);
-                in.setEncoding(QStringConverter::Utf8);
+                in.setCodec("UTF-8");
 
                 while (!in.atEnd())
                 {
@@ -690,7 +690,7 @@ void MainWindow::on_action_Open_triggered()
         return;
     }
     QTextStream in(&file);
-    in.setEncoding(QStringConverter::Utf8);
+    in.setCodec("UTF-8");
 
     QString text;
     while(!in.atEnd())
@@ -760,7 +760,7 @@ void MainWindow::on_action_Save_triggered()
         return;
     }
     QTextStream out(&file);
-    out.setEncoding(QStringConverter::Utf8);
+    out.setCodec("UTF-8");
 
     out << ui->textEdit->toPlainText();
     if(out.status() != QTextStream::Ok)
@@ -813,7 +813,7 @@ void MainWindow::on_action_Save_As_triggered()
         return;
     }
     QTextStream out(&file);
-    out.setEncoding(QStringConverter::Utf8);
+    out.setCodec("UTF-8");
 
     out << ui->textEdit->toPlainText();
     if(out.status() != QTextStream::Ok)

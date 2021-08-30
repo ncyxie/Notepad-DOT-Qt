@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>429</width>
-    <height>360</height>
+    <height>380</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -61,7 +61,8 @@
 cross-platform and highly
 customizable text editor.
 Written in C++ language
-and based on Qt framework. 
+and based on Qt 5.15.2
+framework. 
 
 Version: 1.1.0-s1
 Build date: 18/08/2021
@@ -89,7 +90,7 @@ Thanks to XeZrunner
    <property name="geometry">
     <rect>
      <x>160</x>
-     <y>300</y>
+     <y>320</y>
      <width>101</width>
      <height>31</height>
     </rect>

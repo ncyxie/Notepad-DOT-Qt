@@ -663,6 +663,38 @@ void MainWindow::on_action_New_triggered()
 
 void MainWindow::on_action_Open_triggered()
 {
+    if (fileText != ui->textEdit->toPlainText())
+    {
+        if (isFresh == false)
+        {
+            QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Exit", "Do you want to save changes to " + currentFile + "?\n",
+                                                                    QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel,
+                                                                    QMessageBox::Cancel);
+
+            if (resBtn == QMessageBox::No) {
+            } else if (resBtn == QMessageBox::Cancel) {
+                return;
+            }
+            else if (resBtn == QMessageBox::Yes) {
+                on_action_Save_triggered();
+            }
+        }
+        else
+        {
+            QMessageBox::StandardButton resBtn = QMessageBox::question(this, "Exit", "Do you want to save changes to Untitled?\n",
+                                                                    QMessageBox::No | QMessageBox::Yes | QMessageBox::Cancel,
+                                                                    QMessageBox::Cancel);
+
+            if (resBtn == QMessageBox::No) {
+            } else if (resBtn == QMessageBox::Cancel) {
+                return;
+            }
+            else if (resBtn == QMessageBox::Yes) {
+                on_action_Save_As_triggered();
+            }
+        }
+    }
+
     QTextCursor cursor = ui->textEdit->textCursor();
     QFile file;
     {

@@ -38,7 +38,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_Search_with_Yahoo->setDisabled(true);
     ui->action_Uppercase->setDisabled(true);
     ui->action_Lowercase->setDisabled(true);
-
     ui->action_Word_Wrap->setCheckable(true);
     ui->action_Vertical->setCheckable(true);
     ui->action_Horizontal->setCheckable(true);

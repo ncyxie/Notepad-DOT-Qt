@@ -66,13 +66,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->action_gui_style_Windows_old->setCheckable(true);
     ui->action_gui_style_Windows_new->setCheckable(true);
     ui->action_gui_style_Fusion->setChecked(true);
-
-    #ifdef _WIN32
-    ui->action_gui_style_Windows_new->setEnabled(true);
-    #else
-    ui->action_gui_style_Windows_new->setDisabled(true);
-    #endif
-
     ui->action_statusBar_On->setChecked(false);
     ui->action_statusBar_Off->setChecked(true);
     ui->action_Word_Counter_On->setDisabled(true);
@@ -94,6 +87,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->addPermanentWidget(linesCountLabel);
     ui->statusbar->addPermanentWidget(charCountLabel);
     ui->statusbar->addPermanentWidget(wordCountLabel);
+
+    #ifdef _WIN32
+    ui->action_gui_style_Windows_new->setEnabled(true);
+    #else
+    ui->action_gui_style_Windows_new->setDisabled(true);
+    #endif
 
     LoadSettings();
 

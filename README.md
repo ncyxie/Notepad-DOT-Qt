@@ -116,13 +116,13 @@ If you are Linux user, download the '.AppImage' file and allow it to execute.
 
 **For Windows operating system:**
 * Minimum: Windows 7 SP1;
-* **Recommended: Windows 10 21H1 *(or Windows 11 Insider build);***
+* **Recommended: Windows 10 21H1 / 11 21H2;**
 
 * **Architecture: x86_64.**
 
 **For Linux operating systems:**
 * Minimum: Any Linux Distribution with glibc version 2.27 (e.g. Ubuntu 18.04 LTS);
-* **Recommended: Any Linux Distribution with glibc version 2.33 (e.g. Ubuntu 21.04);**
+* **Recommended: Any Linux Distribution with glibc version 2.34 (e.g. Ubuntu 21.10);**
 
 * **Architecture: x86_64.**
 

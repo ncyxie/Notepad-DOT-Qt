@@ -114,17 +114,15 @@ If you are Linux user, download the '.AppImage' file and allow it to execute.
 
 3. **What are this Notepad operating system requirements?**
 
+* **Architecture: x86_64.**	
+
 **For Windows operating system:**
 * Minimum: Windows 7 SP1;
 * **Recommended: Windows 10 21H1 / 11 21H2;**
 
-* **Architecture: x86_64.**
-
 **For Linux operating systems:**
 * Minimum: Any Linux Distribution with glibc version 2.27 (e.g. Ubuntu 18.04 LTS);
 * **Recommended: Any Linux Distribution with glibc version 2.34 (e.g. Ubuntu 21.10);**
-
-* **Architecture: x86_64.**
 
 If your OS meets the requirements *(or if doesn't)* and Notepad DOT Qt doesn't work properly, make sure your 
 operating system is up to date.

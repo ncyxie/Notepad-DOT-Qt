@@ -26,6 +26,12 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Untitled - Notepad DOT Qt");
     fileText = ui->textEdit->toPlainText();
 
+    #ifdef _WIN32
+    ui->action_gui_style_Windows_new->setEnabled(true);
+    #else
+    ui->action_gui_style_Windows_new->setDisabled(true);
+    #endif
+
     ui->action_Undo->setDisabled(true);
     ui->action_Redo->setDisabled(true);
     ui->action_Copy->setDisabled(true);
@@ -87,12 +93,6 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->addPermanentWidget(linesCountLabel);
     ui->statusbar->addPermanentWidget(charCountLabel);
     ui->statusbar->addPermanentWidget(wordCountLabel);
-
-    #ifdef _WIN32
-    ui->action_gui_style_Windows_new->setEnabled(true);
-    #else
-    ui->action_gui_style_Windows_new->setDisabled(true);
-    #endif
 
     LoadSettings();
 

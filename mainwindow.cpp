@@ -719,10 +719,9 @@ void MainWindow::on_action_Open_triggered()
     QTextStream in(&file);
     in.setCodec("UTF-8");
 
-    QString text;
     while(!in.atEnd())
     {
-        text.append(in.readLine());
+        ui->textEdit->append(in.readLine());
         if(in.status() != QTextStream::Ok)
         {
             QMessageBox errorMessage;
@@ -736,11 +735,12 @@ void MainWindow::on_action_Open_triggered()
         }
     }
     file.close();
-    ui->textEdit->setText(text);
+
+    ui->textEdit->document()->toPlainText();
     setWindowTitle(QFileInfo(file.fileName()).fileName() + " - Notepad DOT Qt");
     currentFile = QFileInfo(file.fileName()).fileName();
     isFresh = false;
-    fileText = text;
+    fileText = ui->textEdit->toPlainText();
 
     if (ui->textEdit->toPlainText().isEmpty())
     {

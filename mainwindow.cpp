@@ -562,7 +562,6 @@ void MainWindow::outsideNotepadOpen()
                 while (!in.atEnd())
                 {
                     ui->textEdit->append(in.readLine());
-                    ui->textEdit->moveCursor(QTextCursor::End);
                 }
 
                 ui->textEdit->document()->toPlainText();
@@ -570,8 +569,6 @@ void MainWindow::outsideNotepadOpen()
                 file->close();
                 isFresh = false;
                 fileText = ui->textEdit->toPlainText();
-
-                QTextCursor cursor = ui->textEdit->textCursor();
 
                 if (ui->textEdit->toPlainText().isEmpty())
                 {
@@ -581,7 +578,6 @@ void MainWindow::outsideNotepadOpen()
                 {
                     ui->textEdit->selectAll();
                     ui->textEdit->setTextColor(texteditfontcolor);
-                    ui->textEdit->setTextCursor(cursor);
                 }
 
                 if (ui->textEdit->toPlainText() != "")
@@ -592,6 +588,8 @@ void MainWindow::outsideNotepadOpen()
                 {
                     ui->action_Select_All->setDisabled(true);
                 }
+
+                ui->textEdit->moveCursor(QTextCursor::Start);
             }
     }
 }
@@ -693,7 +691,6 @@ void MainWindow::on_action_Open_triggered()
         }
     }
 
-    QTextCursor cursor = ui->textEdit->textCursor();
     QFile file;
     {
         QFileDialog fileDialog;
@@ -725,7 +722,7 @@ void MainWindow::on_action_Open_triggered()
     QString text;
     while(!in.atEnd())
     {
-        text.append(in.readLine() + '\n');
+        text.append(in.readLine());
         if(in.status() != QTextStream::Ok)
         {
             QMessageBox errorMessage;
@@ -739,9 +736,7 @@ void MainWindow::on_action_Open_triggered()
         }
     }
     file.close();
-
     ui->textEdit->setText(text);
-    ui->textEdit->setTextCursor(cursor);
     setWindowTitle(QFileInfo(file.fileName()).fileName() + " - Notepad DOT Qt");
     currentFile = QFileInfo(file.fileName()).fileName();
     isFresh = false;
@@ -755,6 +750,8 @@ void MainWindow::on_action_Open_triggered()
     {
         ui->action_Select_All->setDisabled(true);
     }
+
+    ui->textEdit->moveCursor(QTextCursor::Start);
 }
 
 void MainWindow::on_action_Save_triggered()

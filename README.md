@@ -1,10 +1,9 @@
-*Last time information was updated: 04/11/2021*
+*Last time information was updated: 05/11/2021*
 
 # Notepad DOT Qt
 
 ## Table of contents
 
-- [Latest Information](#latest-information)
 - [Introduction](#introduction)
 - [Screenshots](#screenshots)
 - [Download](#download)
@@ -18,10 +17,6 @@
 - [Bug reports](#bug-reports)
 - [FAQ](#faq)
 - [Thanks to](#thanks-to)
-
-## Latest Information
-
-**Notepad DOT Qt v1.1.0-s1 is now available to download.**
 
 ## Introduction
 

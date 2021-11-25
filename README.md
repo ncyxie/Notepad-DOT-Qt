@@ -13,7 +13,7 @@
 		- [Using the Terminal](#using-the-terminal)
 	- [Windows](#windows)
 		- [Using the Setup file](#using-the-setup-file)
-		- [Using the winget tool](#using-the-winget-tool-guide-source)
+		- [Using the winget tool](#using-the-winget-tool)
 - [Bug reports](#bug-reports)
 - [FAQ](#faq)
 - [Thanks to](#thanks-to)

@@ -73,7 +73,7 @@ It is suitable for daily driving, from newbies to advanced users.
 	
 #### Using the winget tool
 	
-*Note: The winget command line tool is only supported on Windows 10 1709 (build 16299) or later at this time.*
+*Note: The winget command line tool is only supported on **Windows 10 (1709)** and **Windows 11 (21H2)** or later versions.*
 
 **Installing Notepad DOT Qt via winget**
 	

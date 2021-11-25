@@ -71,18 +71,9 @@ It is suitable for daily driving, from newbies to advanced users.
 #### Using the Setup file
 [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file, open it up and follow further Notepad DOT Setup guide;
 	
-#### Using the winget tool ([Guide source](https://docs.microsoft.com/en-us/windows/package-manager/winget))
-
-**Install winget**
+#### Using the winget tool
 	
-*Note: The winget tool requires Windows 10, version 1809 (10.0.17763), or a later version of Windows 10.*
-	
-There are several ways to install the winget tool:
-* The **winget** tool is included in the flight or preview version of [Windows App Installer](https://www.microsoft.com/p/app-installer/9nblggh4nns1?ocid=9nblggh4nns1_ORSEARCH_Bing&rtc=1&activetab=pivot:overviewtab). You must install the preview version of **App Installer** to use **winget**. To gain early access, submit your request to the [Windows Package Manager Insiders Program](https://aka.ms/AppInstaller_InsiderProgram). Participating in the flight ring will guarantee you see the latest preview updates.
-
-* Participate in the [Windows Insider flight ring](https://insider.windows.com).
-
-* Install the Windows Desktop App Installer package located on the [Releases page for the winget repository](https://github.com/microsoft/winget-cli/releases).
+*Note: The winget command line tool is only supported on Windows 10 1709 (build 16299) or later at this time.*
 
 **Installing Notepad DOT Qt via winget**
 	

@@ -113,7 +113,7 @@ If you are Linux user, download the '.AppImage' file and allow it to execute.
 
 **For Windows operating system:**
 * Minimum: Windows 7 SP1;
-* **Recommended: Windows 10 21H1 / 11 21H2;**
+* **Recommended: Windows 10 (21H2) / 11 (21H2);**
 
 **For Linux operating systems:**
 * Minimum: Any Linux Distribution with glibc version 2.27 (e.g. Ubuntu 18.04 LTS);

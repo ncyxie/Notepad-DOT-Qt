@@ -447,7 +447,7 @@ void MainWindow::on_textEdit_textChanged()
 
     if (wordsOn == true)
     {
-        wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), QString::SkipEmptyParts).count()));
+        wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), Qt::SkipEmptyParts).count()));
     }
 
     if (charOn == true)
@@ -557,7 +557,7 @@ void MainWindow::outsideNotepadOpen()
             {
                 ui->textEdit->clear();
                 QTextStream in(file);
-                in.setCodec("UTF-8");
+                in.setEncoding(QStringConverter::Utf8);
 
                 while (!in.atEnd())
                 {
@@ -717,7 +717,7 @@ void MainWindow::on_action_Open_triggered()
         return;
     }
     QTextStream in(&file);
-    in.setCodec("UTF-8");
+    in.setEncoding(QStringConverter::Utf8);
 
     while(!in.atEnd())
     {
@@ -787,7 +787,7 @@ void MainWindow::on_action_Save_triggered()
         return;
     }
     QTextStream out(&file);
-    out.setCodec("UTF-8");
+    out.setEncoding(QStringConverter::Utf8);
 
     out << ui->textEdit->toPlainText();
     if(out.status() != QTextStream::Ok)
@@ -840,7 +840,7 @@ void MainWindow::on_action_Save_As_triggered()
         return;
     }
     QTextStream out(&file);
-    out.setCodec("UTF-8");
+    out.setEncoding(QStringConverter::Utf8);
 
     out << ui->textEdit->toPlainText();
     if(out.status() != QTextStream::Ok)
@@ -1614,7 +1614,7 @@ void MainWindow::on_action_Word_Counter_On_triggered()
     ui->action_Word_Counter_On->setChecked(true);
     ui->action_Word_Counter_Off->setChecked(false);
     wordsOn = true;
-    wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), QString::SkipEmptyParts).count()));
+    wordCountLabel->setText(tr("Words: ") + QString::number(ui->textEdit->toPlainText().split(QRegularExpression("(\\s|\\n|\\r)+"), Qt::SkipEmptyParts).count()));
 }
 
 void MainWindow::on_action_Word_Counter_Off_triggered()

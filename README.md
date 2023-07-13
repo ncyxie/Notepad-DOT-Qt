@@ -71,7 +71,7 @@ It is suitable for everyday use, from beginners to advanced users.
 	
 #### Using the winget tool
 	
-*Note: The winget command line utility is only supported on **Windows 10 (since version 1709)** and later versions.
+*Note: The winget command line utility is only supported since **Windows 10 (1709)** and later versions.
 If your version of Windows is compatible with Winget and Winget still doesn't work, make sure that the 'App Installer' package is up to date.*
 
 **Installing Notepad DOT Qt via winget**

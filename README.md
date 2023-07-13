@@ -18,9 +18,7 @@
 
 ## Introduction
 
-**Notepad DOT Qt** is an open source, cross-platform and highly customizable text editor.
-It has all the essential notepad features with more handy stuff.
-It is suitable for everyday use, from beginners to advanced users.
+**Notepad DOT Qt** is an open source, cross-platform and highly customizable text editor. It has all the essential notepad features with more handy stuff. It is suitable for everyday use, from beginners to advanced users.
 
 ## Screenshots
 
@@ -71,8 +69,7 @@ It is suitable for everyday use, from beginners to advanced users.
 	
 #### Using the winget tool
 	
-*Note: The winget command line utility is only supported since **Windows 10 (1709)** and later versions.
-If your version of Windows is compatible with Winget and Winget still doesn't work, make sure that the 'App Installer' package is up to date.*
+*Note: The winget command line utility is only supported since **Windows 10 (1709)** and later versions. If your version of Windows is compatible with Winget and Winget still doesn't work, make sure that the 'App Installer' package is up to date.*
 
 **Installing Notepad DOT Qt via winget**
 	
@@ -94,8 +91,7 @@ Absolutely. That is why it is open source. Feel free to make it better.
 
 2. **Does Notepad DOT Qt run on Windows and Linux operating systems?**
 
-Yes, it does. If you are a Windows user, make sure you download the '.exe' file and set up the application. 
-If you are a Linux user, download the '.AppImage' file and allow it to run.
+Yes, it does. If you are a Windows user, make sure you download the '.exe' file and set up the application. If you are a Linux user, download the '.AppImage' file and allow it to run.
 
 3. **What are the operating system requirements for Notepad DOT Qt?**
 
@@ -109,8 +105,7 @@ If you are a Linux user, download the '.AppImage' file and allow it to run.
 * Minimum: Any Linux Distribution with glibc version 2.27 (e.g. Ubuntu 18.04 LTS);
 * **Recommended: Any Linux Distribution with glibc version above 2.27;**
 
-If your computer meets the requirements and Notepad DOT Qt is still not working properly, please make sure that your 
-operating system and required components are up to date.
+If your computer meets the requirements and Notepad DOT Qt is still not working properly, please make sure that your operating system and required components are up to date.
 	
 4. **Where is the Notepad DOT Qt config file/folder stored?**
 	
@@ -128,8 +123,7 @@ It's simple. Open a terminal and type this line: ``ldd --version``.
 
 6. **Why Notepad DOT Qt doesn't officially support macOS?**
 
-I don't have macOS computer, so development capabilities for macOS would be very limited. 
-In fact, Notepad DOT Qt *should* work on macOS, but the responsibility for compiling and debugging the application lies with you.
+I don't have macOS computer, so development capabilities for macOS would be very limited. In fact, Notepad DOT Qt *should* work on macOS, but the responsibility for compiling and debugging the application lies with you.
 
 ## Special thanks to
 

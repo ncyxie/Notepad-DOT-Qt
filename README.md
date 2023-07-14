@@ -64,7 +64,7 @@
 
 ### Windows
 
-#### Using the Setup file
+#### Using the setup file
 [Download the latest Notepad DOT Qt version](https://github.com/ncyxie/Notepad-DOT-Qt/releases) '.exe' file, open it and follow the instructions for setting up Notepad DOT;
 	
 #### Using the winget tool

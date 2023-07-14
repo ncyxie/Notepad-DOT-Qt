@@ -69,7 +69,7 @@
 	
 #### Using the winget tool
 	
-*Note: The winget command line utility is only supported since **Windows 10 (1709)** and later versions. If your version of Windows is compatible with Winget and Winget still doesn't work, make sure that the 'App Installer' package is up to date.*
+*Note: The winget command line utility is supported in **Windows 10 (version 1709)** and later versions. If your version of Windows is compatible with winget and winget still doesn't work, make sure that the 'App Installer' package is up to date.*
 
 **Installing Notepad DOT Qt via winget**
 	
